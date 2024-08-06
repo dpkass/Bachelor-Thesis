@@ -1,144 +1,68 @@
-import numpy as np
-from collections import defaultdict as dd
-from queue import PriorityQueue as PQ
+from algorithms import DP_DICT, Greedy
+from generator import generate
 
-dtype = np.int64
-dtype_max = np.iinfo(dtype).max
+import logging
 
-
-def inc(lst, i):
-    tmp = list(lst)
-    tmp[i] += 1
-    return tuple(tmp)
+from tabulate import tabulate
 
 
-class Solver:
-    def __init__(self):
-        self.n = None
-        self.m = None
+def compare(algo_a, algo_b, n, m, a):
+    """
+    Compare two algorithms' performance on specified weights.
 
-    def fit(self, n, m): pass
-
-    def transform(self, y) -> int: pass
-
-    def fit_transform(self, n, m, y) -> int:
-        self.fit(n, m)
-        return self.transform(y)
-
-
-class DP(Solver):
-    def __init__(self):
-        super().__init__()
-        self.dp = None
-
-    def init_positions(self):
-        root = tuple([0] * self.m)
-        self.dp[root] = 0
-        return [root]
+    :param algo_a: First algorithm (typically the worse)
+    :param algo_b: Second algorithm (typically the better)
+    :param n: Number of jobs
+    :param m: Number of machines
+    :param a: List of weights
+    :return: T(algo_a) divided by T(algo_b)
+    """
+    return algo_a.fit_transform(n, m, a) / algo_b.fit_transform(n, m, a)
 
 
-class DP_MDIM(DP):
-    def fit(self, n, m):
-        self.n, self.m = n, m
-        self.dp = np.full([n + 1 // i for i in range(1, m + 1)], dtype=dtype, fill_value=dtype_max)
+def compare_to_optimal(algo, n, m, a):
+    """
+    Compare an algorithms' performance to the optimal solution.
 
-    def transform(self, w):
-        curr_positions = self.init_positions()
-        next_positions = set()
-
-        for wi in w:
-            for pos in curr_positions:
-                for j in range(self.m):
-                    if pos[j - 1] > pos[j] or j == 0:
-                        npos = inc(pos, j)
-                        self.dp[npos] = min(self.dp[npos], self.dp[pos] + npos[j] * wi)
-                        next_positions.add(npos)
-            curr_positions = next_positions.copy()
-            next_positions.clear()
-
-        return self.dp, min(self.dp[i] for i in curr_positions)
+    :param algo: The algorithm to compare
+    :param n: Number of jobs
+    :param m: Number of machines
+    :param a: List of weights
+    :return: "Quality" of algo for specified weights
+    """
+    return compare(algo, DP_DICT(), n, m, a)
 
 
-class DP_DICT(DP):
-    def fit(self, n, m):
-        self.n, self.m = n, m
-        self.dp = dd(lambda: dtype_max)
+def average_quality(algo, n, m, as_):
+    """
+    Average quality of an algorithm over given weights.
 
-    def transform(self, w):
-        curr_positions = self.init_positions()
-        next_positions = set()
-
-        next_values = dd(lambda: dtype_max)
-
-        for wi in w:
-            for pos in curr_positions:
-                for j in range(self.m):
-                    if pos[j - 1] > pos[j] or j == 0:
-                        npos = inc(pos, j)
-                        next_values[npos] = min(next_values[npos], self.dp[pos] + npos[j] * wi)
-                        next_positions.add(npos)
-
-            curr_positions = next_positions.copy()
-            next_positions.clear()
-
-            self.dp = next_values.copy()
-            next_values.clear()
-
-        return min(self.dp[i] for i in curr_positions)
+    :param algo: The algorithm to compare
+    :param n: Number of jobs
+    :param m: Number of machines
+    :param as_: List of lists of weights
+    :return: Average "Quality" of algo for specified weights
+    """
+    return sum(compare_to_optimal(algo, n, m, a) for a in as_) / len(as_)
 
 
-class Greedy(Solver):
-    def fit(self, n, m):
-        self.n, self.m = n, m
-        self.pq = PQ(maxsize=m)
-        for _ in range(m): self.pq.put((0, 0))
-
-    def transform(self, w):
-        for wi in w:
-            sum_wc, i = self.pq.get()
-            i += 1
-            sum_wc += wi * i
-            self.pq.put((sum_wc, i))
-
-        sum_wc = 0
-        while not self.pq.empty():
-            partial_sum, _ = self.pq.get()
-            sum_wc += partial_sum
-
-        return sum_wc
+def run(algo, n, ms, as_):
+    return [average_quality(algo, n, m, as_) for m in ms]
 
 
-def run(wf, seed=0):
-    np.random.seed(seed)
-    w = wf()
-
-    dp_dict = DP_DICT()
-    greedy = Greedy()
-
-    dp = dp_dict.fit_transform(n, m, w)
-    gdy = greedy.fit_transform(n, m, w)
-
-    return gdy / dp
+def run_all(algorithm, n, ms):
+    all_as = generate()
+    results = [(desc, *run(algorithm, n, ms, as_))
+               for (as_, desc) in all_as]
+    print(tabulate(results, ["Description of a", *ms]))
 
 
-run_mean = lambda w: sum(run(w, i) for i in range(10)) / 10
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+    logger = logging.getLogger(__name__)
 
-n = 150
-m = 4
+    n = 150
+    ms = [2, 3, 4]
+    algorithm = Greedy()
 
-low = np.random.randint(0, 100, size=n // 2)
-high = np.random.randint(900, 1000, size=n // 2)
-
-w1 = lambda: range(n)  # 1.182, 1.260, 1.303
-w2 = lambda: range(n)[::-1]  # 1
-w3 = lambda: np.random.randint(0, 100, size=n)  # 1.199, 1.273, 1.316
-w4 = lambda: np.random.randint(0, 100, size=n) + 10000  # 1.0007, 1.0009, 1.001
-w5 = lambda: np.random.randint(10000, 1000000, size=n)  # 1.182, 1.261, 1.298
-w6 = lambda: np.concatenate((low, high))  # 1.452, 1.830, 1.949
-w7 = lambda: np.concatenate((high, low))  # 1.012, 1.014, 1.023
-w8 = lambda: np.sort(np.random.randint(1, 100000, size=n))  # 1.180, 1.254, 1.299
-w9 = lambda: np.sort(np.random.randint(1, 100000, size=n))[::-1]  # 1.0000005, 1.0000005, 1.000001
-ws = [w1, w2, w3, w4, w5, w6, w7, w8, w9]
-
-for w in ws: print(run_mean(w))
-
+    run_all(algorithm, n, ms)
