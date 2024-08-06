@@ -1,9 +1,30 @@
-from algorithms import DP_DICT, Greedy
+import time
+
+from algorithms import DP_DICT, DP_MDIM, Greedy
 from generator import generate
 
 import logging
 
 from tabulate import tabulate
+
+
+def run(algo, n, m, a):
+    """
+    Do a single solve.
+
+    :param algo: Algorithm to run
+    :param n: Number of Jobs
+    :param m: Number of Machines
+    :param a: List of Weights
+    :return: γ(algo, m, a)
+    """
+    algo_name = algo.__class__.__name__
+    logger.debug(f"Run Algorithm {algo_name}")
+
+    res = algo.fit_transform(n, m, a)
+    logger.debug(f"γ({algo_name}, m:{m}, a) = {res}")
+
+    return res
 
 
 def compare(algo_a, algo_b, n, m, a):
@@ -15,12 +36,19 @@ def compare(algo_a, algo_b, n, m, a):
     :param n: Number of jobs
     :param m: Number of machines
     :param a: List of weights
-    :return: T(algo_a) divided by T(algo_b)
+    :return: γ(algo_a, m, a) divided by γ(algo_b, m, a)
     """
-    return algo_a.fit_transform(n, m, a) / algo_b.fit_transform(n, m, a)
+    logger.log(1, f"a = {a}")
+
+    a_res = run(algo_a, n, m, a)
+    b_res = run(algo_b, n, m, a)
+
+    logger.debug(f"diff = {a_res - b_res}, quot = {a_res / b_res}")
+
+    return a_res / b_res
 
 
-def compare_to_optimal(algo, n, m, a):
+def quality(algo, n, m, a):
     """
     Compare an algorithms' performance to the optimal solution.
 
@@ -33,36 +61,51 @@ def compare_to_optimal(algo, n, m, a):
     return compare(algo, DP_DICT(), n, m, a)
 
 
-def average_quality(algo, n, m, as_):
+def average_quality(algo, n, m, A):
     """
     Average quality of an algorithm over given weights.
 
     :param algo: The algorithm to compare
     :param n: Number of jobs
     :param m: Number of machines
-    :param as_: List of lists of weights
+    :param A: List of lists of weights
     :return: Average "Quality" of algo for specified weights
     """
-    return sum(compare_to_optimal(algo, n, m, a) for a in as_) / len(as_)
+    logger.info(f"Calculate average quality for m = {m}")
+    start = time.perf_counter()
+
+    res = 0
+    for i, a in enumerate(A, start=1):
+        logger.debug(f"Run {i}/{len(A)}")
+        res += quality(algo, n, m, a)
+
+    end = time.perf_counter()
+    res /= len(A)
+    logger.info(f"Quality = {res}, Took = {round(end - start, 3)} s")
+    return res
 
 
-def run(algo, n, ms, as_):
-    return [average_quality(algo, n, m, as_) for m in ms]
+def average_quality_per_machine(algo, n, ms, A, desc):
+    logger.info(f"======================== {desc}  ========================")
+    return [average_quality(algo, n, m, A) for m in ms]
 
 
-def run_all(algorithm, n, ms):
-    all_as = generate()
-    results = [(desc, *run(algorithm, n, ms, as_))
-               for (as_, desc) in all_as]
-    print(tabulate(results, ["Description of a", *ms]))
+def average_quality_per_generator(algo, n, M):
+    all_A = generate()
+    results = [(desc, *average_quality_per_machine(algo, n, M, A, desc))
+               for (A, desc) in all_A]
+    print(tabulate(results, ["Description of a", *M]))
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
-    logger = logging.getLogger(__name__)
+    logging.basicConfig(
+        format='%(asctime)s  %(levelname)-8s %(message)s',
+        level=logging.INFO,
+        datefmt='%Y-%m-%d %H:%M:%S')
+    logger = logging.getLogger("Comparator")
 
     n = 150
-    ms = [2, 3, 4]
+    M = [1, 2, 3, 4]
     algorithm = Greedy()
 
-    run_all(algorithm, n, ms)
+    average_quality_per_generator(algorithm, n, M)
