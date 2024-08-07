@@ -15,9 +15,9 @@ class Solver:
 
     def transform(self, y) -> int: pass
 
-    def fit_transform(self, n, m, y) -> int:
-        self.fit(n, m)
-        return self.transform(y)
+    def fit_transform(self, m, a) -> int:
+        self.fit(len(a), m)
+        return self.transform(a)
 
 
 class DP(Solver):
@@ -44,16 +44,16 @@ class DP_MDIM(DP):
         self.n, self.m = n, m
         self.dp = np.full([n + 1 // i for i in range(1, m + 1)], dtype=dtype, fill_value=dtype_max)
 
-    def transform(self, w):
+    def transform(self, a):
         curr_positions = self.init_positions()
         next_positions = set()
 
-        for wi in w:
+        for ai in a:
             for pos in curr_positions:
                 for j in range(self.m):
                     if pos[j - 1] > pos[j] or j == 0:
                         npos = inc(pos, j)
-                        self.dp[npos] = min(self.dp[npos], self.dp[pos] + npos[j] * wi)
+                        self.dp[npos] = min(self.dp[npos], self.dp[pos] + npos[j] * ai)
                         next_positions.add(npos)
             curr_positions = next_positions.copy()
             next_positions.clear()
@@ -69,18 +69,18 @@ class DP_DICT(DP):
         self.n, self.m = n, m
         self.dp = dd(lambda: dtype_max)
 
-    def transform(self, w):
+    def transform(self, a):
         curr_positions = self.init_positions()
         next_positions = set()
 
         next_values = dd(lambda: dtype_max)
 
-        for wi in w:
+        for ai in a:
             for pos in curr_positions:
                 for j in range(self.m):
                     if pos[j - 1] > pos[j] or j == 0:
                         npos = inc(pos, j)
-                        next_values[npos] = min(next_values[npos], self.dp[pos] + npos[j] * wi)
+                        next_values[npos] = min(next_values[npos], self.dp[pos] + npos[j] * ai)
                         next_positions.add(npos)
 
             curr_positions = next_positions.copy()
@@ -101,11 +101,11 @@ class Greedy(Solver):
         self.pq = PQ(maxsize=m)
         for _ in range(m): self.pq.put((0, 0))
 
-    def transform(self, w):
-        for wi in w:
+    def transform(self, a):
+        for ai in a:
             sum_wc, i = self.pq.get()
             i += 1
-            sum_wc += wi * i
+            sum_wc += ai * i
             self.pq.put((sum_wc, i))
 
         sum_wc = 0

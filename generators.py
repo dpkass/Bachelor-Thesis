@@ -9,7 +9,7 @@ def increasing(n):
     +1 Increasing Weights
 
     :param n: Length of a
-    :return: List of weights a
+    :return: List of Weights a
     """
     return range(n)
 
@@ -19,7 +19,7 @@ def decreasing(n):
     -1 Decreasing Weights
 
     :param n: Length of a
-    :return: List of weights a
+    :return: List of Weights a
     """
     return range(n)[::-1]
 
@@ -30,7 +30,7 @@ def small_random(n, seed):
 
     :param n: Length of a
     :param seed: Reproducibility seed
-    :return: List of weights a
+    :return: List of Weights a
     """
     np.random.seed(seed)
     return np.random.randint(0, 100, size=n)
@@ -42,7 +42,7 @@ def small_span_large(n, seed):
 
     :param n: Length of a
     :param seed: Reproducibility seed
-    :return: List of weights a
+    :return: List of Weights a
     """
     np.random.seed(seed)
     return np.random.randint(0, 100, size=n) + 10000
@@ -54,7 +54,7 @@ def large_span_large(n, seed):
 
     :param n: Length of a
     :param seed: Reproducibility seed
-    :return: List of weights a
+    :return: List of Weights a
     """
     np.random.seed(seed)
     return np.random.randint(10000, 1000000, size=n)
@@ -67,7 +67,7 @@ def low_then_high(n, seed):
 
     :param n: Size of a, if even: |a| = n, else: |a| = n - 1
     :param seed: Reproducibility seed
-    :return: List of weights a
+    :return: List of Weights a
     """
     np.random.seed(seed)
     return np.concatenate([low(n // 2), high(n // 2)])
@@ -80,7 +80,7 @@ def high_then_low(n, seed):
 
     :param n: Size of a, if even: |a| = n, else: |a| = n - 1
     :param seed: Reproducibility seed
-    :return: List of weights a
+    :return: List of Weights a
     """
     np.random.seed(seed)
     return np.concatenate([high(n // 2), low(n // 2)])
@@ -92,7 +92,7 @@ def large_random_increasing(n, seed):
 
     :param n: Length of a
     :param seed: Reproducibility seed
-    :return: List of weights a
+    :return: List of Weights a
     """
     np.random.seed(seed)
     return np.sort(np.random.randint(1, 100000, size=n))
@@ -104,7 +104,7 @@ def large_random_decreasing(n, seed):
 
     :param n: Length of a
     :param seed: Reproducibility seed
-    :return: List of weights a
+    :return: List of Weights a
     """
     np.random.seed(seed)
     return np.sort(np.random.randint(1, 100000, size=n))[::-1]

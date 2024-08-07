@@ -1,64 +1,64 @@
-import time
-
-from tabulate import tabulate
-
 from algorithms import DP_DICT
 from generator import generate
-from main import logger
-from runner import run_single
+
+from computer import compute_single
+
+import time
+import logging
+
+logger = logging.getLogger(__name__)
+
+MSG1 = ' Compute the Average Quality per Generator Type and Number of Machines '
+MSG2 = 'Compute the Average Quality per Number of Machines for Generator Type:'
 
 
-def compare(algo_a, algo_b, n, m, a):
+def compare(algo_a, algo_b, m, a):
     """
-    Compare two algorithms' performance on specified weights.
+    Compare two algorithms' performance on specified Weights.
 
     :param algo_a: First algorithm (typically the worse)
     :param algo_b: Second algorithm (typically the better)
-    :param n: Number of jobs
-    :param m: Number of machines
-    :param a: List of weights
+    :param m: Number of Machines
+    :param a: List of Weights
     :return: γ(algo_a, m, a) divided by γ(algo_b, m, a)
     """
-    logger.log(1, f"a = {a}")
-
-    a_res = run_single(algo_a, n, m, a)
-    b_res = run_single(algo_b, n, m, a)
+    a_res = compute_single(algo_a, m, a)
+    b_res = compute_single(algo_b, m, a)
 
     logger.debug(f"diff = {a_res - b_res}, quot = {a_res / b_res}")
 
     return a_res / b_res
 
 
-def quality(algo, n, m, a):
+def quality(algo, m, a):
     """
-    Compare an algorithms' performance to the optimal solution.
+    Compute the Quality of an Algorithm for Weight List.
 
     :param algo: The algorithm to compare
-    :param n: Number of jobs
-    :param m: Number of machines
-    :param a: List of weights
-    :return: "Quality" of algo for specified weights
+    :param m: Number of Machines
+    :param a: List of Weights
+    :return: "Quality" of algo for specified Weights
     """
-    return compare(algo, DP_DICT(), n, m, a)
+    return compare(algo, DP_DICT(), m, a)
 
 
-def average_quality(algo, n, m, A):
+def average_quality(algo, m, A):
     """
-    Average quality of an algorithm over given weights.
+    Compute the Average Quality of an Algorithm for Weight Lists.
 
     :param algo: The algorithm to compare
-    :param n: Number of jobs
-    :param m: Number of machines
-    :param A: List of lists of weights of a specific generator
+    :param m: Number of Machines
+    :param A: List of Lists of Weights of a specific generator
     :return: Average "Quality" of algo for specific generator
     """
-    logger.info(f"Calculate average quality for m = {m}")
+    logger.info(f"Compute the Average Quality for {m} Machines")
     start = time.perf_counter()
 
     res = 0
     for i, a in enumerate(A, start=1):
-        logger.debug(f"Run {i}/{len(A)}")
-        res += quality(algo, n, m, a)
+        logger.debug(f"Compute {i}/{len(A)}")
+        logger.log(1, f"a = {a}")
+        res += quality(algo, m, a)
 
     end = time.perf_counter()
     res /= len(A)
@@ -66,29 +66,33 @@ def average_quality(algo, n, m, A):
     return res
 
 
-def average_quality_per_no_machines(algo, n, ms, A, desc):
+def average_quality_per_no_machines(algo, ms, A, desc):
     """
-    Calculate the Average Quality for each m, i.e. Number of Machines
+    Compute the Average Quality per Number of Machines
 
     :param algo: The algorithm to compare
-    :param n: Number of jobs
-    :param ms: Options for number of machines
-    :param A: List of lists of weights of a specific generator
+    :param ms: Options for Number of Machines
+    :param A: List of Lists of Weights of a specific generator
     :return: Average "Quality" of algo for specific generator
     """
-    logger.info(f"======================== {desc}  ========================")
-    return [average_quality(algo, n, m, A) for m in ms]
+    logger.info(f"{f' {MSG2} {desc} ':-^150}")
+
+    return [average_quality(algo, m, A) for m in ms]
 
 
-def average_quality_per_generator(algo, n, M):
+def average_quality_per_generator(algo, n, ms):
     """
-    Calculate the Average Quality for each generator type and m, and print as a table
+    Compute the Average Quality per Generator Type and Number of Machines
 
     :param algo: The algorithm to compare
     :param n: Number of jobs
-    :param M: Options for number of machines
+    :param ms: Options for Number of Machines
+    :return: Average quality per Number of Machines per generator type
     """
-    all_A = generate()
-    results = [(desc, *average_quality_per_no_machines(algo, n, M, A, desc))
-               for (A, desc) in all_A]
-    print(tabulate(results, ["Description of a", *M]))
+    logger.info(f"{'':=^150}")
+    logger.info(f"{MSG1:=^150}")
+    logger.info(f"{'':=^150}")
+
+    results = [(desc, *average_quality_per_no_machines(algo, ms, A, desc))
+               for (A, desc) in generate(n)]
+    return results

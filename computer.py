@@ -13,17 +13,16 @@ MSG3 = ' Compute the Solutions per Number of Machines for multiple Weight Lists 
 MSG4 = ' Compute the Average Value per Number of Machines per Generator Type '
 
 
-def compute_single(algo, n, m, a):
+def compute_single(algo, m, a):
     """
     Compute a single solution of an algorithm for set n, m, and Weight List a
 
     :param algo: Algorithm to run
-    :param n: Number of Jobs
     :param m: Number of Machines
     :param a: List of Weights
     :return: γ(algo, m, a)
     """
-    res = algo.fit_transform(n, m, a)
+    res = algo.fit_transform(m, a)
 
     algo_name = algo.__class__.__name__
     logger.debug(f"γ({algo_name}, m:{m}, a) = {res}")
@@ -31,7 +30,7 @@ def compute_single(algo, n, m, a):
     return res
 
 
-def compute_each(algo, n, m, A):
+def compute_each(algo, m, A):
     """
     Compute the solutions for each Weight List in A.
 
@@ -44,7 +43,7 @@ def compute_each(algo, n, m, A):
     for i, a in enumerate(A, start=1):
         logger.debug(f"Compute {i}/{len(A)}")
         logger.log(1, f"a = {a}")
-        sol = compute_single(algo, n, m, a)
+        sol = compute_single(algo, m, a)
         res.append(sol)
 
     end = time.perf_counter()
@@ -52,7 +51,7 @@ def compute_each(algo, n, m, A):
     return res
 
 
-def compute_per_number_of_machines(algo, n, ms, A, desc):
+def compute_per_number_of_machines(algo, ms, A, desc):
     """
     Compute the Solutions per Number of Machines for each Weight List in A.
 
@@ -60,11 +59,11 @@ def compute_per_number_of_machines(algo, n, ms, A, desc):
     """
     logger.info(f"{f' {MSG1} {desc} ':-^150}")
 
-    return [compute_each(algo, n, m, A) for m in ms]
+    return [compute_each(algo, m, A) for m in ms]
 
 
 def _compute_solutions(algo, n, ms):
-    return [(desc, *compute_per_number_of_machines(algo, n, ms, A, desc))
+    return [(desc, *compute_per_number_of_machines(algo, ms, A, desc))
             for (A, desc) in generate(n)]
 
 
@@ -74,6 +73,10 @@ def compute_solutions(algo, n, ms):
     1. Generator Type
     2. Number of Machines
     3. Seed (if random)
+
+    :param algo: Algorithm to calculate the values for
+    :param n: Number of Jobs
+    :param ms: Options for Numbers of Machines
     """
     logger.info(f"{'':=^150}")
     logger.info(f"{MSG3:=^150}")
@@ -87,6 +90,10 @@ def compute_averaged(algo, n, ms):
     Compute a 2D-Array with the following axes:
     1. Generator Type
     2. Number of Machines
+
+    :param algo: Algorithm to calculate the values for
+    :param n: Number of Jobs
+    :param ms: Options for Numbers of Machines
     """
     logger.info(f"{'':=^150}")
     logger.info(f"{MSG4:=^150}")
