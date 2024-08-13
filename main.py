@@ -1,6 +1,6 @@
 from tabulate import tabulate
 
-from algrotihms import Greedy
+from algrotihms import *
 
 from comparator import average_quality_per_generator
 from computer import compute_averaged, compute_solutions
