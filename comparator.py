@@ -1,4 +1,4 @@
-from algorithms import DP_DICT
+from algrotihms import DP_DICT
 from generator import generate
 
 from computer import compute_single
