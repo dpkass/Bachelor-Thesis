@@ -86,9 +86,9 @@ def high_then_low(n, seed):
     return np.concatenate([high(n // 2), low(n // 2)])
 
 
-def large_random_increasing(n, seed):
+def large_span_random_increasing(n, seed):
     """
-    Increasingly Sorted Large Random Weights
+    Increasingly Sorted Large Span Random Weights
 
     :param n: Length of a
     :param seed: Reproducibility seed
@@ -98,9 +98,9 @@ def large_random_increasing(n, seed):
     return np.sort(np.random.randint(1, 100000, size=n))
 
 
-def large_random_decreasing(n, seed):
+def large_span_random_decreasing(n, seed):
     """
-    Decreasingly Sorted Large Random Weights
+    Decreasingly Sorted Large Span Random Weights
 
     :param n: Length of a
     :param seed: Reproducibility seed
@@ -117,7 +117,7 @@ generators = [(increasing, "+1 Increasing Weights", False),
               (large_span_large, "Large Span Large Weights", True),
               (low_then_high, "Random Half Low, then Half High Weights", True),
               (high_then_low, "Random Half High, then Half Low Weights", True),
-              (large_random_increasing,
-               "Increasingly Sorted Large Random Weights", True),
-              (large_random_decreasing,
-               "Decreasingly Sorted Large Random Weights", True)]
+              (large_span_random_increasing,
+               "Increasingly Sorted Large Span Random Weights", True),
+              (large_span_random_decreasing,
+               "Decreasingly Sorted Large Span Random Weights", True)]
