@@ -2,7 +2,7 @@ from collections import defaultdict
 
 import numpy as np
 
-dtype = np.int64
+dtype = np.uint64
 dtype_max = np.iinfo(dtype).max
 
 
