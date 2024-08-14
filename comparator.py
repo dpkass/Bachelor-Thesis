@@ -1,3 +1,7 @@
+from concurrent.futures import ThreadPoolExecutor
+
+import copy
+
 from algrotihms import DP_DICT
 from generator import generate
 
@@ -30,7 +34,7 @@ def compare(algo_a, algo_b, m, a):
     return a_res / b_res
 
 
-def quality(algo, m, a):
+def quality(algo, m, a, multithread):
     """
     Compute the Quality of an Algorithm for Weight List.
 
@@ -39,10 +43,11 @@ def quality(algo, m, a):
     :param a: List of Weights
     :return: "Quality" of algo for specified Weights
     """
+    if multithread: algo = copy.deepcopy(algo)
     return compare(algo, DP_DICT(), m, a)
 
 
-def average_quality(algo, m, A):
+def average_quality(algo, m, A, multithread=False):
     """
     Compute the Average Quality of an Algorithm for Weight Lists.
 
@@ -54,11 +59,16 @@ def average_quality(algo, m, A):
     logger.info(f"Compute the Average Quality for {m} Machines")
     start = time.perf_counter()
 
-    res = 0
-    for i, a in enumerate(A, start=1):
+    def step(i, a):
         logger.debug(f"Compute {i}/{len(A)}")
         logger.log(1, f"a = {a}")
-        res += quality(algo, m, a)
+        return quality(algo, m, a, multithread)
+
+    if not multithread:
+        res = sum(step(i, a) for i, a in enumerate(A, start=1))
+    else:
+        with ThreadPoolExecutor() as executor:
+            res = sum(executor.map(lambda args: step(*args), enumerate(A, start=1)))
 
     end = time.perf_counter()
     res /= len(A)
@@ -66,7 +76,7 @@ def average_quality(algo, m, A):
     return res
 
 
-def average_quality_per_no_machines(algo, ms, A, desc):
+def average_quality_per_no_machines(algo, ms, A, desc, multithread=False):
     """
     Compute the Average Quality per Number of Machines
 
@@ -77,10 +87,14 @@ def average_quality_per_no_machines(algo, ms, A, desc):
     """
     logger.info(f"{f' {MSG2} {desc} ':-^150}")
 
-    return [average_quality(algo, m, A) for m in ms]
+    if not multithread:
+        return [average_quality(algo, m, A) for m in ms]
+
+    with ThreadPoolExecutor() as executor:
+        return list(executor.map(lambda m: average_quality(algo, m, A, multithread), ms))
 
 
-def average_quality_per_generator(algo, n, ms):
+def average_quality_per_generator(algo, n, ms, multithread=False):
     """
     Compute the Average Quality per Generator Type and Number of Machines
 
@@ -93,6 +107,12 @@ def average_quality_per_generator(algo, n, ms):
     logger.info(f"{MSG1:=^150}")
     logger.info(f"{'':=^150}")
 
-    results = [(desc, *average_quality_per_no_machines(algo, ms, A, desc))
-               for (A, desc) in generate(n)]
-    return results
+    def call(data):
+        A, desc = data
+        return (desc, *average_quality_per_no_machines(algo, ms, A, desc, multithread))
+
+    if not multithread:
+        return [call(v) for v in generate(n)]
+
+    with ThreadPoolExecutor() as executor:
+        return list(executor.map(lambda v: call(v), generate(n)))
