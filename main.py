@@ -12,7 +12,7 @@ def _test_algorithm(algorithm, quality=True, compute_averaged=False, compute_sol
     algorithm_name = algorithm.__class__.name
 
     if quality:
-        avg_q = average_quality_per_generator(algorithm, n, ms, True)
+        avg_q = average_quality_per_generator(algorithm, n, ms)
         print_as_table(avg_q, algorithm_name)
 
     if compute_averaged:
@@ -42,4 +42,5 @@ if __name__ == "__main__":
     # _test_algorithm(Lookahead(5))
     # _test_algorithm(Lookahead(15))
     # _test_algorithm(Lookahead(30))
-    _test_algorithm(HeavyFirst())
+    # _test_algorithm(HeavyFirst())
+    _test_algorithm(SimpleSortAndSplit())

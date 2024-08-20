@@ -3,11 +3,13 @@ from algrotihms.dp_dict import DP_DICT
 from algrotihms.greedy import Greedy
 from algrotihms.lookahead import Lookahead
 from algrotihms.heavy_first import HeavyFirst
+from algrotihms.sort_and_split import SimpleSortAndSplit
 
 __all__ = [
     'DP_MDIM',
     'DP_DICT',
     'Greedy',
     'Lookahead',
-    'HeavyFirst'
+    'HeavyFirst',
+    'SimpleSortAndSplit'
 ]
