@@ -108,8 +108,8 @@ def average_quality_per_generator(algo, n, ms, multithread=False):
     logger.info(f"{'':=^150}")
 
     def call(data):
-        A, desc = data
-        return (desc, *average_quality_per_no_machines(algo, ms, A, desc, multithread))
+        A, desc, _ = data
+        return desc, *average_quality_per_no_machines(algo, ms, A, desc, multithread)
 
     if not multithread:
         return [call(v) for v in generate(n)]

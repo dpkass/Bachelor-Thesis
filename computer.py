@@ -51,7 +51,7 @@ def compute_each(algo, m, A):
     return res
 
 
-def compute_per_number_of_machines(algo, ms, A, desc):
+def compute_per_number_of_machines(algo, ms, A, desc, fill):
     """
     Compute the Solutions per Number of Machines for each Weight List in A.
 
@@ -59,12 +59,13 @@ def compute_per_number_of_machines(algo, ms, A, desc):
     """
     logger.info(f"{f' {MSG1} {desc} ':-^150}")
 
-    return [compute_each(algo, m, A) for m in ms]
+    return [compute_each(algo, m, A) * fill for m in ms]
 
 
 def _compute_solutions(algo, n, ms):
-    return [(desc, *compute_per_number_of_machines(algo, ms, A, desc))
-            for (A, desc) in generate(n)]
+    seeds = range(10)
+    return [(desc, *compute_per_number_of_machines(algo, ms, A, desc, 1 if rnd else len(seeds)))
+            for (A, desc, rnd) in generate(n, seeds)]
 
 
 def compute_solutions(algo, n, ms):

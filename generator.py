@@ -1,7 +1,9 @@
 from generators import generators as gs
 
+from typing import Iterable
 
-def generate_seeded(g, n, seeds):
+
+def generate_seeded(g, n, seeds) -> Iterable[Iterable[int]]:
     """
     Generate Lists of Weights for given seeds. If it is not random generate
     just once.
@@ -16,7 +18,7 @@ def generate_seeded(g, n, seeds):
     return [g(n, seed) for seed in seeds]
 
 
-def generate(n=150, seeds=range(10)):
+def generate(n=150, seeds=range(10)) -> [Iterable[Iterable[int]], str]:
     """
     Generate Lists of Weights for all generators and given seeds.
 
@@ -24,5 +26,5 @@ def generate(n=150, seeds=range(10)):
     :param seeds: Reproducibility Seeds. Defaults to [0, ..., 9]
     :return: List of tuples of Lists of a's and their description
     """
-    return [(generate_seeded(g, n, seeds if is_random else None), desc)
+    return [(generate_seeded(g, n, seeds if is_random else None), desc, is_random)
             for (g, desc, is_random) in gs]
