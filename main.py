@@ -5,7 +5,7 @@ from algrotihms import *
 from comparator import average_quality_per_generator
 from computer import compute_averaged as ca, compute_solutions as cs
 
-import logging
+import log
 
 
 def _test_algorithm(algorithm, quality=True, compute_averaged=False, compute_solutions=False):
@@ -29,11 +29,7 @@ def print_as_table(data, name):
 
 
 if __name__ == "__main__":
-    logging.basicConfig(
-        format='%(asctime)s  %(threadName)-25s %(levelname)-8s %(message)s',
-        level=logging.INFO,
-        datefmt='%Y-%m-%d %H:%M:%S'
-    )
+    log.configure()
 
     n = 150
     ms = [2, 3, 4]
