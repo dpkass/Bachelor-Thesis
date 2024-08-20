@@ -1,4 +1,5 @@
 from collections import defaultdict
+from typing import Iterable
 
 import numpy as np
 
@@ -12,7 +13,13 @@ def inc(it, i):
     return tuple(tmp)
 
 
+def w_sum(vs: Iterable[int | tuple], key=None) -> int:
+    return sum(i * (key(n) if key else n) for i, n in enumerate(vs, 1))
+
+
 class Solver:
+    t = w_sum
+
     def __init__(self):
         self.n = None
         self.m = None
