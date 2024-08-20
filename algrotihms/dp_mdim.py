@@ -8,6 +8,8 @@ class DP_MDIM(DP):
     Normal DP with multidimensional array. Very Space intensive.
     """
 
+    name = 'Multidimensional DP'
+
     def fit(self, n, m):
         self.n, self.m = n, m
         self.dp = np.full([n + 1 // i for i in range(1, m + 1)], dtype=dtype, fill_value=dtype_max)

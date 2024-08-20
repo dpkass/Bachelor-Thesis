@@ -7,6 +7,9 @@ class Greedy(Solver):
     """
     Greedy. Linear complexity.
     """
+
+    name = "Greedy"
+
     def fit(self, n, m):
         self.n, self.m = n, m
         self.pq = PQ(maxsize=m)

@@ -18,6 +18,8 @@ def w_sum(vs: Iterable[int | tuple], key=None) -> int:
 
 
 class Solver:
+    name = "Unknown"
+
     t = w_sum
 
     def __init__(self):
@@ -34,6 +36,8 @@ class Solver:
 
 
 class DP(Solver):
+    name = "DP"
+
     def __init__(self):
         super().__init__()
         self.dp = None

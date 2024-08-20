@@ -8,10 +8,12 @@ class Lookahead(DP):
     Greedy with DP based lookahead.
     """
 
+    name = "Lookahead"
+
     def __init__(self, k):
         super(Lookahead, self).__init__()
         self.k = k
-        self.__class__.__name__ = f"Lookahead {k}"
+        self.__class__.name = f"Lookahead {k}"
 
     def fit(self, n, m):
         self.n, self.m = n, m

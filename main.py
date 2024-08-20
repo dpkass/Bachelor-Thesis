@@ -9,7 +9,7 @@ import logging
 
 
 def _test_algorithm(algorithm, quality=True, compute_averaged=False, compute_solutions=False):
-    algorithm_name = algorithm.__class__.__name__
+    algorithm_name = algorithm.__class__.name
 
     if quality:
         avg_q = average_quality_per_generator(algorithm, n, ms, True)
