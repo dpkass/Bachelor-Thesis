@@ -3,7 +3,7 @@ from tabulate import tabulate
 from algrotihms import *
 
 from comparator import average_quality_per_generator
-from computer import compute_averaged, compute_solutions
+from computer import compute_averaged as ca, compute_solutions as cs
 
 import logging
 
@@ -16,11 +16,11 @@ def _test_algorithm(algorithm, quality=True, compute_averaged=False, compute_sol
         print_as_table(avg_q, algorithm_name)
 
     if compute_averaged:
-        cmp_avg = compute_averaged(algorithm, n, ms)
+        cmp_avg = ca(algorithm, n, ms)
         print_as_table(cmp_avg, algorithm_name)
 
     if compute_solutions:
-        sol = compute_solutions(algorithm, n, ms)
+        sol = cs(algorithm, n, ms)
         print_as_table(sol, algorithm_name)
 
 
@@ -40,5 +40,6 @@ if __name__ == "__main__":
 
     # _test_algorithm(Greedy())
     # _test_algorithm(Lookahead(5))
-    # _test_algorithm(Lookahead(20))
-    _test_algorithm(Lookahead(50))
+    # _test_algorithm(Lookahead(15))
+    # _test_algorithm(Lookahead(30))
+    _test_algorithm(HeavyFirst())
