@@ -13,11 +13,11 @@ class HeavyFirst(Solver):
     def __init__(self):
         super().__init__()
         self.v = None
-        self.t = lambda vs: Solver.t(vs, lambda v: v[0])
+        self.t = lambda vs: Solver.t(vs, lambda v: v[1])
 
     def fit(self, n, m):
         self.n, self.m = n, m
-        self.v = [SortedList([], lambda v: v[1]) for _ in range(m)]
+        self.v = [SortedList() for _ in range(m)]
 
     def step(self, value):
         best_index = None
@@ -36,5 +36,5 @@ class HeavyFirst(Solver):
         self.v[best_index].add(value)
 
     def transform(self, a):
-        for ai in decorate_sort(a, index_first=False): self.step(ai)
+        for ai in decorate_sort(a): self.step(ai)
         return sum(self.t(machine) for machine in self.v)
