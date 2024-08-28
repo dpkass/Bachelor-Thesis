@@ -17,6 +17,11 @@ def w_sum(vs: Iterable[int | tuple], key=None) -> int:
     return sum(i * (key(n) if key else n) for i, n in enumerate(vs, 1))
 
 
+def decorate_sort(a, index_first=True, reverse=True):
+    a = sorted(enumerate(a), key=lambda x: x[1], reverse=reverse)
+    return a if index_first else [(y, x) for x, y in a]
+
+
 class Solver:
     name = "Unknown"
 

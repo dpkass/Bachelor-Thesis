@@ -1,4 +1,4 @@
-from algrotihms.base import Solver
+from algrotihms.base import Solver, decorate_sort
 
 from sortedcontainers import SortedList
 
@@ -36,5 +36,5 @@ class HeavyFirst(Solver):
         self.v[best_index].add(value)
 
     def transform(self, a):
-        for ai in sorted(zip(a, range(len(a))), reverse=True): self.step(ai)
+        for ai in decorate_sort(a, index_first=False): self.step(ai)
         return sum(self.t(machine) for machine in self.v)

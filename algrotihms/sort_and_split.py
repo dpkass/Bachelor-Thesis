@@ -1,4 +1,4 @@
-from algrotihms.base import Solver
+from algrotihms.base import Solver, decorate_sort
 
 from sortedcontainers import SortedList
 
@@ -22,5 +22,5 @@ class SimpleSortAndSplit(Solver):
         self.n, self.m = n, m
 
     def transform(self, a):
-        machines = partition(sorted(enumerate(a), key=lambda v: v[1]), self.m)
+        machines = partition(decorate_sort(a), self.m)
         return sum(Solver.t(m) for m in machines)
