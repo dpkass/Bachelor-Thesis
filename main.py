@@ -39,4 +39,5 @@ if __name__ == "__main__":
     # _test_algorithm(Lookahead(15))
     # _test_algorithm(Lookahead(30))
     # _test_algorithm(HeavyFirst())
-    _test_algorithm(SimpleSortAndSplit())
+    # _test_algorithm(SimpleSortAndSplit())
+    _test_algorithm(BalancedSequentialInsert())
