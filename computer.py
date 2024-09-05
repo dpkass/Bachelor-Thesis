@@ -67,13 +67,12 @@ def compute_per_number_of_machines(algo, ms, A, desc, fill):
     return [compute_each(algo, m, A) * fill for m in ms]
 
 
-def _compute_solutions(algo, n, ms):
-    seeds = range(10)
+def _compute_solutions(algo, n, ms, seeds=range(10)):
     return [(desc, *compute_per_number_of_machines(algo, ms, A, desc, 1 if rnd else len(seeds)))
             for (A, desc, rnd) in generate(n, seeds)]
 
 
-def compute_solutions(algo, n, ms):
+def compute_solutions(algo, n, ms, seeds=range(10)):
     """
     Compute a 3D-Array with the following axes:
     1. Generator Type
@@ -83,15 +82,16 @@ def compute_solutions(algo, n, ms):
     :param algo: Algorithm to calculate the values for
     :param n: Number of Jobs
     :param ms: Options for Numbers of Machines
+    :param seeds: Which seeds to use
     """
     logger.info(f"{'':=^150}")
     logger.info(f"{MSG3:=^150}")
     logger.info(f"{'':=^150}")
 
-    return _compute_solutions(algo, n, ms)
+    return _compute_solutions(algo, n, ms, seeds)
 
 
-def compute_averaged(algo, n, ms):
+def compute_averaged(algo, n, ms, seeds=range(10)):
     """
     Compute a 2D-Array with the following axes:
     1. Generator Type
@@ -100,11 +100,12 @@ def compute_averaged(algo, n, ms):
     :param algo: Algorithm to calculate the values for
     :param n: Number of Jobs
     :param ms: Options for Numbers of Machines
+    :param seeds: Which seeds to use
     """
     logger.info(f"{'':=^150}")
     logger.info(f"{MSG4:=^150}")
     logger.info(f"{'':=^150}")
 
-    vals = _compute_solutions(algo, n, ms)
+    vals = _compute_solutions(algo, n, ms, seeds)
 
     return [[desc, *(fmean(row) for row in rows)] for [desc, *rows] in vals]

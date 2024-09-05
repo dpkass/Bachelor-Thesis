@@ -1,0 +1,271 @@
+n,m,Generator,Seed,0
+150,2,+1 Increasing Weights,0,494950
+150,2,+1 Increasing Weights,1,494950
+150,2,+1 Increasing Weights,2,494950
+150,2,+1 Increasing Weights,3,494950
+150,2,+1 Increasing Weights,4,494950
+150,2,+1 Increasing Weights,5,494950
+150,2,+1 Increasing Weights,6,494950
+150,2,+1 Increasing Weights,7,494950
+150,2,+1 Increasing Weights,8,494950
+150,2,+1 Increasing Weights,9,494950
+150,2,-1 Decreasing Weights,0,354350
+150,2,-1 Decreasing Weights,1,354350
+150,2,-1 Decreasing Weights,2,354350
+150,2,-1 Decreasing Weights,3,354350
+150,2,-1 Decreasing Weights,4,354350
+150,2,-1 Decreasing Weights,5,354350
+150,2,-1 Decreasing Weights,6,354350
+150,2,-1 Decreasing Weights,7,354350
+150,2,-1 Decreasing Weights,8,354350
+150,2,-1 Decreasing Weights,9,354350
+150,2,Small Random Weights,0,272352
+150,2,Small Random Weights,1,275059
+150,2,Small Random Weights,2,306404
+150,2,Small Random Weights,3,262901
+150,2,Small Random Weights,4,283887
+150,2,Small Random Weights,5,266708
+150,2,Small Random Weights,6,301088
+150,2,Small Random Weights,7,282889
+150,2,Small Random Weights,8,295225
+150,2,Small Random Weights,9,302433
+150,2,Small Span Large Weights,0,57272352
+150,2,Small Span Large Weights,1,57275059
+150,2,Small Span Large Weights,2,57306404
+150,2,Small Span Large Weights,3,57262901
+150,2,Small Span Large Weights,4,57283887
+150,2,Small Span Large Weights,5,57266708
+150,2,Small Span Large Weights,6,57301088
+150,2,Small Span Large Weights,7,57282889
+150,2,Small Span Large Weights,8,57295225
+150,2,Small Span Large Weights,9,57302433
+150,2,Large Span Large Weights,0,2772744108
+150,2,Large Span Large Weights,1,2748563990
+150,2,Large Span Large Weights,2,2895762457
+150,2,Large Span Large Weights,3,2746100259
+150,2,Large Span Large Weights,4,2828233862
+150,2,Large Span Large Weights,5,2914532425
+150,2,Large Span Large Weights,6,2725878774
+150,2,Large Span Large Weights,7,2952528480
+150,2,Large Span Large Weights,8,2885601824
+150,2,Large Span Large Weights,9,2960404259
+150,2,"Random Half Low, then Half High Weights",0,2828792
+150,2,"Random Half Low, then Half High Weights",1,2842501
+150,2,"Random Half Low, then Half High Weights",2,2865452
+150,2,"Random Half Low, then Half High Weights",3,2831328
+150,2,"Random Half Low, then Half High Weights",4,2858994
+150,2,"Random Half Low, then Half High Weights",5,2820547
+150,2,"Random Half Low, then Half High Weights",6,2857754
+150,2,"Random Half Low, then Half High Weights",7,2849311
+150,2,"Random Half Low, then Half High Weights",8,2854894
+150,2,"Random Half Low, then Half High Weights",9,2854394
+150,2,"Random Half High, then Half Low Weights",0,2828792
+150,2,"Random Half High, then Half Low Weights",1,2842501
+150,2,"Random Half High, then Half Low Weights",2,2865452
+150,2,"Random Half High, then Half Low Weights",3,2831328
+150,2,"Random Half High, then Half Low Weights",4,2858994
+150,2,"Random Half High, then Half Low Weights",5,2820547
+150,2,"Random Half High, then Half Low Weights",6,2857754
+150,2,"Random Half High, then Half Low Weights",7,2849311
+150,2,"Random Half High, then Half Low Weights",8,2854894
+150,2,"Random Half High, then Half Low Weights",9,2854394
+150,2,Increasingly Sorted Large Span Random Weights,0,353429269
+150,2,Increasingly Sorted Large Span Random Weights,1,358007735
+150,2,Increasingly Sorted Large Span Random Weights,2,325237031
+150,2,Increasingly Sorted Large Span Random Weights,3,317559984
+150,2,Increasingly Sorted Large Span Random Weights,4,351983039
+150,2,Increasingly Sorted Large Span Random Weights,5,311844201
+150,2,Increasingly Sorted Large Span Random Weights,6,297259511
+150,2,Increasingly Sorted Large Span Random Weights,7,348937224
+150,2,Increasingly Sorted Large Span Random Weights,8,319282309
+150,2,Increasingly Sorted Large Span Random Weights,9,340364056
+150,2,Decreasingly Sorted Large Span Random Weights,0,262246275
+150,2,Decreasingly Sorted Large Span Random Weights,1,261199453
+150,2,Decreasingly Sorted Large Span Random Weights,2,233913589
+150,2,Decreasingly Sorted Large Span Random Weights,3,230749692
+150,2,Decreasingly Sorted Large Span Random Weights,4,262739313
+150,2,Decreasingly Sorted Large Span Random Weights,5,224677799
+150,2,Decreasingly Sorted Large Span Random Weights,6,206130517
+150,2,Decreasingly Sorted Large Span Random Weights,7,248433264
+150,2,Decreasingly Sorted Large Span Random Weights,8,223490235
+150,2,Decreasingly Sorted Large Span Random Weights,9,244610300
+150,3,+1 Increasing Weights,0,316200
+150,3,+1 Increasing Weights,1,316200
+150,3,+1 Increasing Weights,2,316200
+150,3,+1 Increasing Weights,3,316200
+150,3,+1 Increasing Weights,4,316200
+150,3,+1 Increasing Weights,5,316200
+150,3,+1 Increasing Weights,6,316200
+150,3,+1 Increasing Weights,7,316200
+150,3,+1 Increasing Weights,8,316200
+150,3,+1 Increasing Weights,9,316200
+150,3,-1 Decreasing Weights,0,253725
+150,3,-1 Decreasing Weights,1,253725
+150,3,-1 Decreasing Weights,2,253725
+150,3,-1 Decreasing Weights,3,253725
+150,3,-1 Decreasing Weights,4,253725
+150,3,-1 Decreasing Weights,5,253725
+150,3,-1 Decreasing Weights,6,253725
+150,3,-1 Decreasing Weights,7,253725
+150,3,-1 Decreasing Weights,8,253725
+150,3,-1 Decreasing Weights,9,253725
+150,3,Small Random Weights,0,187224
+150,3,Small Random Weights,1,182711
+150,3,Small Random Weights,2,206738
+150,3,Small Random Weights,3,178729
+150,3,Small Random Weights,4,187270
+150,3,Small Random Weights,5,178566
+150,3,Small Random Weights,6,194519
+150,3,Small Random Weights,7,189468
+150,3,Small Random Weights,8,194369
+150,3,Small Random Weights,9,198452
+150,3,Small Span Large Weights,0,38437224
+150,3,Small Span Large Weights,1,38432711
+150,3,Small Span Large Weights,2,38456738
+150,3,Small Span Large Weights,3,38428729
+150,3,Small Span Large Weights,4,38437270
+150,3,Small Span Large Weights,5,38428566
+150,3,Small Span Large Weights,6,38444519
+150,3,Small Span Large Weights,7,38439468
+150,3,Small Span Large Weights,8,38444369
+150,3,Small Span Large Weights,9,38448452
+150,3,Large Span Large Weights,0,1887247808
+150,3,Large Span Large Weights,1,1877379330
+150,3,Large Span Large Weights,2,1943096216
+150,3,Large Span Large Weights,3,1792942736
+150,3,Large Span Large Weights,4,1955680430
+150,3,Large Span Large Weights,5,1948249342
+150,3,Large Span Large Weights,6,1806938695
+150,3,Large Span Large Weights,7,1956227184
+150,3,Large Span Large Weights,8,1876447616
+150,3,Large Span Large Weights,9,1952222748
+150,3,"Random Half Low, then Half High Weights",0,2165950
+150,3,"Random Half Low, then Half High Weights",1,2168361
+150,3,"Random Half Low, then Half High Weights",2,2187425
+150,3,"Random Half Low, then Half High Weights",3,2164095
+150,3,"Random Half Low, then Half High Weights",4,2173239
+150,3,"Random Half Low, then Half High Weights",5,2158881
+150,3,"Random Half Low, then Half High Weights",6,2182837
+150,3,"Random Half Low, then Half High Weights",7,2171045
+150,3,"Random Half Low, then Half High Weights",8,2170471
+150,3,"Random Half Low, then Half High Weights",9,2179140
+150,3,"Random Half High, then Half Low Weights",0,1645901
+150,3,"Random Half High, then Half Low Weights",1,1640545
+150,3,"Random Half High, then Half Low Weights",2,1666548
+150,3,"Random Half High, then Half Low Weights",3,1632860
+150,3,"Random Half High, then Half Low Weights",4,1648755
+150,3,"Random Half High, then Half Low Weights",5,1638593
+150,3,"Random Half High, then Half Low Weights",6,1652901
+150,3,"Random Half High, then Half Low Weights",7,1653330
+150,3,"Random Half High, then Half Low Weights",8,1655171
+150,3,"Random Half High, then Half Low Weights",9,1658970
+150,3,Increasingly Sorted Large Span Random Weights,0,226979769
+150,3,Increasingly Sorted Large Span Random Weights,1,229344035
+150,3,Increasingly Sorted Large Span Random Weights,2,206800081
+150,3,Increasingly Sorted Large Span Random Weights,3,204834659
+150,3,Increasingly Sorted Large Span Random Weights,4,226087314
+150,3,Increasingly Sorted Large Span Random Weights,5,201408451
+150,3,Increasingly Sorted Large Span Random Weights,6,190346436
+150,3,Increasingly Sorted Large Span Random Weights,7,221471199
+150,3,Increasingly Sorted Large Span Random Weights,8,202311084
+150,3,Increasingly Sorted Large Span Random Weights,9,215756706
+150,3,Decreasingly Sorted Large Span Random Weights,0,186170925
+150,3,Decreasingly Sorted Large Span Random Weights,1,186176578
+150,3,Decreasingly Sorted Large Span Random Weights,2,168419414
+150,3,Decreasingly Sorted Large Span Random Weights,3,163109992
+150,3,Decreasingly Sorted Large Span Random Weights,4,186423738
+150,3,Decreasingly Sorted Large Span Random Weights,5,158626049
+150,3,Decreasingly Sorted Large Span Random Weights,6,147454767
+150,3,Decreasingly Sorted Large Span Random Weights,7,179395839
+150,3,Decreasingly Sorted Large Span Random Weights,8,161917860
+150,3,Decreasingly Sorted Large Span Random Weights,9,176791875
+150,4,+1 Increasing Weights,0,234137
+150,4,+1 Increasing Weights,1,234137
+150,4,+1 Increasing Weights,2,234137
+150,4,+1 Increasing Weights,3,234137
+150,4,+1 Increasing Weights,4,234137
+150,4,+1 Increasing Weights,5,234137
+150,4,+1 Increasing Weights,6,234137
+150,4,+1 Increasing Weights,7,234137
+150,4,+1 Increasing Weights,8,234137
+150,4,+1 Increasing Weights,9,234137
+150,4,-1 Decreasing Weights,0,198987
+150,4,-1 Decreasing Weights,1,198987
+150,4,-1 Decreasing Weights,2,198987
+150,4,-1 Decreasing Weights,3,198987
+150,4,-1 Decreasing Weights,4,198987
+150,4,-1 Decreasing Weights,5,198987
+150,4,-1 Decreasing Weights,6,198987
+150,4,-1 Decreasing Weights,7,198987
+150,4,-1 Decreasing Weights,8,198987
+150,4,-1 Decreasing Weights,9,198987
+150,4,Small Random Weights,0,141318
+150,4,Small Random Weights,1,138598
+150,4,Small Random Weights,2,156352
+150,4,Small Random Weights,3,135642
+150,4,Small Random Weights,4,144712
+150,4,Small Random Weights,5,136115
+150,4,Small Random Weights,6,149241
+150,4,Small Random Weights,7,143434
+150,4,Small Random Weights,8,147681
+150,4,Small Random Weights,9,150863
+150,4,Small Span Large Weights,0,29021318
+150,4,Small Span Large Weights,1,29018598
+150,4,Small Span Large Weights,2,29036352
+150,4,Small Span Large Weights,3,29015642
+150,4,Small Span Large Weights,4,29024712
+150,4,Small Span Large Weights,5,29016115
+150,4,Small Span Large Weights,6,29029241
+150,4,Small Span Large Weights,7,29023434
+150,4,Small Span Large Weights,8,29027681
+150,4,Small Span Large Weights,9,29030863
+150,4,Large Span Large Weights,0,1420132462
+150,4,Large Span Large Weights,1,1411762768
+150,4,Large Span Large Weights,2,1474186296
+150,4,Large Span Large Weights,3,1395707782
+150,4,Large Span Large Weights,4,1460275989
+150,4,Large Span Large Weights,5,1491695744
+150,4,Large Span Large Weights,6,1396302280
+150,4,Large Span Large Weights,7,1499824671
+150,4,Large Span Large Weights,8,1445991994
+150,4,Large Span Large Weights,9,1501403623
+150,4,"Random Half Low, then Half High Weights",0,1471534
+150,4,"Random Half Low, then Half High Weights",1,1467487
+150,4,"Random Half Low, then Half High Weights",2,1486075
+150,4,"Random Half Low, then Half High Weights",3,1465912
+150,4,"Random Half Low, then Half High Weights",4,1476828
+150,4,"Random Half Low, then Half High Weights",5,1464383
+150,4,"Random Half Low, then Half High Weights",6,1483642
+150,4,"Random Half Low, then Half High Weights",7,1475432
+150,4,"Random Half Low, then Half High Weights",8,1480227
+150,4,"Random Half Low, then Half High Weights",9,1482166
+150,4,"Random Half High, then Half Low Weights",0,1441540
+150,4,"Random Half High, then Half Low Weights",1,1437034
+150,4,"Random Half High, then Half Low Weights",2,1455493
+150,4,"Random Half High, then Half Low Weights",3,1435672
+150,4,"Random Half High, then Half Low Weights",4,1445916
+150,4,"Random Half High, then Half Low Weights",5,1433379
+150,4,"Random Half High, then Half Low Weights",6,1452145
+150,4,"Random Half High, then Half Low Weights",7,1444762
+150,4,"Random Half High, then Half Low Weights",8,1449914
+150,4,"Random Half High, then Half Low Weights",9,1451186
+150,4,Increasingly Sorted Large Span Random Weights,0,168448598
+150,4,Increasingly Sorted Large Span Random Weights,1,169827361
+150,4,Increasingly Sorted Large Span Random Weights,2,153441189
+150,4,Increasingly Sorted Large Span Random Weights,3,151889156
+150,4,Increasingly Sorted Large Span Random Weights,4,168208199
+150,4,Increasingly Sorted Large Span Random Weights,5,149075430
+150,4,Increasingly Sorted Large Span Random Weights,6,139514358
+150,4,Increasingly Sorted Large Span Random Weights,7,164538202
+150,4,Increasingly Sorted Large Span Random Weights,8,150320211
+150,4,Increasingly Sorted Large Span Random Weights,9,160663615
+150,4,Decreasingly Sorted Large Span Random Weights,0,145475390
+150,4,Decreasingly Sorted Large Span Random Weights,1,145853119
+150,4,Decreasingly Sorted Large Span Random Weights,2,131553168
+150,4,Decreasingly Sorted Large Span Random Weights,3,127774270
+150,4,Decreasingly Sorted Large Span Random Weights,4,145121674
+150,4,Decreasingly Sorted Large Span Random Weights,5,124491914
+150,4,Decreasingly Sorted Large Span Random Weights,6,117399777
+150,4,Decreasingly Sorted Large Span Random Weights,7,139963682
+150,4,Decreasingly Sorted Large Span Random Weights,8,126474089
+150,4,Decreasingly Sorted Large Span Random Weights,9,137628865
