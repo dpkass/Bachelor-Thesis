@@ -37,21 +37,25 @@ class BalancedSequentialInsert(Solver):
         self.n, self.m = n, m
         self.ms = [SortedList() for _ in range(m)]
 
+    def transform(self, a) -> int:
+        a = decorate_sort(a)
+
+        i = 1
+        while not self.iterate(a, i): i += 1
+
+        return sum(self.t(m) for m in self.ms)
+
+    def iterate(self, a, i):
+        self._reset()
+        self.ms[0].update(a[:i])
+        t_m0 = self.t(self.ms[0])
+
+        for m in self.ms[1:]:
+            while self.t(m) < t_m0 and i < self.n:
+                m.add(a[i])
+                i += 1
+
+        return i == self.n
+
     def _reset(self):
         for m in self.ms: m.clear()
-
-    def transform(self, a) -> int:
-        a = decorate_sort(a, reverse=False)
-
-        for i, ai in enumerate(a, 1):
-            self.ms[0].update(a[-i:])
-            temp_a = a[:-i]
-
-            t = self.t(self.ms[0])
-            for j in range(1, self.m):
-                while self.t(self.ms[j]) < t and temp_a:
-                    self.ms[j].add(temp_a.pop())
-
-            if not temp_a: return sum(self.t(m) for m in self.ms)
-
-            self._reset()
