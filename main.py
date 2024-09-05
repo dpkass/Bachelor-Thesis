@@ -2,7 +2,7 @@ from tabulate import tabulate
 
 from algrotihms import *
 
-from comparator import average_quality_per_generator
+from benchmark import average_quality_per_generator
 from computer import compute_averaged as ca, compute_solutions as cs
 
 import log
