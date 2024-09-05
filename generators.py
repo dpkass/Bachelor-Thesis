@@ -110,14 +110,26 @@ def large_span_random_decreasing(n, seed):
     return np.sort(np.random.randint(1, 100000, size=n))[::-1]
 
 
-generators = [(increasing, "+1 Increasing Weights", False),
-              (decreasing, "-1 Decreasing Weights", False),
-              (small_random, "Small Random Weights", True),
-              (small_span_large, "Small Span Large Weights", True),
-              (large_span_large, "Large Span Large Weights", True),
-              (low_then_high, "Random Half Low, then Half High Weights", True),
-              (high_then_low, "Random Half High, then Half Low Weights", True),
-              (large_span_random_increasing,
-               "Increasingly Sorted Large Span Random Weights", True),
-              (large_span_random_decreasing,
-               "Decreasingly Sorted Large Span Random Weights", True)]
+class Generator:
+    def __init__(self, generator_function, name, is_random):
+        self.gf = generator_function
+        self.name = name
+        self.is_random = is_random
+
+    def __call__(self, n, seed=None):
+        return self.gf(n, seed) if self.is_random else self.gf(n)
+
+
+all = [(increasing, "+1 Increasing Weights", False),
+       (decreasing, "-1 Decreasing Weights", False),
+       (small_random, "Small Random Weights", True),
+       (small_span_large, "Small Span Large Weights", True),
+       (large_span_large, "Large Span Large Weights", True),
+       (low_then_high, "Random Half Low, then Half High Weights", True),
+       (high_then_low, "Random Half High, then Half Low Weights", True),
+       (large_span_random_increasing,
+        "Increasingly Sorted Large Span Random Weights", True),
+       (large_span_random_decreasing,
+        "Decreasingly Sorted Large Span Random Weights", True)]
+
+generators = [Generator(*args) for args in all]

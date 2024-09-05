@@ -13,7 +13,7 @@ MSG3 = ''' Compute the Solutions per Number of Machines for multiple Weight List
 MSG4 = ''' Compute the Average Value per Number of Machines per Generator Type '''
 
 
-def compute_single(algo, m, a):
+def compute_single(algo, m, instance):
     """
     Compute a single solution of an algorithm for set n, m, and Weight List a
 
@@ -23,7 +23,7 @@ def compute_single(algo, m, a):
     :return: γ(algo, m, a)
     """
     start = time.perf_counter()
-    res = algo.fit_transform(m, a)
+    res = algo.fit_transform(m, instance.values)
     end = time.perf_counter()
 
     algo_name = algo.__class__.__name__
@@ -33,20 +33,19 @@ def compute_single(algo, m, a):
     return res
 
 
-def compute_each(algo, m, A):
+def compute_each_instance(algo, m, instances):
     """
     Compute the solutions for each Weight List in A.
-
-    :returns: A List of Solutions for each given a in A
+    Note: in place
     """
     logger.info(f"START: {m} Machines.")
     start = time.perf_counter()
 
     res = []
-    for i, a in enumerate(A, start=1):
-        logger.debug(f"    START: Compute Instance {i}/{len(A)}")
-        logger.log(1, f"    a = {a}")
-        sol = compute_single(algo, m, a)
+    for i, instance in enumerate(instances, start=1):
+        logger.debug(f"    START: Compute Instance {i}/{len(instances)}")
+        logger.log(1, f"    a = {instance}")
+        sol = compute_single(algo, m, instance)
         res.append(sol)
 
     end = time.perf_counter()
@@ -56,20 +55,25 @@ def compute_each(algo, m, A):
     return res
 
 
-def compute_per_number_of_machines(algo, ms, A, desc, fill):
+def compute_per_number_of_machines(algo, machines):
     """
     Compute the Solutions per Number of Machines for each Weight List in A.
-
-    :returns: A List of Solutions for each given Number of Machines m in ms
+    Note: in place
     """
-    logger.info(f"{f' {MSG1} {desc} ':-^150}")
-
-    return [compute_each(algo, m, A) * fill for m in ms]
+    for instances in machines:
+        m = instances.coords['m'].values.item()
+        compute_each_instance(algo, m, instances)
 
 
 def _compute_solutions(algo, n, ms, seeds=range(10)):
-    return [(desc, *compute_per_number_of_machines(algo, ms, A, desc, 1 if rnd else len(seeds)))
-            for (A, desc, rnd) in generate(n, seeds)]
+    results = generate(n, seeds).expand_dims(dim={'m': ms}, axis=1)
+
+    for machines in results:
+        description = machines.coords['Generator'].values.item()
+        logger.info(f"{f' {MSG1} {description} ':-^150}")
+        compute_per_number_of_machines(algo, machines)
+
+    return results
 
 
 def compute_solutions(algo, n, ms, seeds=range(10)):
@@ -78,6 +82,8 @@ def compute_solutions(algo, n, ms, seeds=range(10)):
     1. Generator Type
     2. Number of Machines
     3. Seed (if random)
+
+    Note: in place
 
     :param algo: Algorithm to calculate the values for
     :param n: Number of Jobs

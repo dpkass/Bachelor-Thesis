@@ -1,5 +1,3 @@
-import numpy as np
-
 from algrotihms import DP_DICT
 
 from computer import _compute_solutions
@@ -9,15 +7,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 MSG1 = ''' Compute the Average Quality per Generator Type and Number of Machines '''
-
-
-def detach_descriptions(arr):
-    arr = np.array(arr, object)
-    return arr[:, 0], np.array(arr[:, 1:].tolist())
-
-
-def attach_descriptions(arr, descriptions):
-    return [(desc, *a) for desc, a in zip(descriptions, arr)]
 
 
 def average_quality_per_generator(algo, n, ms):
@@ -33,9 +22,8 @@ def average_quality_per_generator(algo, n, ms):
     logger.info(f"{MSG1:=^150}")
     logger.info(f"{'':=^150}")
 
-    descriptions, optimal = detach_descriptions(_compute_solutions(DP_DICT(), n, ms))
-    _, result = detach_descriptions(_compute_solutions(algo, n, ms))
+    optimal = _compute_solutions(DP_DICT(), n=150, ms=[2, 3, 4])
+    result = _compute_solutions(algo, n, ms)
 
     quality_per_instance = result / optimal
-    average_quality_per_generator = quality_per_instance.mean(axis=2).tolist()
-    return attach_descriptions(average_quality_per_generator, descriptions)
+    return quality_per_instance.mean(axis=2)
