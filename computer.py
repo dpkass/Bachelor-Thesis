@@ -1,16 +1,16 @@
 from generator import generate
 
-import numpy as np
+from statistics import fmean
 
 import time
 import logging
 
 logger = logging.getLogger("Runner")
 
-MSG1 = 'Compute the Solutions per Number of Machines for Generator Type:'
-MSG2 = 'Compute the Solution Average per Number of Machines for Generator Type:'
-MSG3 = ' Compute the Solutions per Number of Machines for multiple Weight Lists of a Generator Type '
-MSG4 = ' Compute the Average Value per Number of Machines per Generator Type '
+MSG1 = '''Compute the Solutions per Number of Machines for Generator Type:'''
+MSG2 = '''Compute the Solution Average per Number of Machines for Generator Type:'''
+MSG3 = ''' Compute the Solutions per Number of Machines for multiple Weight Lists of a Generator Type '''
+MSG4 = ''' Compute the Average Value per Number of Machines per Generator Type '''
 
 
 def compute_single(algo, m, a):
@@ -22,10 +22,13 @@ def compute_single(algo, m, a):
     :param a: List of Weights
     :return: γ(algo, m, a)
     """
+    start = time.perf_counter()
     res = algo.fit_transform(m, a)
+    end = time.perf_counter()
 
     algo_name = algo.__class__.__name__
-    logger.debug(f"γ({algo_name}, m:{m}, a) = {res}")
+    logger.debug(f"    DONE: γ({algo_name}, m:{m}, a) = {res}. "
+                 f"Took {round(end - start, 3)} s")
 
     return res
 
@@ -36,18 +39,20 @@ def compute_each(algo, m, A):
 
     :returns: A List of Solutions for each given a in A
     """
-    logger.info(f"Compute the Solutions for {m} Machines")
+    logger.info(f"START: {m} Machines.")
     start = time.perf_counter()
 
     res = []
     for i, a in enumerate(A, start=1):
-        logger.debug(f"Compute {i}/{len(A)}")
-        logger.log(1, f"a = {a}")
+        logger.debug(f"    START: Compute Instance {i}/{len(A)}")
+        logger.log(1, f"    a = {a}")
         sol = compute_single(algo, m, a)
         res.append(sol)
 
     end = time.perf_counter()
-    logger.info(f"Took = {round(end - start, 3)} s")
+    logger.info(
+        f"DONE: {m} Machines. "
+        f"Took {round(end - start, 3)} s for {len(res)} Instance{'s' if len(res) > 1 else ''}.")
     return res
 
 
@@ -102,4 +107,4 @@ def compute_averaged(algo, n, ms):
 
     vals = _compute_solutions(algo, n, ms)
 
-    return [[desc, *(np.mean(row) for row in rows)] for [desc, *rows] in vals]
+    return [[desc, *(fmean(row) for row in rows)] for [desc, *rows] in vals]
