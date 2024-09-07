@@ -25,7 +25,8 @@ def _test_algorithm(algorithm, quality=True, compute_averaged=False, compute_sol
 
 
 def print_as_table(data, name):
-    print(tabulate(data, [name, *[f"m = {m}" for m in ms]], tablefmt="pipe"), end="\n\n")
+    data = data.to_pandas()
+    print(tabulate(data, headers=data.columns.insert(0, name), tablefmt="pipe"))
 
 
 if __name__ == "__main__":
