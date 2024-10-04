@@ -1,9 +1,51 @@
 \chapter{Introduction}
 
-PARTS
+\begin{markdown}
+## Motivation
+- Introduce scheduling as a fundamental problem in operations research and computer science.
+  - Emphasize its importance in optimizing resources in various industries like manufacturing,
+    logistics, and computing.
+- Define the specific scheduling problem with **local precedence constraints**.
+  - Explain that in this context, precedence constraints must be respected only within each
+    machine.
+  - Provide real-world examples:
+    - Manufacturing processes where tasks on the same machine must follow a specific order.
+    - Parallel computing where tasks assigned to the same processor have dependencies.
+- Highlight the objective of minimizing the **weighted sum of completion times**.
+  - Discuss how this metric reflects efficiency and cost-effectiveness.
+- Explain the challenges posed by local precedence constraints.
+  - Complexity added due to partial ordering of tasks.
+  - Difficulty in balancing load across multiple machines while respecting local constraints.
 
-Motivation
+## Related Work
+- Review classical scheduling problems and algorithms.
+  - Single-machine scheduling without precedence constraints.
+  - Multi-machine scheduling and common heuristics.
+  - Global precedence constraints and their impact on scheduling complexity.
+- Discuss existing literature on scheduling with precedence constraints.
+  - Exact algorithms (e.g., dynamic programming, branch and bound).
+  - Approximation algorithms and known performance ratios.
+  - Heuristic methods like greedy algorithms and their typical use cases.
+- Identify gaps in the current research.
+  - Limited focus on local (machine-specific) precedence constraints.
+  - Lack of efficient algorithms for large-scale instances with local constraints.
+  - Insufficient empirical analysis on different instance types and weight distributions.
 
-Related Work
-
-Our Results
+## Our Results
+- **Main Contributions:**
+  - Developed and implemented several algorithms tailored for scheduling with local precedence
+    constraints.
+  - Designed a comprehensive experimental setup to evaluate algorithm performance across
+    various
+    instance types and machine counts.
+  - Analyzed the performance, scalability, and stability of each algorithm.
+- **Key Findings:**
+  - Identified which algorithms perform optimally or near-optimally under specific conditions.
+  - Discovered trends in algorithm performance relative to instance characteristics (e.g.,
+    weight
+    distributions).
+  - Provided insights into the trade-offs between computational complexity and solution
+    quality.
+- **Thesis Structure Overview:**
+  - Outline how the thesis is organized to present these findings systematically.
+\end{markdown}

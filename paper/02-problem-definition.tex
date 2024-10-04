@@ -1,8 +1,70 @@
 \chapter{Problem Definition}
 **Problem Definition**
 
+\begin{markdown}
+    ## Introduce Problem
+    - **Formal Definition:**
+    - Define a set of jobs $J = \{1, 2, ..., n\}$ and machines $M = \{1, 2, ..., m\}$.
+    - Each job $j$ has an associated weight $w_j$.
+    - Local precedence constraints require that on each machine, jobs must be processed in a
+    specific order.
+    - **Objective Function:**
+    - Minimize the total weighted completion time $\sum_{j \in J} w_j C_j$, where $C_j$ is the
+    completion time of job $j$.
+    - **Assumptions:**
+    - All jobs are available at time zero. (not online)
+    - Processing times are uniform = 1 (if not specified, assume unit processing time).
+    - Precedence constraints are only within machines, not between them.
+    - **Notation and Terminology:**
+    - Clarify symbols, variables, and any special terms used throughout the thesis.
+
+    ## Complexity
+    - **Computational Complexity:**
+    - Discuss that the complexity is unknown.
+    - Provide references to similar known NP-hard problems.
+    - Explain that exact solutions are impractical for large $n$ or $m$ due to exponential time
+    complexity.
+    - Complexity of DP is around $\mathcal{O}(n^m)$
+    - **Implications:**
+    - Necessity for heuristic or approximation algorithms.
+    - Importance of understanding algorithm performance on different instance types.
+    - **Special Cases:**
+    - Mention any scenarios where the problem might be solvable in polynomial time.
+    - Discuss the impact of specific weight distributions or constraints on complexity.
+
+    ## DP Description
+    - **Algorithm Overview:**
+    - Present the dynamic programming (DP) algorithm used to find the optimal solution.
+    - **Correctness:**
+    - **State Representation:**
+    - Define the DP state variables (e.g., job sequences on machines, completion times).
+    - **Recurrence Relations:**
+    - Explain how the optimal solution for a state is built from subproblems.
+    - Provide mathematical equations for state transitions.
+    - **Base Cases and Initialization:**
+    - Specify the starting conditions for the DP algorithm.
+    - **Proof of Correctness:**
+    - Argue that the DP considers all valid schedules.
+    - Show that it always selects the schedule with the minimal total weighted completion
+    time.
+    - **Space and Time Complexity:**
+    - **Time Complexity Analysis:**
+    - Derive the Big O notation for the algorithm's runtime.
+    - Discuss how the number of states grows with $n$ and $m$.
+    - **Space Complexity Analysis:**
+    - Calculate the memory requirements for storing DP tables.
+    - **Practical Limitations:**
+    - Explain why the DP algorithm may not be feasible for large instances.
+    - Discuss any optimizations attempted to reduce complexity.
+\end{markdown}
+
+
 \section{Complexity}
+
+
 \section{Optimal Solution (DP)}
 Description with Pseudocode
+
 \subsection{Correctness}
+
 \subsection{Space and Time Complexity}
