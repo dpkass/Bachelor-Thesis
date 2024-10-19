@@ -1,70 +1,268 @@
 \chapter{Problem Definition}
-**Problem Definition**
-
-\begin{markdown}
-    ## Introduce Problem
-    - **Formal Definition:**
-    - Define a set of jobs $J = \{1, 2, ..., n\}$ and machines $M = \{1, 2, ..., m\}$.
-    - Each job $j$ has an associated weight $w_j$.
-    - Local precedence constraints require that on each machine, jobs must be processed in a
-    specific order.
-    - **Objective Function:**
-    - Minimize the total weighted completion time $\sum_{j \in J} w_j C_j$, where $C_j$ is the
-    completion time of job $j$.
-    - **Assumptions:**
-    - All jobs are available at time zero. (not online)
-    - Processing times are uniform = 1 (if not specified, assume unit processing time).
-    - Precedence constraints are only within machines, not between them.
-    - **Notation and Terminology:**
-    - Clarify symbols, variables, and any special terms used throughout the thesis.
-
-    ## Complexity
-    - **Computational Complexity:**
-    - Discuss that the complexity is unknown.
-    - Provide references to similar known NP-hard problems.
-    - Explain that exact solutions are impractical for large $n$ or $m$ due to exponential time
-    complexity.
-    - Complexity of DP is around $\mathcal{O}(n^m)$
-    - **Implications:**
-    - Necessity for heuristic or approximation algorithms.
-    - Importance of understanding algorithm performance on different instance types.
-    - **Special Cases:**
-    - Mention any scenarios where the problem might be solvable in polynomial time.
-    - Discuss the impact of specific weight distributions or constraints on complexity.
-
-    ## DP Description
-    - **Algorithm Overview:**
-    - Present the dynamic programming (DP) algorithm used to find the optimal solution.
-    - **Correctness:**
-    - **State Representation:**
-    - Define the DP state variables (e.g., job sequences on machines, completion times).
-    - **Recurrence Relations:**
-    - Explain how the optimal solution for a state is built from subproblems.
-    - Provide mathematical equations for state transitions.
-    - **Base Cases and Initialization:**
-    - Specify the starting conditions for the DP algorithm.
-    - **Proof of Correctness:**
-    - Argue that the DP considers all valid schedules.
-    - Show that it always selects the schedule with the minimal total weighted completion
-    time.
-    - **Space and Time Complexity:**
-    - **Time Complexity Analysis:**
-    - Derive the Big O notation for the algorithm's runtime.
-    - Discuss how the number of states grows with $n$ and $m$.
-    - **Space Complexity Analysis:**
-    - Calculate the memory requirements for storing DP tables.
-    - **Practical Limitations:**
-    - Explain why the DP algorithm may not be feasible for large instances.
-    - Discuss any optimizations attempted to reduce complexity.
-\end{markdown}
 
 
-\section{Complexity}
+\section{Introduction to the Scheduling Problem with Local Precedence Constraints}
+
+Scheduling is a fundamental problem in operations research and computer science, pivotal for optimizing resource utilization across various industries such as manufacturing, logistics, and computing. Efficient scheduling ensures that tasks are completed in a timely manner while minimizing costs and maximizing productivity.
+
+In this thesis, we focus on a specific variant of the scheduling problem characterized by \textbf{local precedence constraints}. Unlike global precedence constraints, which require a strict ordering of tasks across all machines, local precedence constraints mandate that the precedence order is adhered to only within each individual machine based on a predefined global order of jobs. This distinction allows for greater flexibility in scheduling, as jobs can be assigned to different machines without violating the local precedence requirements, provided that the order of jobs on each machine respects the global job ordering.
+
+\subsection{Formal Problem Definition}
+
+Let us formally define the scheduling problem under consideration:
+
+\begin{itemize}
+    \item \textbf{Jobs}: We have a set of $n$ jobs denoted by $J = \{1, 2, \dots, n\}$. The set $J$ is \emph{ordered}, meaning that the jobs are indexed in a specific sequence, such that $1 < 2 < \dots < n$. Each job $j \in J$ is associated with a weight $w_j \in \mathbb{R}^+$, representing its importance or cost.
+
+    \item \textbf{Machines}: There are $m$ identical machines available, denoted by $M = \{1, 2, \dots, m\}$.
+
+    \item \textbf{Processing Time}: For simplicity, we assume that each job has a unit processing time. This assumption can be relaxed in future work to accommodate varying processing times.
+
+    \item \textbf{Local Precedence Constraints}: The precedence constraints are defined based on the global order of jobs in $J$. Specifically, within each machine $k \in M$, if job $i$ is processed before job $j$, then it must hold that $i < j$ in the global ordering of $J$. This means that on each machine, jobs must be processed in the order of their indices in $J$. However, there are no precedence relations between jobs assigned to different machines.
+
+    \item \textbf{Objective}: The primary objective is to \textbf{minimize the total weighted sum of completion times}, defined as:
+    \[
+        \min \sum_{j \in J} w_j C_j,
+    \]
+    where $C_j$ is the completion time of job $j$.
+\end{itemize}
+
+\subsection{Assumptions and Notations}
+
+To precisely articulate the problem, we make the following assumptions:
+
+\begin{itemize}
+    \item \textbf{Job Availability}: All jobs are available for processing at time zero.
+
+    \item \textbf{Processing Order}: Within each machine, jobs must be processed in a sequence that respects the global order of $J$. Specifically, if job $i$ precedes job $j$ on a machine, then $i < j$ in $J$.
+
+    \item \textbf{Identical Machines}: All machines are identical in terms of processing capabilities and speed.
+
+    \item \textbf{Completion Time}: The completion time $C_j$ of a job $j$ is defined as the time at which the job finishes processing on its assigned machine.
+\end{itemize}
+
+We introduce the following notations to facilitate the mathematical formulation:
+
+\begin{itemize}
+    \item $J = \{1, 2, \dots, n\}$: \emph{Ordered} set of jobs.
+    \item $M = \{1, 2, \dots, m\}$: Set of machines.
+    \item $w_j$: Weight of job $j$.
+    \item $C_j$: Completion time of job $j$.
+    \item $S_k$: Sequence of jobs assigned to machine $k$, maintaining the order as per $J$.
+\end{itemize}
+
+\subsection{Mathematical Formulation}
+
+The scheduling problem can be mathematically formulated as follows:
+
+\begin{align*}
+    \min \quad & \sum_{j \in J} w_j C_j \\
+    \text{subject to} \quad & \text{Each job is assigned to exactly one machine}, \\
+    & \text{Jobs on each machine are processed in the order of } J, \\
+    & \text{Jobs are processed sequentially without overlap on each machine}.
+\end{align*}
+
+\subsection{Illustrative Example}
+
+To elucidate the concept of local precedence constraints based on a global job order, consider the following example:
+
+\textbf{Example:} Suppose we have three jobs $J = \{1, 2, 3\}$ with weights $w_1 = 2$, $w_2 = 3$, and $w_3 = 1$, and two machines $M = \{A, B\}$. The jobs are globally ordered as $1 < 2 < 3$. The local precedence constraints require that on any given machine, if a job precedes another, it must do so in the global order.
+
+One feasible schedule could be:
+
+\begin{itemize}
+    \item Machine $A$: Jobs $1 \rightarrow 3$
+    \item Machine $B$: Job $2$
+\end{itemize}
+
+Here, on Machine $A$, job $1$ precedes job $3$, which is consistent with the global order ($1 < 3$). Job $2$ on Machine $B$ can be scheduled independently, even if it starts before job $3$ on Machine $A$, as there are no precedence relations between machines.
+
+The completion times would be:
+
+\begin{itemize}
+    \item $C_1 = 1$ (completed at time 1)
+    \item $C_3 = 2$ (completed at time 2)
+    \item $C_2 = 1$ (completed at time 1)
+\end{itemize}
+
+The total weighted sum of completion times is:
+
+\[
+    \sum_{j \in J} w_j C_j = 2 \times 1 + 3 \times 1 + 1 \times 2 = 2 + 3 + 2 = 7.
+\]
+
+Another feasible schedule could be:
+
+\begin{itemize}
+    \item Machine $A$: Jobs $1 \rightarrow 2$
+    \item Machine $B$: Job $3$
+\end{itemize}
+
+The completion times would be:
+
+\begin{itemize}
+    \item $C_1 = 1$
+    \item $C_2 = 2$
+    \item $C_3 = 1$
+\end{itemize}
+
+The total weighted sum of completion times is:
+
+\[
+    \sum_{j \in J} w_j C_j = 2 \times 1 + 3 \times 2 + 1 \times 1 = 2 + 6 + 1 = 9.
+\]
+
+Comparing both schedules, the first schedule has a lower total weighted sum of completion times, illustrating how the assignment and sequencing of jobs affect the objective.
+
+\subsection{Significance of the Problem}
+
+Scheduling with local precedence constraints presents unique challenges compared to traditional scheduling problems:
+
+\begin{itemize}
+    \item \textbf{Structured Flexibility}: The global order of jobs imposes a structured flexibility, allowing jobs to be assigned to different machines while maintaining local precedence within each machine. This structure can be exploited to design more efficient algorithms.
+
+    \item \textbf{Complexity in Optimization}: Balancing the load across multiple machines while adhering to the global order constraints introduces complexity in finding optimal or near-optimal solutions.
+
+    \item \textbf{Real-World Applicability}: This problem variant models real-world scenarios where tasks have inherent priorities or dependencies, but these constraints are localized within specific resources or processes. Examples include manufacturing assembly lines, parallel processing tasks in computing, and project management with resource-specific task dependencies.
+\end{itemize}
+
+Addressing this problem can lead to more efficient scheduling algorithms that are both computationally feasible and effective in minimizing the total weighted completion time, thereby enhancing operational efficiency in various domains.
 
 
-\section{Optimal Solution (DP)}
-Description with Pseudocode
+\section{Computational Complexity}
 
-\subsection{Correctness}
+The scheduling problem with local precedence constraints presents an intriguing area of study, particularly concerning its computational complexity. Understanding the complexity is essential for developing effective algorithms that can handle various instance sizes and configurations.
+
+\subsection{Known Complexity Status}
+
+As of the current state of research, the exact computational complexity of the scheduling problem with local precedence constraints is \textbf{unknown}. While it shares similarities with other well-known scheduling problems, such as those with global precedence constraints or without any precedence constraints, the introduction of local precedence constraints based on a global job order adds a unique layer of complexity that has yet to be fully classified.
+
+\subsection{Implications of Unknown Complexity}
+
+\begin{itemize}
+    \item \textbf{Algorithm Development}: The uncertainty in complexity necessitates the exploration of both exact and heuristic algorithms to determine feasible approaches for various instance sizes.
+
+    \item \textbf{Practical Applications}: Despite the unknown theoretical complexity, practical applications require efficient algorithms that can provide high-quality solutions within reasonable computational times, especially for large-scale instances.
+
+    \item \textbf{Research Opportunities}: This uncertainty opens avenues for further theoretical research to classify the problem definitively and to explore its boundaries in relation to other scheduling problems.
+\end{itemize}
+
+\subsection{Special Cases and Polynomial-Time Solvable Scenarios}
+
+While the general problem remains elusive in terms of its complexity classification, certain special cases exhibit properties that make them more tractable:
+
+\begin{itemize}
+    \item \textbf{Single Machine Case ($m=1$)}: With only one machine, the problem reduces to scheduling jobs in the order of $J$ to minimize the weighted sum of completion times. This scenario is trivially solvable by processing the jobs in the given global order.
+
+    \item \textbf{Identical Weights}: If all jobs have identical weights, the problem simplifies to balancing the jobs across all machines to minimize the total completion time. This can be optimally achieved by distributing the jobs as evenly as possible among the machines.
+
+    \item \textbf{No Precedence Constraints}: In the absence of precedence constraints, the problem becomes the classical \emph{Minimize Weighted Sum of Completion Times} on parallel machines. While still challenging, this variant has well-studied approximation algorithms that can provide near-optimal solutions.
+
+    \item \textbf{Fixed Number of Machines}: When the number of machines $m$ is fixed and does not grow with the number of jobs $n$, certain approximation schemes and fixed-parameter tractable algorithms become feasible, leveraging the fixed dimensionality to manage complexity.
+\end{itemize}
+
+These special cases highlight that while certain configurations of the problem are more manageable, the general case with multiple machines and local precedence constraints based on a global job order remains a complex and open area of study.
+
+
+\section{Dynamic Programming Approach}
+
+To address the computational challenges posed by the scheduling problem with local precedence constraints, we explore a \textbf{Dynamic Programming (DP)} approach aimed at finding the optimal solution. This section provides a detailed description of the DP algorithm, its correctness, and its computational complexity.
+
+\subsection{Algorithm Overview}
+
+The Dynamic Programming approach systematically explores all possible job assignments and sequences across machines to identify the schedule that minimizes the total weighted sum of completion times. It does so by breaking down the problem into smaller subproblems, solving each subproblem optimally, and building up the solution to the original problem.
+
+\subsection{State Representation}
+
+In the DP framework, each state represents a unique configuration of job assignments across machines. Specifically, a state can be defined as a tuple that captures the current number of jobs assigned to each machine.
+
+Formally, let the state be represented as $s = (p_1, p_2, \dots, p_m)$, where $p_k$ denotes the number of jobs assigned to machine $k$. Given that the jobs are ordered, the first $p_k$ jobs assigned to machine $k$ are the next available jobs in $J$ that have not yet been assigned to any machine, and they must be processed in the global order.
+
+\subsection{Recurrence Relations}
+
+The core of the DP algorithm lies in the recurrence relations that define how to transition from one state to another. For each job, the algorithm considers assigning it to any of the available machines, ensuring that local precedence constraints are maintained. The optimal solution for a given state is derived from the optimal solutions of its predecessor states.
+
+Mathematically, if $DP[s]$ represents the minimum total weighted completion time for state $s = (p_1, p_2, \dots, p_m)$, and $j$ is the next job to be assigned (based on the global order), then for each machine $k \in M$, assigning job $j$ to machine $k$ leads to a new state $s'$ where $p_k$ is incremented by 1:
+
+\[
+    DP[s'] = \min_{k \in M} \left\{ DP[s] + w_j \times C_{j,k} \right\},
+\]
+where $C_{j,k} = p_k + 1$ is the completion time of job $j$ on machine $k$, assuming unit processing time and that jobs are processed in the global order on each machine.
+
+\subsection{Proof of Correctness}
+
+To establish the correctness of the DP algorithm, we rely on the \textbf{Principle of Optimality}, which states that an optimal solution to the problem contains within it optimal solutions to subproblems.
+
+\textbf{Base Case}: The DP algorithm initializes with a base case representing the scenario where no jobs have been assigned to any machine. For this state, the total weighted completion time is zero:
+
+\[
+    DP[(0, 0, \dots, 0)] = 0.
+\]
+
+\textbf{Inductive Step}: Assume that for all states representing assignments of the first $k$ jobs, the DP table correctly stores the minimum total weighted completion time. When assigning the $(k+1)$-th job, the algorithm considers all possible machine assignments, updating the DP table with the minimum achievable total weighted completion time for each new state. Therefore, the optimality is preserved at each step.
+
+Hence, by induction, the DP algorithm correctly computes the optimal solution for the scheduling problem with local precedence constraints.
 
 \subsection{Space and Time Complexity}
+
+\subsubsection{Initial Complexity}
+
+The initial time and space complexity of the DP algorithm are both $O(m^n)$, as each of the $n$ jobs can be assigned to any of the $m$ machines, leading to $m^n$ possible states.
+
+\subsubsection{Symmetry Breaking and Complexity Reduction}
+
+To optimize the time and space complexities, we employ \textbf{symmetry breaking} techniques. Since assigning jobs to machines in different orders but with the same number of jobs per machine results in equivalent states, we can enforce an ordering to eliminate redundant states. Specifically, when multiple machines have the same number of assigned jobs, we always choose the machine with the smallest index.
+
+This approach reduces the number of unique states significantly. The number of states corresponds to the number of integer compositions (ordered partitions) of $n$ into $m$ non-negative integers, where we consider only non-increasing sequences due to the symmetry breaking.
+
+However, accurately calculating the reduced number of states is non-trivial. An upper bound can be derived by considering the number of partitions of $n$ into $m$ parts, which is related to the problem of integer partitions and harmonic numbers.
+
+\subsubsection{Complexity Analysis Using Harmonic Numbers}
+
+By enforcing that $p_1 \geq p_2 \geq \dots \geq p_m$, and recognizing that the maximum value of $p_k$ is approximately $n/k$, we can infer that the number of unique states is bounded by:
+
+\[
+    \text{Number of States} \leq \prod_{k=1}^{m} \left( \frac{n}{k} + 1 \right).
+\]
+
+Taking logarithms to simplify:
+
+\[
+    \log(\text{Number of States}) \leq \sum_{k=1}^{m} \log\left( \frac{n}{k} + 1 \right).
+\]
+
+Approximating the sum using harmonic numbers $H_m$ (since $H_m = \sum_{k=1}^{m} \frac{1}{k}$ and $H_m \approx \ln m + \gamma$), we observe that the complexity grows polynomially with $n$ and logarithmically with $m$.
+
+Thus, the time and space complexities become:
+
+\[
+    \text{Time Complexity} = O\left( n \cdot m^{ n / \log m } \right),
+\]
+\[
+    \text{Space Complexity} = O\left( m^{ n /\log m } \right).
+\]
+
+However, this is a rough approximation, and the exact complexity is difficult to pinpoint due to the combinatorial nature of the problem. The important takeaway is that the symmetry breaking significantly reduces the number of states compared to the initial $O(m^n)$, making the DP algorithm more practical for moderate values of $n$ and $m$.
+
+\subsection{Practical Implementations and Optimizations}
+
+To make the DP algorithm practical, several optimizations can be employed:
+
+\begin{itemize}
+    \item \textbf{Symmetry Breaking}: By always choosing the machine with the smallest index when possible, we reduce the number of unique states.
+
+    \item \textbf{Layer-by-Layer Processing}: Processing states layer by layer limits the amount of memory required at any given time and allows for efficient memory management. Specifically, we generate and store only the states corresponding to the assignment of $k$ jobs at a time.
+
+    \item \textbf{State Representation}: Efficient data structures, such as dictionaries or hash maps, can be used to store and access DP states. For example, the \texttt{DP\_DICT} implementation uses a dictionary to map states to their minimum total weighted completion times.
+
+    \item \textbf{Pruning Suboptimal States}: If a state has a total weighted completion time greater than the best known solution, it can be discarded early.
+
+    \item \textbf{Implementations Reference}: The implementations of the DP algorithms, such as \texttt{DP\_DICT} and \texttt{DP\_MDIM}, which utilize these optimizations, will be discussed in more depth in Section~\ref{sec:algorithm_definitions}.
+\end{itemize}
+
+Despite these optimizations, the DP approach remains computationally intensive for large instances, necessitating the exploration of heuristic and approximation algorithms for practical applications.
+
+
+\section{Summary}
+
+In summary, the scheduling problem with local precedence constraints presents a challenging optimization scenario with significant practical relevance. Its complexity status remains unknown, highlighting the need for both theoretical exploration and practical algorithm development. While the Dynamic Programming approach offers an optimal solution, its initial exponential time and space complexities limit its practicality. Through strategic optimizations such as symmetry breaking and layer-by-layer processing, the DP algorithm becomes more feasible for moderate instances. Nonetheless, this motivates the investigation of alternative algorithms, such as greedy heuristics and balanced sequential insert methods, which balance solution quality with computational feasibility.
