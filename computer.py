@@ -21,6 +21,7 @@ def compute_single(instance, m, algo):
     :return: γ(algo, m, a)
     """
     algo_name = algo.name
+    logger.debug(f"a={instance}")
     logger.info(f"Calculate γ({algo_name}, m:{m}, a).")
 
     start = time.perf_counter()

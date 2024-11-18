@@ -1,8 +1,5 @@
 import numpy as np
 
-low = lambda n: np.random.randint(0, 100, size=n)
-high = lambda n: np.random.randint(900, 1000, size=n)
-
 
 def increasing(n):
     """
@@ -11,7 +8,7 @@ def increasing(n):
     :param n: Length of a
     :return: List of Weights a
     """
-    return range(n)
+    return range(1, n + 1)
 
 
 def decreasing(n):
@@ -21,7 +18,7 @@ def decreasing(n):
     :param n: Length of a
     :return: List of Weights a
     """
-    return range(n)[::-1]
+    return increasing(n)[::-1]
 
 
 def small_random(n, seed):
@@ -33,7 +30,7 @@ def small_random(n, seed):
     :return: List of Weights a
     """
     np.random.seed(seed)
-    return np.random.randint(0, 100, size=n)
+    return np.random.randint(1, 100, size=n)
 
 
 def small_span_large(n, seed):
@@ -44,8 +41,7 @@ def small_span_large(n, seed):
     :param seed: Reproducibility seed
     :return: List of Weights a
     """
-    np.random.seed(seed)
-    return np.random.randint(0, 100, size=n) + 10000
+    return small_random(n, seed) + 100000
 
 
 def large_span_large(n, seed):
@@ -65,12 +61,13 @@ def low_then_high(n, seed):
     Random Half Low, then Half High Weights
     e.g. [920, 912, 945, ..., 24, 94, 56]
 
-    :param n: Size of a, if even: |a| = n, else: |a| = n - 1
+    :param n: Size of a
     :param seed: Reproducibility seed
     :return: List of Weights a
     """
-    np.random.seed(seed)
-    return np.concatenate([low(n // 2), high(n // 2)])
+    a = small_random(n, seed)
+    a[n // 2:] += 900
+    return a
 
 
 def high_then_low(n, seed):
@@ -82,8 +79,7 @@ def high_then_low(n, seed):
     :param seed: Reproducibility seed
     :return: List of Weights a
     """
-    np.random.seed(seed)
-    return np.concatenate([high(n // 2), low(n // 2)])
+    return low_then_high(n, seed)[::-1]
 
 
 def large_span_random_increasing(n, seed):
@@ -106,8 +102,7 @@ def large_span_random_decreasing(n, seed):
     :param seed: Reproducibility seed
     :return: List of Weights a
     """
-    np.random.seed(seed)
-    return np.sort(np.random.randint(1, 100000, size=n))[::-1]
+    return large_span_random_increasing(n, seed)[::-1]
 
 
 class Generator:

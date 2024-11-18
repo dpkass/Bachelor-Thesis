@@ -1,5 +1,7 @@
 import numpy as np
 
+from math import ceil
+
 from algrotihms.base import DP, dtype, dtype_max
 
 
@@ -12,7 +14,7 @@ class DP_MDIM(DP):
 
     def fit(self, n, m):
         self.n, self.m = n, m
-        self.dp = np.full([n + 1 // i for i in range(1, m + 1)], dtype=dtype, fill_value=dtype_max)
+        self.dp = np.full([ceil((n + 1) / i) for i in range(1, m + 1)], dtype=dtype, fill_value=dtype_max)
 
     def transform(self, a):
         self.init_positions()
