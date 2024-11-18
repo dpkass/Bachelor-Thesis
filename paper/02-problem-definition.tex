@@ -1,18 +1,15 @@
-\chapter{Problem Definition}
-
-
-\section{Introduction to the Scheduling Problem with Local Precedence Constraints}
+\chapter{Problem Definition} \label{chap:problem_definition}
 
 Scheduling is a fundamental problem in operations research and computer science, pivotal for optimizing resource utilization across various industries such as manufacturing, logistics, and computing. Efficient scheduling ensures that tasks are completed in a timely manner while minimizing costs and maximizing productivity.
 
 In this thesis, we focus on a specific variant of the scheduling problem characterized by \textbf{local precedence constraints}. Unlike global precedence constraints, which require a strict ordering of tasks across all machines, local precedence constraints mandate that the precedence order is adhered to only within each individual machine based on a predefined global order of jobs. This distinction allows for greater flexibility in scheduling, as jobs can be assigned to different machines without violating the local precedence requirements, provided that the order of jobs on each machine respects the global job ordering.
 
-\subsection{Formal Problem Definition}
+\subsection*{Formal Problem Definition}
 
 Let us formally define the scheduling problem under consideration:
 
 \begin{itemize}
-    \item \textbf{Jobs}: We have a set of $n$ jobs denoted by $J = \{1, 2, \dots, n\}$. The set $J$ is \emph{ordered}, meaning that the jobs are indexed in a specific sequence, such that $1 < 2 < \dots < n$. Each job $j \in J$ is associated with a weight $w_j \in \mathbb{R}^+$, representing its importance or cost.
+    \item \textbf{Jobs}: We have an ordered set of $n$ jobs denoted by $J = \{1, 2, \dots, n\}$. Each job $j \in J$ is associated with a weight $w_j \in \mathbb{R}^+$, representing its importance or cost.
 
     \item \textbf{Machines}: There are $m$ identical machines available, denoted by $M = \{1, 2, \dots, m\}$.
 
@@ -27,7 +24,7 @@ Let us formally define the scheduling problem under consideration:
     where $C_j$ is the completion time of job $j$.
 \end{itemize}
 
-\subsection{Assumptions and Notations}
+\subsection*{Assumptions and Notation}
 
 To precisely articulate the problem, we make the following assumptions:
 
@@ -41,17 +38,17 @@ To precisely articulate the problem, we make the following assumptions:
     \item \textbf{Completion Time}: The completion time $C_j$ of a job $j$ is defined as the time at which the job finishes processing on its assigned machine.
 \end{itemize}
 
-We introduce the following notations to facilitate the mathematical formulation:
+We introduce the following notation to facilitate the mathematical formulation:
 
 \begin{itemize}
-    \item $J = \{1, 2, \dots, n\}$: \emph{Ordered} set of jobs.
+    \item $J = \{1, 2, \dots, n\}$: Ordered set of jobs.
     \item $M = \{1, 2, \dots, m\}$: Set of machines.
     \item $w_j$: Weight of job $j$.
     \item $C_j$: Completion time of job $j$.
     \item $S_k$: Sequence of jobs assigned to machine $k$, maintaining the order as per $J$.
 \end{itemize}
 
-\subsection{Mathematical Formulation}
+\subsection*{Mathematical Formulation}
 
 The scheduling problem can be mathematically formulated as follows:
 
@@ -62,59 +59,63 @@ The scheduling problem can be mathematically formulated as follows:
     & \text{Jobs are processed sequentially without overlap on each machine}.
 \end{align*}
 
-\subsection{Illustrative Example}
+\begin{example}
 
-To elucidate the concept of local precedence constraints based on a global job order, consider the following example:
+    To elucidate the concept of local precedence constraints based on a global job order, consider the following example:
 
-\textbf{Example:} Suppose we have three jobs $J = \{1, 2, 3\}$ with weights $w_1 = 2$, $w_2 = 3$, and $w_3 = 1$, and two machines $M = \{A, B\}$. The jobs are globally ordered as $1 < 2 < 3$. The local precedence constraints require that on any given machine, if a job precedes another, it must do so in the global order.
+    Suppose we have three jobs $J = \{1, 2, 3\}$ with weights $w_1 = 2$, $w_2 = 3$, and $w_3 = 1$, and two machines $M = \{A, B\}$. The jobs are globally ordered as $1 < 2 < 3$. The local precedence constraints require that on any given machine, if a job precedes another, it must do so in the global order.
 
-One feasible schedule could be:
+    One feasible schedule could be:
 
-\begin{itemize}
-    \item Machine $A$: Jobs $1 \rightarrow 3$
-    \item Machine $B$: Job $2$
-\end{itemize}
+    \begin{itemize}
+        \item Machine $A$: Jobs $1 \rightarrow 3$
+        \item Machine $B$: Job $2$
+    \end{itemize}
 
-Here, on Machine $A$, job $1$ precedes job $3$, which is consistent with the global order ($1 < 3$). Job $2$ on Machine $B$ can be scheduled independently, even if it starts before job $3$ on Machine $A$, as there are no precedence relations between machines.
+    Here, on Machine $A$, job $1$ precedes job $3$, which is consistent with the global order ($1 < 3$). Job $2$ on Machine $B$ can be scheduled independently, even if it starts before job $3$ on Machine $A$, as there are no precedence relations between machines.
 
-The completion times would be:
+    The completion times would be:
 
-\begin{itemize}
-    \item $C_1 = 1$ (completed at time 1)
-    \item $C_3 = 2$ (completed at time 2)
-    \item $C_2 = 1$ (completed at time 1)
-\end{itemize}
+    \begin{itemize}
+        \item $C_1 = 1$ (completed at time 1)
+        \item $C_3 = 2$ (completed at time 2)
+        \item $C_2 = 1$ (completed at time 1)
+    \end{itemize}
 
-The total weighted sum of completion times is:
+    The total weighted sum of completion times is:
 
-\[
-    \sum_{j \in J} w_j C_j = 2 \times 1 + 3 \times 1 + 1 \times 2 = 2 + 3 + 2 = 7.
-\]
+    \[
+        \sum_{j \in J} w_j C_j = 2 \times 1 + 3 \times 1 + 1 \times 2 = 2 + 3 + 2 = 7.
+    \]
 
-Another feasible schedule could be:
+    Another feasible schedule could be:
 
-\begin{itemize}
-    \item Machine $A$: Jobs $1 \rightarrow 2$
-    \item Machine $B$: Job $3$
-\end{itemize}
+    \begin{itemize}
+        \item Machine $A$: Jobs $1 \rightarrow 2$
+        \item Machine $B$: Job $3$
+    \end{itemize}
 
-The completion times would be:
+    The completion times would be:
 
-\begin{itemize}
-    \item $C_1 = 1$
-    \item $C_2 = 2$
-    \item $C_3 = 1$
-\end{itemize}
+    \begin{itemize}
+        \item $C_1 = 1$
+        \item $C_2 = 2$
+        \item $C_3 = 1$
+    \end{itemize}
 
-The total weighted sum of completion times is:
+    The total weighted sum of completion times is:
 
-\[
-    \sum_{j \in J} w_j C_j = 2 \times 1 + 3 \times 2 + 1 \times 1 = 2 + 6 + 1 = 9.
-\]
+    \[
+        \sum_{j \in J} w_j C_j = 2 \times 1 + 3 \times 2 + 1 \times 1 = 2 + 6 + 1 = 9.
+    \]
 
-Comparing both schedules, the first schedule has a lower total weighted sum of completion times, illustrating how the assignment and sequencing of jobs affect the objective.
+    Comparing both schedules, the first schedule has a lower total weighted sum of completion times, illustrating how the assignment and sequencing of jobs affect the objective.
 
-\subsection{Significance of the Problem}
+    \textbf{ADD DIAGRAM}
+
+\end{example}
+
+\subsection*{Significance of the Problem}
 
 Scheduling with local precedence constraints presents unique challenges compared to traditional scheduling problems:
 
@@ -131,13 +132,11 @@ Addressing this problem can lead to more efficient scheduling algorithms that ar
 
 \section{Computational Complexity}
 
-The scheduling problem with local precedence constraints presents an intriguing area of study, particularly concerning its computational complexity. Understanding the complexity is essential for developing effective algorithms that can handle various instance sizes and configurations.
-
-\subsection{Known Complexity Status}
+The scheduling problem with local precedence constraints presents an intriguing area of study, particularly concerning its computational complexity. Understanding this complexity is essential for developing effective algorithms that can handle various instance sizes and configurations.
 
 As of the current state of research, the exact computational complexity of the scheduling problem with local precedence constraints is \textbf{unknown}. While it shares similarities with other well-known scheduling problems, such as those with global precedence constraints or without any precedence constraints, the introduction of local precedence constraints based on a global job order adds a unique layer of complexity that has yet to be fully classified.
 
-\subsection{Implications of Unknown Complexity}
+\subsection*{Implications of Unknown Complexity}
 
 \begin{itemize}
     \item \textbf{Algorithm Development}: The uncertainty in complexity necessitates the exploration of both exact and heuristic algorithms to determine feasible approaches for various instance sizes.
@@ -147,7 +146,7 @@ As of the current state of research, the exact computational complexity of the s
     \item \textbf{Research Opportunities}: This uncertainty opens avenues for further theoretical research to classify the problem definitively and to explore its boundaries in relation to other scheduling problems.
 \end{itemize}
 
-\subsection{Special Cases and Polynomial-Time Solvable Scenarios}
+\subsection*{Special Cases and Polynomial-Time Solvable Scenarios}
 
 While the general problem remains elusive in terms of its complexity classification, certain special cases exhibit properties that make them more tractable:
 
@@ -168,85 +167,211 @@ These special cases highlight that while certain configurations of the problem a
 
 To address the computational challenges posed by the scheduling problem with local precedence constraints, we explore a \textbf{Dynamic Programming (DP)} approach aimed at finding the optimal solution. This section provides a detailed description of the DP algorithm, its correctness, and its computational complexity.
 
-\subsection{Algorithm Overview}
+\subsection*{Algorithm Overview}
 
-The Dynamic Programming approach systematically explores all possible job assignments and sequences across machines to identify the schedule that minimizes the total weighted sum of completion times. It does so by breaking down the problem into smaller subproblems, solving each subproblem optimally, and building up the solution to the original problem.
+The dynamic programming approach systematically explores all possible job assignments and sequences across machines to identify the schedule that minimizes the total weighted sum of completion times. It achieves this by decomposing the problem into smaller subproblems, solving each subproblem optimally, and building up the solution to the original problem.
 
-\subsection{State Representation}
+In the DP framework, each state represents a unique configuration of job assignments across machines. We define a state as a tuple that captures the current number of jobs assigned to each machine. Formally, let the state be represented as $\boldsymbol{p} = (p_1, p_2, \dots, p_m)$, where $p_k$ denotes the number of jobs assigned to machine $k$.
 
-In the DP framework, each state represents a unique configuration of job assignments across machines. Specifically, a state can be defined as a tuple that captures the current number of jobs assigned to each machine.
+The core of the DP algorithm lies in the recurrence relation that defines how to transition from one state to another. For each job, the algorithm considers assigning it to any of the available machines, ensuring that local precedence constraints are maintained. The optimal solution for a given state is derived from the optimal solutions of its predecessor states.
 
-Formally, let the state be represented as $s = (p_1, p_2, \dots, p_m)$, where $p_k$ denotes the number of jobs assigned to machine $k$. Given that the jobs are ordered, the first $p_k$ jobs assigned to machine $k$ are the next available jobs in $J$ that have not yet been assigned to any machine, and they must be processed in the global order.
+Let $DP(\boldsymbol{p})$ represent the minimum total weighted completion time for state $\boldsymbol{p} = (p_1, p_2, \dots, p_m)$, where the sum of the elements of $\boldsymbol{p}$ is $k$, indicating that $k$ jobs have been assigned so far. Let $j = k + 1$ be the next job to assign (since jobs are assigned in order). For each machine $i$, assigning job $j$ to machine $i$ leads to a new state $\boldsymbol{p}'$ where $p_i$ is incremented by 1:
 
-\subsection{Recurrence Relations}
+\begin{equation}
+    DP(\boldsymbol{p}') = \min_{i \in M} \left\{ DP(\boldsymbol{p}) + w_j \times C_{j,i} \right\},
+    \label{eq:dp_recurrence}
+\end{equation}
 
-The core of the DP algorithm lies in the recurrence relations that define how to transition from one state to another. For each job, the algorithm considers assigning it to any of the available machines, ensuring that local precedence constraints are maintained. The optimal solution for a given state is derived from the optimal solutions of its predecessor states.
+where $C_{j,i} = p_i + 1$ is the completion time of job $j$ on machine $i$, assuming unit processing time and that jobs are processed in the global order on each machine.
 
-Mathematically, if $DP[s]$ represents the minimum total weighted completion time for state $s = (p_1, p_2, \dots, p_m)$, and $j$ is the next job to be assigned (based on the global order), then for each machine $k \in M$, assigning job $j$ to machine $k$ leads to a new state $s'$ where $p_k$ is incremented by 1:
+\subsection*{Proof of Correctness}
 
-\[
-    DP[s'] = \min_{k \in M} \left\{ DP[s] + w_j \times C_{j,k} \right\},
-\]
-where $C_{j,k} = p_k + 1$ is the completion time of job $j$ on machine $k$, assuming unit processing time and that jobs are processed in the global order on each machine.
-
-\subsection{Proof of Correctness}
-
-To establish the correctness of the DP algorithm, we rely on the \textbf{Principle of Optimality}, which states that an optimal solution to the problem contains within it optimal solutions to subproblems.
+To establish the correctness of the DP algorithm, we rely on the \textbf{Principle of Optimality}, which states that an optimal solution to a problem contains within it optimal solutions to its subproblems.
 
 \textbf{Base Case}: The DP algorithm initializes with a base case representing the scenario where no jobs have been assigned to any machine. For this state, the total weighted completion time is zero:
 
 \[
-    DP[(0, 0, \dots, 0)] = 0.
+    DP(0, 0, \dots, 0) = 0.
 \]
 
-\textbf{Inductive Step}: Assume that for all states representing assignments of the first $k$ jobs, the DP table correctly stores the minimum total weighted completion time. When assigning the $(k+1)$-th job, the algorithm considers all possible machine assignments, updating the DP table with the minimum achievable total weighted completion time for each new state. Therefore, the optimality is preserved at each step.
+\textbf{Inductive Step}: Assume that, for all states representing assignments of the first $j-1$ jobs, the DP table correctly stores the minimum total weighted completion time. We proceed to assign the $j$-th job by considering all possible machine assignments. Let $p = (p_1, p_2, \dots, p_m)$ represent the current state, where $p_k$ indicates the number of jobs assigned to machine $k$.
 
-Hence, by induction, the DP algorithm correctly computes the optimal solution for the scheduling problem with local precedence constraints.
-
-\subsection{Space and Time Complexity}
-
-\subsubsection{Initial Complexity}
-
-The initial time and space complexity of the DP algorithm are both $O(m^n)$, as each of the $n$ jobs can be assigned to any of the $m$ machines, leading to $m^n$ possible states.
-
-\subsubsection{Symmetry Breaking and Complexity Reduction}
-
-To optimize the time and space complexities, we employ \textbf{symmetry breaking} techniques. Since assigning jobs to machines in different orders but with the same number of jobs per machine results in equivalent states, we can enforce an ordering to eliminate redundant states. Specifically, when multiple machines have the same number of assigned jobs, we always choose the machine with the smallest index.
-
-This approach reduces the number of unique states significantly. The number of states corresponds to the number of integer compositions (ordered partitions) of $n$ into $m$ non-negative integers, where we consider only non-increasing sequences due to the symmetry breaking.
-
-However, accurately calculating the reduced number of states is non-trivial. An upper bound can be derived by considering the number of partitions of $n$ into $m$ parts, which is related to the problem of integer partitions and harmonic numbers.
-
-\subsubsection{Complexity Analysis Using Harmonic Numbers}
-
-By enforcing that $p_1 \geq p_2 \geq \dots \geq p_m$, and recognizing that the maximum value of $p_k$ is approximately $n/k$, we can infer that the number of unique states is bounded by:
+The next state $p'$ is determined by assigning job $j$ to one of the $m$ machines. Specifically, a successor state $p'_k$ of state $p$ is formed by incrementing $p_k$ by $1$ to account for assigning job $j$ to machine $k$. Formally, the new state is given by:
 
 \[
-    \text{Number of States} \leq \prod_{k=1}^{m} \left( \frac{n}{k} + 1 \right).
+    p'_k = (p_1, p_2, \dots, p_k + 1, \dots, p_m),
 \]
 
-Taking logarithms to simplify:
+where $k \in M$. For each successor state $p'_k$, the new completion time for job $j$, denoted as $C_{j,k}$, is calculated as $p_k + 1$, indicating the position of job $j$ on machine $k$.
+
+The DP value for the successor state $p'_k$ is computed using the recurrence relation \autoref{eq:dp_recurrence}, which is restated here for convenience:
 
 \[
-    \log(\text{Number of States}) \leq \sum_{k=1}^{m} \log\left( \frac{n}{k} + 1 \right).
+    DP(p'_k) = DP(p) + w_j \times C_{j,k},
 \]
 
-Approximating the sum using harmonic numbers $H_m$ (since $H_m = \sum_{k=1}^{m} \frac{1}{k}$ and $H_m \approx \ln m + \gamma$), we observe that the complexity grows polynomially with $n$ and logarithmically with $m$.
+where $w_j$ is the weight of job $j$. This process is repeated for all machines $k \in M$, resulting in $m$ new successor states $p'_1, p'_2, \dots, p'_m$ and corresponding DP values $DP(p'_1), DP(p'_2), \dots, DP(p'_m)$. The new entries in the DP table thus capture all possible ways of assigning job $j$ to one of the machines, given the current state $p$.
 
-Thus, the time and space complexities become:
+It is important to note that the successors of different states may overlap, meaning that the same successor state can be reached through multiple paths. In such cases, we retain only the minimum DP value across all possible paths leading to the overlapping state. For example, consider the initial state $(0, 0)$ with two successors: $(1, 0)$ and $(0, 1)$. The successors of these states are $(2, 0)$, $(1, 1)$, and $(1, 1)$, $(0, 2)$, respectively. Here, the state $(1, 1)$ is reached from both $(1, 0)$ and $(0, 1)$, and the DP value for $(1, 1)$ is taken as the minimum across both possible paths.
+
+The induction proceeds by repeating this process until all $n$ jobs have been assigned. At each step, the DP table is updated to store the minimum total weighted completion time for each new state.
+
+Finally, the optimal solution is determined by finding the state where all jobs have been assigned and which has the minimum DP value, representing the minimum total weighted completion time across all possible schedules.
+
+By considering all possible assignments at each step and always choosing the one that minimizes the total weighted completion time, the dynamic programming algorithm ensures that the optimal solution is preserved through all steps of the induction.
+
+\subsection*{Space and Time Complexity}
+
+Let us explore the computational complexities of this algorithm by progressively finding tighter upper bounds with increasingly detailed proofs. Denote the set of all possible states, i.e., the state space, as $S$.
+
+Initially, the time and space complexity of the DP algorithm are both $O(m^n)$, as each of the $n$ jobs can be assigned to any of the $m$ machines, resulting in $m^n$ possible final states or $\sum_{n_i=0}^n m^{n_i}$ total states, both of which are in $O(m^n)$.
+
+\textbf{State Space.} A closer examination of the state space reveals a significantly smaller upper bound. For $p = (p_1, p_2, \dots, p_m)$, the individual values $p_k$ are limited by $n$. Therefore, the upper bound for $|S|$ is reduced to $O(n^m)$. We observe that $O(m^n) \gg O(n^m)$, since $n \gg m$, otherwise the problem would not be as meaningful.
+
+This upper bound applies primarily to the space complexity, i.e., the size of the state space, as each state could (and will) require its own computation.
+
+\textbf{Overlapping Successors.} The next step in finding a smaller upper bound involves determining how many successors overlap, or equivalently, how many predecessors each state has. A state has as many predecessors as there are machines with more than $0$ jobs assigned to them, since each $p_k > 0$ can be decremented by $1$ to yield a distinct predecessor.
+
+\begin{figure}[h!]
+    \centering
+    \input{graphs/full-ss-overlapping-successors}
+    \caption{State Space for $m=3$, $n=2$ with overlapping successors.}
+    \label{fig:full-ss-overlapping-successors}
+\end{figure}
+
+Before deriving the number of overlapping successors, let's revisit our definition of states. A state is solely defined by the number of jobs assigned to each machine. These can overlap, as illustrated in \autoref{fig:full-ss-overlapping-successors}.
+
+For the following derivation, we augment the state definition by including its predecessor: $s = (p, s')$, where $s'$ is the predecessor of $s$, and $p$ remains $(p_1, p_2, \dots, p_m)$. This modification eliminates overlapping successors, as seen in \autoref{fig:full-ss-no-overlapping-successors}. Next, we calculate the number of states that share the same value $p$ but have different predecessors $s'$.
+
+\begin{figure}[h!]
+    \centering
+    \input{graphs/full-ss-no-overlapping-successors}
+    \caption{State Space for $m=3$, $n=2$ without overlapping successors.}
+    \label{fig:full-ss-no-overlapping-successors}
+\end{figure}
+
+The number of states that have only one predecessor, or equivalently, only one $p_k > 0$ (formally $|\{k : p_k > 0, k = 1, \dots, m\}| = 1$), is $nm$. This is because, for each step of assigning $n_i$ jobs, all jobs must be scheduled on a single machine, and each machine can be used for this purpose. These states never have more than one predecessor.
+
+Let the Stirling number of the second kind be denoted as $\stirlingS{n}{k}$. The number of states with two predecessors is given by:
+\[
+    \sum_{n_i=0}^n \left( \binom{m}{2} \times \stirlingS{n_i}{2} \times 2! \right),
+\]
+since there are $\binom{m}{2}$ ways to select two of the $m$ machines, $\stirlingS{n_i}{2}$ ways to partition $n_i$ jobs into two non-empty subsets, and $2!$ ways to distribute these subsets among the selected machines. Summing this over all partial solutions for $n_i$, the general formula for states with $l$ predecessors is:
+
+\begin{equation}
+    SP^1_{n,m}(l) \coloneqq \left| \{ p = (p_1, \dots, p_m) : |\{ k : p_k > 0 \}| = l \} \right| = \sum_{n_i=0}^{n} \binom{m}{l} \stirlingS{n_i}{l} l!,
+    \label{eq:sp1}
+\end{equation}
+
+Summing over all possible numbers of predecessors, $l = 0, \dots, m$, we obtain the total state space size:
 
 \[
-    \text{Time Complexity} = O\left( n \cdot m^{ n / \log m } \right),
+    |S| = \sum_{l=0}^m SP^1_{n,m}(l).
 \]
+
+This represents the formula for the full state space of unmerged states.
+
+Now, to understand how much time and space we save by merging overlapping successors, we consider merging states by taking the minimum of the possible values for that state. By doing this, we achieve three outcomes:
+\begin{itemize}
+    \item We revert to our original definition of states and predecessors.
+    \item We reduce the number of paths originating from a state by eliminating redundant predecessors.
+    \item We determine the number of constant steps needed to calculate the value of a state from its predecessors, which is exactly $l$.
+\end{itemize}
+
+To illustrate, consider any state $p$ with a set of $l$ predecessors $P'$ and $m$ successors $S'$. Each state $p' \in P'$ can reach $p$ in one step, resulting in $l$ steps in total. Previously, each $p' \in P'$ had its own successor with value $p$ and would independently find each successor $s' \in S'$ on its own path, leading to $l \times m$ different paths. Now, as $p$ is consolidated into a single state, we only have $l + m$ steps. Refer to \autoref{fig:full-ss-overlapping-successors} and \autoref{fig:full-ss-no-overlapping-successors} for a visual comparison of the difference.
+
+The remaining question is: how many states remain after merging? The aspect that changes from our original \eqref{eq:sp1} function is the number of ways to partition the $n_i$ jobs over the $l$ subsets ($\stirlingS{n_i}{l}$) and the possible permutations of those subsets among the chosen machines ($l!$). Instead, we now consider ordered partitions or \textbf{compositions} of the number $n_i$ into exactly $l$ parts, which is given by the following equation for $n$ and $k$ respectively \cite{k-compositions}:
+
 \[
-    \text{Space Complexity} = O\left( m^{ n /\log m } \right).
+    c_k(n) = \binom{n-1}{k-1}.
 \]
 
-However, this is a rough approximation, and the exact complexity is difficult to pinpoint due to the combinatorial nature of the problem. The important takeaway is that the symmetry breaking significantly reduces the number of states compared to the initial $O(m^n)$, making the DP algorithm more practical for moderate values of $n$ and $m$.
+Hence, we arrive at a new equation for \textbf{S}tates with $l$ \textbf{P}redecessors, denoted as $SP^2_{n,m}(l)$:
+\begin{equation}
+    SP^2_{n,m}(l) = \sum_{n_i=0}^{n} \binom{m}{l} c_l(n_i),
+    \label{eq:sp2}
+\end{equation}
+Now, summing over $l$ gives the new total state space size.
+\[
+    |S| = \sum_{l=0}^m SP^2_{n,m}(l)
+\]
+Using the binomial identity:
+\begin{equation}
+    \sum_{k=0}^m \binom{m}{k} \binom{n_i - 1}{k - 1} = \binom{n_i + m - 1}{m},
+    \label{eq:bin-id-1}
+\end{equation}
+and the identity \cite{spiegel1968mathhandbook}:
+\[
+    \sum_{k=0}^m \binom{n + k}{n} = \binom{n + m + 1}{m},
+\]
+we derive the state space size after merging overlapping successors:
 
-\subsection{Practical Implementations and Optimizations}
+\begin{align*}
+    |S|
+    &= \sum_{l=0}^m SP^2_{n,m}(l) \\
+    &= \sum_{l=0}^m \sum_{n_i=0}^{n} \binom{m}{l} c_l(n_i) \\
+    &= \sum_{n_i=0}^{n} \sum_{l=0}^m \binom{m}{l} \binom{n_i - 1}{l - 1} \\
+    &= \sum_{n_i=0}^{n} \binom{n_i + m - 1}{m} \\
+    &= \binom{n + m}{m} \\
+    &= n^{\overline{m}},
+\end{align*}
+where $n^{\overline{m}}$ is the Pochhammer symbol (rising factorial). Therefore, the time complexity is:
 
-To make the DP algorithm practical, several optimizations can be employed:
+\[
+    \mathcal{O}\left( n^{\overline{m}} \times m \right).
+\]
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|cccccc}
+        \hline
+        \textbf{\(m\)} $\backslash$ \textbf{\(n\)} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+        \hline
+        1                                          & 1          & 2          & 3          & 4          & 5          & 6          \\
+        2                                          & 1          & 3          & 6          & 10         & 15         & 21         \\
+        3                                          & 1          & 4          & 10         & 20         & 35         & 56         \\
+        4                                          & 1          & 5          & 15         & 35         & 70         & 126        \\
+        \hline
+    \end{tabular}
+    \label{tab:sss-merged-successors}
+    \caption{\( n^{\overline{m}} \) for Selected Indices \(m\) and \(n\)}
+\end{table}
+
+\textbf{Proof for \autoref{eq:bin-id-1} Missing}
+
+\textbf{Symmetry Breaking.} To further optimize the time and space complexities, we employ symmetry breaking techniques. Since assigning jobs to machines in different orders but with the same number of jobs per machine results in equivalent states, we can enforce an ordering to eliminate redundant states. Specifically, when multiple machines have the same number of assigned jobs, we always choose the machine with the smallest index.
+
+\textit{Note:} Referring back to the initial formula \autoref{eq:sp1}, we essentially omit the binomial and factorial terms since we no longer distinguish between which $l$ machines are chosen and how many permutations exist for distributing the $\stirlingS{n_i}{l}$ subsets among the selected machines. Comparing it to the second formula \autoref{eq:sp2}, we similarly drop the binomial coefficient and transition from considering compositions (ordered partitions) to unordered partitions, as the ordering only leads to symmetric solutions.
+
+This approach significantly reduces the number of unique states. The number of states corresponds to the number of integer partitions of $n$ into at most $m$ non-negative integer parts, denoted as:
+
+\[
+    p_m(n),
+\]
+
+which grows asymptotically for a fixed $m$, or in our case $m \ll n$, approximately as $\frac{n^{m-1}}{m!(m-1)!}$. Therefore, our state space size and time complexity are:
+
+\begin{equation}
+    |S| = \sum_{n_i=0}^n p_m(n_i) = \int_{n_i=0}^n p_m(n_i) \in \mathcal{O}\left( \frac{n^{m-1}}{(m!)^2} \right),
+    \label{sss}
+\end{equation}
+\begin{equation}
+    \text{Time Complexity: } \mathcal{O}\left( p_m(n) \right).
+    \label{time-comp}
+\end{equation}
+
+This serves as our final approximation for the state space and, consequently, for the time complexity. Next, we will discuss a technique to further reduce the space complexity.
+
+\textbf{Layer-by-Layer Processing.} As previously observed, each layer of states depends only on the preceding layer. Therefore, by storing only the current and the preceding layers, we achieve a final space complexity of:
+\begin{equation}
+    \text{Space Complexity: } \mathcal{O}\left( p_m(n) - p_m(n-2) \right),
+    \label{space-comp}
+\end{equation}
+which remains significantly smaller than the total state space.
+
+\subsection*{Practical Implementations and Optimizations}
+
+To make the DP algorithm practical, several optimizations were employed:
 
 \begin{itemize}
     \item \textbf{Symmetry Breaking}: By always choosing the machine with the smallest index when possible, we reduce the number of unique states.
@@ -257,12 +382,7 @@ To make the DP algorithm practical, several optimizations can be employed:
 
     \item \textbf{Pruning Suboptimal States}: If a state has a total weighted completion time greater than the best known solution, it can be discarded early.
 
-    \item \textbf{Implementations Reference}: The implementations of the DP algorithms, such as \texttt{DP\_DICT} and \texttt{DP\_MDIM}, which utilize these optimizations, will be discussed in more depth in Section~\ref{sec:algorithm_definitions}.
+    \item \textbf{Algorithm Implementations}: Detailed discussions of the DP algorithm implementations, such as \texttt{DP\_DICT} and \texttt{DP\_MDIM}, will be provided in Section~\ref{sec:algorithm_definitions}.
 \end{itemize}
 
 Despite these optimizations, the DP approach remains computationally intensive for large instances, necessitating the exploration of heuristic and approximation algorithms for practical applications.
-
-
-\section{Summary}
-
-In summary, the scheduling problem with local precedence constraints presents a challenging optimization scenario with significant practical relevance. Its complexity status remains unknown, highlighting the need for both theoretical exploration and practical algorithm development. While the Dynamic Programming approach offers an optimal solution, its initial exponential time and space complexities limit its practicality. Through strategic optimizations such as symmetry breaking and layer-by-layer processing, the DP algorithm becomes more feasible for moderate instances. Nonetheless, this motivates the investigation of alternative algorithms, such as greedy heuristics and balanced sequential insert methods, which balance solution quality with computational feasibility.

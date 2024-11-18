@@ -1,18 +1,37 @@
 \documentclass{report}
 
 \usepackage[utf8]{inputenc}
+\usepackage{markdown}
 \usepackage{amsmath}
-\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[inkscapelatex=false]{svg}
+\usepackage{mathtools}
+\usepackage{tikz}
 
+\graphicspath{ {./images/} }
+
+\usetikzlibrary{graphs, graphdrawing}
+\usegdlibrary{layered}
 
 \title{
+\begin{figure}
+    \centering
+    \includesvg[width=0.75\linewidth]{images/HHU_Logo.svg}
+\end{figure}
+
     Scheduling with local Precedence Constraints\\
     {\Large Heinrich-Heine University Düsseldorf}
 }
+
 \author{Taha El Amine Kassabi}
 \date{\today}
 
 \begin{document}
+
+
+    \include{99-declarations}
 
     \maketitle
 
