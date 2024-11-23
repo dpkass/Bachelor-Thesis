@@ -1,0 +1,59 @@
+\section{Experiment Setup} \label{sec:experiment_setup}
+
+In this section, we describe the experimental setup used to evaluate the performance of various scheduling algorithms under local precedence constraints. The setup encompasses the computational environment, the algorithms implemented, the instance generators for creating test cases, the parameters considered, the performance metrics employed, and the data collection methods.
+
+We evaluated six algorithms designed to address the scheduling problem with local precedence constraints in distinct ways. These include:
+
+\begin{itemize}
+    \item \textbf{Dynamic Programming (DP) Algorithm}: Serves as the optimal solution and benchmark for comparing other algorithms.
+    \item \textbf{Greedy Algorithm}: A simple heuristic that assigns jobs to machines in a way that minimally increases the total weighted completion time.
+    \item \textbf{Heavy First}: Sorts jobs by weight in non-increasing order and assigns the heaviest jobs first, following a greedy strategy.
+    \item \textbf{$k$-Lookahead Algorithm}: Incorporates future job information by considering the next $k$ jobs before making a scheduling decision.
+    \item \textbf{Sort \& Split}: Sorts jobs by weight and splits them into $m$ equally sized arrays, then assigns each array to a machine while maintaining local precedence.
+    \item \textbf{Balanced Sequential Insert (BSI)}: Aims to balance the workload across machines by distributing jobs based on their weights.
+\end{itemize}
+
+To assess the algorithms across diverse scenarios, we employed several instance generators that produce different weight distributions. These generators are categorized as follows:
+
+\begin{itemize}
+    \item \textbf{Non-Random Generators}:
+    \begin{itemize}
+        \item \textbf{Increasing Weights}: Generates jobs with weights increasing sequentially.
+        \item \textbf{Decreasing Weights}: Generates jobs with weights decreasing sequentially.
+    \end{itemize}
+    \item \textbf{Random Generators}:
+    \begin{itemize}
+        \item \textbf{Small Weights}: Random weights in the range $[1, 100)$.
+        \item \textbf{Small Span Large Weights}: Random weights in the range $[100{,}000, 100{,}100)$.
+        \item \textbf{Large Span Large Weights}: Random weights in the range $[10{,}000, 100{,}000)$.
+        \item \textbf{Large Span Non-Decreasing Weights}: Random weights in the range $[1, 100{,}000)$ sorted in non-decreasing order.
+        \item \textbf{Large Span Non-Increasing Weights}: Random weights in the range $[1, 100{,}000)$ sorted in non-increasing order.
+        \item \textbf{Low Then High Weights}: The first half of the jobs have weights in $[1, 100)$, and the second half in $[900, 1{,}000)$.
+        \item \textbf{High Then Low Weights}: The reverse of the above, where the first half of the jobs have weights in $[900, 1{,}000)$, and the second half in $[1, 100)$.
+    \end{itemize}
+\end{itemize}
+
+These instance generators were chosen to simulate a variety of real-world scenarios and to understand how different weight distributions affect the performance of the scheduling algorithms. By testing the algorithms on both ordered and random weight distributions, we aim to uncover their strengths and weaknesses under varying conditions.
+
+The experiments were conducted using the following parameters:
+
+\begin{itemize}
+    \item \textbf{Number of Jobs ($n$)}: $150$.
+    \item \textbf{Number of Machines ($m$)}: $2$, $3$, and $4$.
+    \item \textbf{Random Seeds}: $0$ to $9$
+\end{itemize}
+
+The random seeds ensure reproducibility and allow us to assess performance stability across different random states.
+
+To evaluate and compare the algorithms, we employed several performance metrics:
+
+\begin{itemize}
+    \item \textbf{Relative Performance Ratio (Quality)}: The ratio of the algorithm's total weighted completion time to that of the optimal solution.
+    \item \textbf{Softmax Scaled Performance}: Normalized performance scores using the softmax function.
+    \item \textbf{Variation Coefficient}: The coefficient of variation over different seeds.
+    \item \textbf{Relative Improvement}: The improvement in performance relative to increasing the number of machines $m$.
+\end{itemize}
+
+These metrics are used to highlight differences between algorithms, measure the stability of each algorithm's performance, and assess whether algorithms perform better or asymptotically approach the optimal solution as the number of machines increases.
+
+Results from the experiments were stored using \texttt{xarray} DataArrays and Datasets, facilitating easy manipulation and analysis of multi-dimensional data. Each computed value was saved in NetCDF (\texttt{.nc}) files for persistence and later retrieval.

@@ -1,0 +1,168 @@
+\section{Algorithm Definitions} \label{sec:algorithm_definitions}
+
+In this section, we provide detailed descriptions of the algorithms evaluated in our experiments. Each algorithm is presented with pseudocode and an intuitive explanation to clarify its operation. We aim for consistency in the presentation to facilitate understanding and comparison.
+
+The following notation is introduced:
+\begin{itemize}
+    \item $S_k$ is the sequence of jobs currently assigned to machine $k$.
+    \item $t(S_k)$ computes the sum of weighted completion times of jobs assigned to machine $k$.
+    \item \texttt{defaultdict(x)} returns a hashmap. When accessing a key that does not exist, it returns the default value \textit{x}.
+\end{itemize}
+
+We consider two implementations of the dynamic programming (DP) approach:
+
+\textbf{Dictionary-Based DP (DP\_DICT)}: Utilizes a dictionary to store state-value pairs, enhancing memory efficiency by only retaining relevant states. This approach may introduce minimal computational overhead due to dictionary operations.
+
+\textbf{Multi-Dimensional Array DP (DP\_MDIM)}: Employs a multi-dimensional array to represent states, allowing for faster access times. However, this method incurs significantly higher memory consumption, especially as the number of machines increases.
+
+For detailed theoretical underpinnings and the correctness of the DP approach, please refer back to Chapter~\ref{chap:problem_definition}.
+
+\begin{algorithm}[H]
+    \caption{Dictionary-Based Dynamic Programming (DP\_DICT)}\label{alg:dpdict}
+    \begin{algorithmic}[1]
+        \State \textbf{Input:} Ordered set of jobs $J$, set of machines $M$, job weights $w$
+        \State \textbf{Output:} Minimum weighted sum of completion times
+        \State Initialize $dp \gets \text{defaultdict}(\infty)$
+        \State $dp[(0, 0, \dots, 0)] \gets 0$
+        \For{$j \in J$}
+            \State $next\_dp \gets \text{defaultdict}(\infty)$
+            \For{$p \in dp.\text{keys()}$}
+                \For{$k \in M$}
+                    \If{$p[k] < p[k-1]$ or $k = 1$}
+                        \State $p' \gets (p[1], \dots, p[k]+1, \dots, p[m])$
+                        \State $next\_dp[p'] \gets \min(next\_dp[p'], dp[p] + p'[k] \cdot w_j)$
+                    \EndIf
+                \EndFor
+            \EndFor
+            \State $dp \gets next\_dp$
+        \EndFor
+        \State \Return $\min(dp.\text{values()})$
+    \end{algorithmic}
+\end{algorithm}
+
+The DP\_DICT algorithm iteratively builds a dictionary of states, where each state $p$ represents a possible distribution of jobs across machines. For each job $j$, it considers assigning it to each machine $k$ under the symmetry-breaking condition ($p[k] < p[k-1]$ or $k = 1$) to avoid redundant computations. The cost of a state is updated based on the cumulative weighted completion time. By using a dictionary, the algorithm efficiently stores only relevant states, optimizing memory usage.
+
+\begin{algorithm}[H]
+    \caption{Multi-Dimensional Array Dynamic Programming (DP\_MDIM)}\label{alg:dpmdim}
+    \begin{algorithmic}[1]
+        \State \textbf{Input:} Ordered set of jobs $J$, set of machines $M$, job weights $w$
+        \State \textbf{Output:} Minimum weighted sum of completion times
+        \State Initialize $dp$ array of shape $[n+1, \lceil (n+1)/2 \rceil, \dots, \lceil (n+1)/m \rceil]$ with $\infty$
+        \State $dp[0, 0, \dots, 0] \gets 0$
+        \State Initialize $states \gets \{(0, 0, \dots, 0)\}$
+        \For{$j \in J$}
+            \State $next\_states \gets \emptyset$
+            \For{$p \in states$}
+                \For{$k \in M$}
+                    \If{$p[k] < p[k-1]$ or $k = 1$}
+                        \State $p' \gets (p[1], \dots, p[k]+1, \dots, p[m])$
+                        \State $dp[p'] \gets \min(dp[p'], dp[p] + p'[k] \cdot w_j)$
+                        \State $next\_states \gets next\_states \cup \{p'\}$
+                    \EndIf
+                \EndFor
+            \EndFor
+            \State $states \gets next\_states$
+        \EndFor
+        \State \Return $\min(dp[p])$ for all $p \in states$
+    \end{algorithmic}
+\end{algorithm}
+
+Similar to DP\_DICT, the DP\_MDIM algorithm explores possible job assignments to machines but uses a multi-dimensional array for state storage. Each dimension corresponds to a machine, and indices represent the number of jobs assigned. The algorithm updates the array by considering all valid states and keeps track of the minimal cost. While access times are faster, this method requires more memory, making it less practical for larger problems.
+
+\begin{algorithm}[H]
+    \caption{Greedy}\label{alg:greedy}
+    \begin{algorithmic}[1]
+        \State \textbf{Input:} Ordered set of jobs $J$, set of machines $M$, job weights $w$
+        \State \textbf{Output:} Weighted sum of completion times
+        \State Initialize priority queue $pq$ with $m$ entries, each $(0, 0)$
+        \For{$j \in J$}
+            \State Extract $(t_m, c_m)$ with minimal $t_m$ from $pq$
+            \State $c_m \gets c_m + 1$
+            \State $t_m \gets t_m + w_j \cdot c$
+            \State Push $(t_m, c_m)$ back into $pq$
+        \EndFor
+        \State \Return $\sum_{(t_m,c_m) \in pq} t_m$
+    \end{algorithmic}
+\end{algorithm}
+
+The Greedy algorithm assigns each job in the order of $J$ to the machine with the current minimal total weighted completion time. By always choosing the least loaded machine, it aims to balance the cost. The sum of completion times $t_m$ and job count $c_m$ are updated for each machine. This approach is particularly fast and simple.
+
+\begin{algorithm}[H]
+    \caption{Heavy First}\label{alg:heavyfirst}
+    \begin{algorithmic}[1]
+        \State \textbf{Input:} Ordered set of jobs $J$, set of machines $M$, job weights $w$
+        \State \textbf{Output:} Total weighted sum of completion times
+        \State Sort $J$ in non-increasing order of $w_j$
+        \State Initialize $state = [S_1, \dots, S_m]$
+        \For{$j \in J$}
+            \For{$m \in M$}
+                \State Compute $potential\_cost$ if job $j$ is assigned to machine $m$
+            \EndFor
+            \State Assign job $j$ to $m$ with minimal $potential\_cost$ and update $state$
+        \EndFor
+        \State \Return $\sum_{k \in M} t(S_k)$
+    \end{algorithmic}
+\end{algorithm}
+
+The Heavy First algorithm assigns jobs in order of decreasing weight, in a greedy fashion. For each job, it evaluates the potential cost of assigning it to each machine and selects the machine that results in the minimal increase in total weighted completion time. This helps in placing heavy jobs where they have the least negative impact. As it only accounts for current state, the negative impact on future placements is not regarded.
+
+\begin{algorithm}[H]
+    \caption{$k$-Lookahead}\label{alg:klookahead}
+    \begin{algorithmic}[1]
+        \State \textbf{Input:} Ordered set of jobs $J$, set of machines $M$, job weights $w$, lookahead parameter $k$
+        \State \textbf{Output:} Total weighted sum of completion times
+        \State Initialize $state = [S_1, \dots, S_m]$
+        \For{$j \in J$}
+            \For{$m \in M$}
+                \State Simulate assigning job $j$ to machine $m$
+                \State Compute $potential\_cost$ for next $k-1$ jobs using DP (\ref{alg:dpdict})
+            \EndFor
+            \State Assign job $j$ to $m$ with minimal $potential\_cost$ and update $state$
+        \EndFor
+        \State \Return $\sum_{k \in M} t(S_k)$
+    \end{algorithmic}
+\end{algorithm}
+
+The $k$-Lookahead algorithm also improves upon the Greedy approach by considering the impact of current decisions on the next $k$ jobs. For each job $j$, it simulates assigning it to each machine $m$ and computes the potential cost using DP for the subsequent $k-1$ jobs. It then selects the machine that results in the minimal estimated total cost, aiming for better long-term scheduling decisions. To compute \texttt{$potential\_cost$}, simply adjust Algorithm \eqref{alg:dpdict} by initializing $dp[( \left| S_1 \right|, \dots, \left| S_m \right|)] \gets \sum_{m \in M} t(S_m)$.
+
+\begin{algorithm}[H]
+    \caption{Sort \& Split}\label{alg:sortsplit}
+    \begin{algorithmic}[1]
+        \State \textbf{Input:} Ordered set of jobs $J$, set of machines $M$, job weights $w$
+        \State \textbf{Output:} Total weighted sum of completion times
+        \State Sort $J$ in non-increasing order of $w_j$
+        \State Split sorted jobs into $m$ job sequences: $L_1, \dots, L_m$
+        \For{$k \in M$}
+            \State Sort $L_k$ by precedence
+            \State Assign $L_k$ to machine $k$
+        \EndFor
+        \State \Return $\sum_{k \in M} t(S_k)$
+    \end{algorithmic}
+\end{algorithm}
+
+The Sort \& Split algorithm sorts the jobs in non-increasing order of their weights and divides them into equal subsets, assigning each subset to a different machine. By grouping jobs based on weight, it reduces competition between heavier and lighter jobs for minimal completion times. However, this method does not account for the specific impact of individual job assignments, which may prevent it from achieving an optimal schedule.
+
+\begin{algorithm}[H]
+    \caption{Balanced Sequential Insert}\label{alg:bsi}
+    \begin{algorithmic}[1]
+        \State \textbf{Input:} Ordered set of jobs $J$, set of machines $M$, job weights $w$
+        \State \textbf{Output:} Total weighted sum of completion times
+        \State Sort $J$ in non-increasing order of $w_j$
+        \State Initialize $state \gets [S_1, \dots, S_m]$
+        \State Initialize $i \gets 1$
+        \While{not all jobs are assigned}
+            \State Reset $state$
+            \State $S_1 \gets J[1, \dots, i]$
+            \State $t_1 \gets t(S_1)$
+            \For{$k \in M \setminus \{1\}$}
+                \While{$t(S_k) < t_1$}
+                    \State Assign next job to machine $k$
+                \EndWhile
+            \EndFor
+            \State $i \gets i + 1$
+        \EndWhile
+        \State \Return $\sum_{k \in M} t(S_k)$
+    \end{algorithmic}
+\end{algorithm}
+
+Building upon the Sort \& Split approach, the Balanced Sequential Insert (BSI) algorithm dynamically assigns jobs to machines to further balance the total weighted completion times. After sorting the jobs by weight, BSI incrementally assigns the heaviest jobs to the first machine and distributes subsequent jobs to other machines in a manner that maintains balanced weighted completion times across all machines. If not all jobs can be assigned under the current distribution, the algorithm increases the number of jobs assigned to the primary machine and redistributes the remaining jobs accordingly. This iterative process ensures a more balanced and efficient distribution of jobs, enhancing the effectiveness of the initial Sort \& Split method.

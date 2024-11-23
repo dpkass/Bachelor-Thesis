@@ -1,14 +1,16 @@
 \documentclass{report}
 
-\usepackage[utf8]{inputenc}
+\usepackage{unicode-math}
 \usepackage{markdown}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{hyperref}
 \usepackage{graphicx}
-\usepackage[inkscapelatex=false]{svg}
+\usepackage{svg}
 \usepackage{mathtools}
 \usepackage{tikz}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
 \graphicspath{ {./images/} }
 
@@ -16,10 +18,10 @@
 \usegdlibrary{layered}
 
 \title{
-\begin{figure}
-    \centering
-    \includesvg[width=0.75\linewidth]{images/HHU_Logo.svg}
-\end{figure}
+    \begin{figure}
+        \centering
+        \includesvg[width=0.75\linewidth]{images/HHU_Logo.svg}
+    \end{figure}
 
     Scheduling with local Precedence Constraints\\
     {\Large Heinrich-Heine University Düsseldorf}
