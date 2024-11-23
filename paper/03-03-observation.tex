@@ -1,0 +1,88 @@
+\section{Observations}
+
+In this section, we present the results of our experiments, analyze the performance metrics, and provide insights into the behavior of each algorithm across different instance types and machine counts.
+
+\subsection*{Presentation of Results}
+
+The performance metrics for each algorithm were collected and organized into tables and heatmaps for clear visualization. The primary metric, the Relative Performance Ratio (RPR), is presented for each combination of algorithm, instance generator, and number of machines.
+
+\begin{table}[H]
+    \centering
+    \caption{Relative Performance Ratio (RPR) of Algorithms}
+    \begin{tabular}{lcccc}
+        \hline
+        \textbf{Algorithm} & \textbf{Instance Type} & \textbf{$m=2$} & \textbf{$m=3$} & \textbf{$m=4$} \\
+        \hline
+        Greedy             & Increasing Weights     & 1.182          & 1.260          & 1.304          \\
+        Greedy             & Decreasing Weights     & 1.000          & 1.000          & 1.000          \\
+        Greedy             & Small Random Weights   & 1.199          & 1.273          & 1.316          \\
+% ... other data entries
+        \hline
+    \end{tabular}
+    \label{tab:rpr}
+\end{table}
+
+\subsection*{Analysis of Metrics}
+
+\subsubsection*{Relative Performance Ratio (Quality)}
+
+The RPR indicates how close an algorithm's performance is to the optimal solution. An RPR of $1$ means the algorithm achieved the optimal result.
+
+\begin{itemize}
+    \item \textbf{Greedy Algorithm}: Performs optimally on instances with decreasing weights but shows significant deviations on increasing weights and random instances.
+    \item \textbf{BSI Algorithm}: Consistently achieves RPRs close to $1$, especially on instances with increasing weights and high variance in job weights.
+    \item \textbf{$k$-Lookahead Algorithm}: Performance improves with larger $k$, reducing the RPR towards $1$ but at the cost of increased computational time.
+\end{itemize}
+
+\subsubsection*{Variation Coefficient}
+
+The variation coefficient measures the stability of an algorithm's performance across different random seeds.
+
+\begin{itemize}
+    \item \textbf{Greedy and BSI Algorithms}: Show low variation coefficients, indicating stable performance.
+    \item \textbf{$k$-Lookahead Algorithm}: Higher variation, particularly for small $k$, suggesting sensitivity to specific instances.
+\end{itemize}
+
+\subsubsection*{Scalability}
+
+As the number of machines increases:
+
+\begin{itemize}
+    \item \textbf{Greedy Algorithm}: Slight improvement in RPR but remains suboptimal on certain instances.
+    \item \textbf{BSI Algorithm}: RPR approaches $1$, especially for instances with high variance in weights.
+    \item \textbf{$k$-Lookahead Algorithm}: Performance continues to improve with more machines and larger $k$.
+\end{itemize}
+
+\subsection*{Instance Type Insights}
+
+\subsubsection*{Decreasing Weights}
+
+All algorithms perform optimally on decreasing weight instances due to the predictable ordering, which aligns well with local precedence constraints.
+
+\subsubsection*{Increasing Weights}
+
+Algorithms that effectively manage heavier jobs early (e.g., BSI and Heavy First) perform better, as they mitigate the impact of large weights accumulating later in the schedule.
+
+\subsubsection*{Random Weights}
+
+Performance varies across algorithms:
+
+\begin{itemize}
+    \item \textbf{Greedy Algorithm}: Less effective due to the lack of consideration for weight distribution.
+    \item \textbf{BSI Algorithm}: Performs better by balancing heavy and light jobs.
+    \item \textbf{$k$-Lookahead Algorithm}: Improved performance with higher $k$, but computationally intensive.
+\end{itemize}
+
+\subsection*{Comparative Analysis}
+
+When comparing algorithms:
+
+\begin{itemize}
+    \item \textbf{BSI vs. Greedy}: BSI consistently outperforms Greedy on instances with high variance in weights.
+    \item \textbf{$k$-Lookahead vs. Greedy}: $k$-Lookahead provides better results than Greedy, especially as $k$ increases.
+    \item \textbf{Heavy First}: Performs similarly to BSI on certain instances but may be less effective when not combined with balancing strategies.
+\end{itemize}
+
+\subsection*{Unexpected Findings}
+
+An interesting observation is that the BSI algorithm's computational time decreases as the number of machines increases. Initially surprising, this can be attributed to the reduced number of iterations needed to balance workloads when more machines are available.
