@@ -3,40 +3,34 @@ from algrotihms import *
 from computer import compute_solutions
 
 import xarray as xr
-import numpy as np
 
 import log
 import logging
 
 log.configure()
 
-kebab = lambda s: s.replace(' ', '-').lower()
 
-
-def precompute(algorithm, n=150, ms=range(2, 5), seeds=range(10)):
-    file_name = f"precomputed/{kebab(algorithm.name)}"
+def precompute(algorithms, n=150, ms=range(1, 7), seeds=range(10)):
+    file_name = "precomputed"
     nc_file = file_name + ".nc"
     csv_file = file_name + ".csv"
 
-    res = np.array(compute_solutions(algorithm, n, ms, seeds), object)
-    generator_names = res[:, 0].astype(str)
+    res = []
 
-    data = np.array(res[:, 1:].tolist())  # axes: gen, m, seed
-    data = data.transpose(1, 0, 2)  # axes: m, gen, seed
-    data = np.expand_dims(data, axis=0)  # axes: n, m, gen, seed
+    for algorithm in algorithms:
+        logging.info("Compute " + algorithm.name)
+        solutions = compute_solutions(algorithm, n, ms, seeds)
+        res += [solutions.expand_dims(algorithm=[algorithm.name], axis=0)]
 
-    new_da = xr.DataArray(data,
-                          coords=[[n], ms, generator_names, seeds],
-                          dims=['n', 'm', 'Generator', 'Seed'])
+    da = xr.combine_by_coords(res)
 
     try:
-        with xr.open_dataarray(nc_file) as curr_da:
-            da = xr.combine_by_coords([curr_da, new_da])
+        with xr.open_dataarray(nc_file) as full_data:
+            da = xr.concat([full_data, da], dim='algorithm').sortby('algorithm')
             logging.info("Found previous data and merged")
     except FileNotFoundError:
-        da = new_da
+        pass
     except Exception as e:
-        da = new_da
         nc_file = nc_file.replace(".nc", "-unmerged.nc")
 
         logging.warning(e)
@@ -51,4 +45,15 @@ def precompute(algorithm, n=150, ms=range(2, 5), seeds=range(10)):
     df.to_csv(csv_file)
 
 
-if __name__ == "__main__": precompute(BalancedSequentialInsert())
+if __name__ == "__main__":
+    all = [
+        DP_DICT(),
+        LeastLoaded(),
+        HeavyFirst(),
+        Lookahead(5),
+        Lookahead(15),
+        SimpleSortAndSplit(),
+        BalancedSequentialInsert()
+    ]
+
+    precompute(all)
