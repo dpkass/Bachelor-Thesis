@@ -19,5 +19,5 @@ def generate(n=150, seeds=range(10)):
 
     data = np.array([[g(n, seed) for seed in seeds] for g in gs], dtype=object)
     return xr.DataArray(data,
-                        coords={'Generator': generator_names, 'Seed': seeds},
-                        dims=['Generator', 'Seed', 'a']).astype(dtype)
+                        coords={'generator': generator_names, 'seed': seeds},
+                        dims=['generator', 'seed', 'a']).astype(dtype)

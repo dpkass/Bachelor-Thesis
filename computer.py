@@ -22,13 +22,13 @@ def compute_single(instance, m, algo):
     """
     algo_name = algo.name
     logger.debug(f"a={instance}")
-    logger.info(f"Calculate γ({algo_name}, m:{m}, a).")
+    logger.debug(f"Calculate γ({algo_name}, m:{m}, a).")
 
     start = time.perf_counter()
     res = algo.fit_transform(m, instance)
     end = time.perf_counter()
 
-    logger.info(f"γ({algo_name}, m:{m}, a) = {res}. Took {round(end - start, 3)} s")
+    logger.debug(f"γ({algo_name}, m:{m}, a) = {res}. Took {round(end - start, 3)} s")
 
     return res
 

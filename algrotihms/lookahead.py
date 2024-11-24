@@ -13,7 +13,7 @@ class Lookahead(DP):
     def __init__(self, k):
         super(Lookahead, self).__init__()
         self.k = k
-        self.__class__.name = f"Lookahead {k}"
+        self.name = f"Lookahead {k}"
 
     def fit(self, n, m):
         self.n, self.m = n, m

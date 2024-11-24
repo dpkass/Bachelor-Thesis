@@ -8,7 +8,7 @@ class DP_DICT(DP):
     DP with dict. Less Space intensive, but a minimally higher complexity.
     """
 
-    name = "Dictionary DP"
+    name = "DP"
 
     def fit(self, n, m):
         self.n, self.m = n, m
