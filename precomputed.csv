@@ -1,0 +1,2101 @@
+algorithm,generator,m,seed,0
+Balanced Sequential Insert,Constant,2,0,5700.0
+Balanced Sequential Insert,Constant,2,1,5700.0
+Balanced Sequential Insert,Constant,2,2,5700.0
+Balanced Sequential Insert,Constant,2,3,5700.0
+Balanced Sequential Insert,Constant,2,4,5700.0
+Balanced Sequential Insert,Constant,2,5,5700.0
+Balanced Sequential Insert,Constant,2,6,5700.0
+Balanced Sequential Insert,Constant,2,7,5700.0
+Balanced Sequential Insert,Constant,2,8,5700.0
+Balanced Sequential Insert,Constant,2,9,5700.0
+Balanced Sequential Insert,Constant,3,0,3825.0
+Balanced Sequential Insert,Constant,3,1,3825.0
+Balanced Sequential Insert,Constant,3,2,3825.0
+Balanced Sequential Insert,Constant,3,3,3825.0
+Balanced Sequential Insert,Constant,3,4,3825.0
+Balanced Sequential Insert,Constant,3,5,3825.0
+Balanced Sequential Insert,Constant,3,6,3825.0
+Balanced Sequential Insert,Constant,3,7,3825.0
+Balanced Sequential Insert,Constant,3,8,3825.0
+Balanced Sequential Insert,Constant,3,9,3825.0
+Balanced Sequential Insert,Constant,4,0,2889.0
+Balanced Sequential Insert,Constant,4,1,2889.0
+Balanced Sequential Insert,Constant,4,2,2889.0
+Balanced Sequential Insert,Constant,4,3,2889.0
+Balanced Sequential Insert,Constant,4,4,2889.0
+Balanced Sequential Insert,Constant,4,5,2889.0
+Balanced Sequential Insert,Constant,4,6,2889.0
+Balanced Sequential Insert,Constant,4,7,2889.0
+Balanced Sequential Insert,Constant,4,8,2889.0
+Balanced Sequential Insert,Constant,4,9,2889.0
+Balanced Sequential Insert,+1 Increasing,2,0,484795.0
+Balanced Sequential Insert,+1 Increasing,2,1,484795.0
+Balanced Sequential Insert,+1 Increasing,2,2,484795.0
+Balanced Sequential Insert,+1 Increasing,2,3,484795.0
+Balanced Sequential Insert,+1 Increasing,2,4,484795.0
+Balanced Sequential Insert,+1 Increasing,2,5,484795.0
+Balanced Sequential Insert,+1 Increasing,2,6,484795.0
+Balanced Sequential Insert,+1 Increasing,2,7,484795.0
+Balanced Sequential Insert,+1 Increasing,2,8,484795.0
+Balanced Sequential Insert,+1 Increasing,2,9,484795.0
+Balanced Sequential Insert,+1 Increasing,3,0,304889.0
+Balanced Sequential Insert,+1 Increasing,3,1,304889.0
+Balanced Sequential Insert,+1 Increasing,3,2,304889.0
+Balanced Sequential Insert,+1 Increasing,3,3,304889.0
+Balanced Sequential Insert,+1 Increasing,3,4,304889.0
+Balanced Sequential Insert,+1 Increasing,3,5,304889.0
+Balanced Sequential Insert,+1 Increasing,3,6,304889.0
+Balanced Sequential Insert,+1 Increasing,3,7,304889.0
+Balanced Sequential Insert,+1 Increasing,3,8,304889.0
+Balanced Sequential Insert,+1 Increasing,3,9,304889.0
+Balanced Sequential Insert,+1 Increasing,4,0,221987.0
+Balanced Sequential Insert,+1 Increasing,4,1,221987.0
+Balanced Sequential Insert,+1 Increasing,4,2,221987.0
+Balanced Sequential Insert,+1 Increasing,4,3,221987.0
+Balanced Sequential Insert,+1 Increasing,4,4,221987.0
+Balanced Sequential Insert,+1 Increasing,4,5,221987.0
+Balanced Sequential Insert,+1 Increasing,4,6,221987.0
+Balanced Sequential Insert,+1 Increasing,4,7,221987.0
+Balanced Sequential Insert,+1 Increasing,4,8,221987.0
+Balanced Sequential Insert,+1 Increasing,4,9,221987.0
+Balanced Sequential Insert,-1 Decreasing,2,0,321891.0
+Balanced Sequential Insert,-1 Decreasing,2,1,321891.0
+Balanced Sequential Insert,-1 Decreasing,2,2,321891.0
+Balanced Sequential Insert,-1 Decreasing,2,3,321891.0
+Balanced Sequential Insert,-1 Decreasing,2,4,321891.0
+Balanced Sequential Insert,-1 Decreasing,2,5,321891.0
+Balanced Sequential Insert,-1 Decreasing,2,6,321891.0
+Balanced Sequential Insert,-1 Decreasing,2,7,321891.0
+Balanced Sequential Insert,-1 Decreasing,2,8,321891.0
+Balanced Sequential Insert,-1 Decreasing,2,9,321891.0
+Balanced Sequential Insert,-1 Decreasing,3,0,226226.0
+Balanced Sequential Insert,-1 Decreasing,3,1,226226.0
+Balanced Sequential Insert,-1 Decreasing,3,2,226226.0
+Balanced Sequential Insert,-1 Decreasing,3,3,226226.0
+Balanced Sequential Insert,-1 Decreasing,3,4,226226.0
+Balanced Sequential Insert,-1 Decreasing,3,5,226226.0
+Balanced Sequential Insert,-1 Decreasing,3,6,226226.0
+Balanced Sequential Insert,-1 Decreasing,3,7,226226.0
+Balanced Sequential Insert,-1 Decreasing,3,8,226226.0
+Balanced Sequential Insert,-1 Decreasing,3,9,226226.0
+Balanced Sequential Insert,-1 Decreasing,4,0,175499.0
+Balanced Sequential Insert,-1 Decreasing,4,1,175499.0
+Balanced Sequential Insert,-1 Decreasing,4,2,175499.0
+Balanced Sequential Insert,-1 Decreasing,4,3,175499.0
+Balanced Sequential Insert,-1 Decreasing,4,4,175499.0
+Balanced Sequential Insert,-1 Decreasing,4,5,175499.0
+Balanced Sequential Insert,-1 Decreasing,4,6,175499.0
+Balanced Sequential Insert,-1 Decreasing,4,7,175499.0
+Balanced Sequential Insert,-1 Decreasing,4,8,175499.0
+Balanced Sequential Insert,-1 Decreasing,4,9,175499.0
+Balanced Sequential Insert,Random Small,2,0,259019.0
+Balanced Sequential Insert,Random Small,2,1,259570.0
+Balanced Sequential Insert,Random Small,2,2,302674.0
+Balanced Sequential Insert,Random Small,2,3,254710.0
+Balanced Sequential Insert,Random Small,2,4,265705.0
+Balanced Sequential Insert,Random Small,2,5,248853.0
+Balanced Sequential Insert,Random Small,2,6,289579.0
+Balanced Sequential Insert,Random Small,2,7,273226.0
+Balanced Sequential Insert,Random Small,2,8,278531.0
+Balanced Sequential Insert,Random Small,2,9,276417.0
+Balanced Sequential Insert,Random Small,3,0,169347.0
+Balanced Sequential Insert,Random Small,3,1,168632.0
+Balanced Sequential Insert,Random Small,3,2,197385.0
+Balanced Sequential Insert,Random Small,3,3,165717.0
+Balanced Sequential Insert,Random Small,3,4,178978.0
+Balanced Sequential Insert,Random Small,3,5,163497.0
+Balanced Sequential Insert,Random Small,3,6,187583.0
+Balanced Sequential Insert,Random Small,3,7,176598.0
+Balanced Sequential Insert,Random Small,3,8,187169.0
+Balanced Sequential Insert,Random Small,3,9,188853.0
+Balanced Sequential Insert,Random Small,4,0,127129.0
+Balanced Sequential Insert,Random Small,4,1,124377.0
+Balanced Sequential Insert,Random Small,4,2,149060.0
+Balanced Sequential Insert,Random Small,4,3,125711.0
+Balanced Sequential Insert,Random Small,4,4,134088.0
+Balanced Sequential Insert,Random Small,4,5,121021.0
+Balanced Sequential Insert,Random Small,4,6,141658.0
+Balanced Sequential Insert,Random Small,4,7,133784.0
+Balanced Sequential Insert,Random Small,4,8,139132.0
+Balanced Sequential Insert,Random Small,4,9,139940.0
+Balanced Sequential Insert,Random Small Span Large,2,0,570270806.0
+Balanced Sequential Insert,Random Small Span Large,2,1,570280759.0
+Balanced Sequential Insert,Random Small Span Large,2,2,570308034.0
+Balanced Sequential Insert,Random Small Span Large,2,3,570268776.0
+Balanced Sequential Insert,Random Small Span Large,2,4,570289587.0
+Balanced Sequential Insert,Random Small Span Large,2,5,570269743.0
+Balanced Sequential Insert,Random Small Span Large,2,6,570304150.0
+Balanced Sequential Insert,Random Small Span Large,2,7,570286406.0
+Balanced Sequential Insert,Random Small Span Large,2,8,570299104.0
+Balanced Sequential Insert,Random Small Span Large,2,9,570303462.0
+Balanced Sequential Insert,Random Small Span Large,3,0,382785457.0
+Balanced Sequential Insert,Random Small Span Large,3,1,382787564.0
+Balanced Sequential Insert,Random Small Span Large,3,2,382808500.0
+Balanced Sequential Insert,Random Small Span Large,3,3,382782907.0
+Balanced Sequential Insert,Random Small Span Large,3,4,382792594.0
+Balanced Sequential Insert,Random Small Span Large,3,5,382782773.0
+Balanced Sequential Insert,Random Small Span Large,3,6,382797558.0
+Balanced Sequential Insert,Random Small Span Large,3,7,382793120.0
+Balanced Sequential Insert,Random Small Span Large,3,8,382797167.0
+Balanced Sequential Insert,Random Small Span Large,3,9,382797730.0
+Balanced Sequential Insert,Random Small Span Large,4,0,288938957.0
+Balanced Sequential Insert,Random Small Span Large,4,1,288939656.0
+Balanced Sequential Insert,Random Small Span Large,4,2,288956977.0
+Balanced Sequential Insert,Random Small Span Large,4,3,288937508.0
+Balanced Sequential Insert,Random Small Span Large,4,4,288946970.0
+Balanced Sequential Insert,Random Small Span Large,4,5,288936352.0
+Balanced Sequential Insert,Random Small Span Large,4,6,288950254.0
+Balanced Sequential Insert,Random Small Span Large,4,7,288944624.0
+Balanced Sequential Insert,Random Small Span Large,4,8,288949182.0
+Balanced Sequential Insert,Random Small Span Large,4,9,288949968.0
+Balanced Sequential Insert,Random Large Span Large,2,0,2643899028.0
+Balanced Sequential Insert,Random Large Span Large,2,1,2608123451.0
+Balanced Sequential Insert,Random Large Span Large,2,2,2716037484.0
+Balanced Sequential Insert,Random Large Span Large,2,3,2505437213.0
+Balanced Sequential Insert,Random Large Span Large,2,4,2728768549.0
+Balanced Sequential Insert,Random Large Span Large,2,5,2735728133.0
+Balanced Sequential Insert,Random Large Span Large,2,6,2532985635.0
+Balanced Sequential Insert,Random Large Span Large,2,7,2767672798.0
+Balanced Sequential Insert,Random Large Span Large,2,8,2733994074.0
+Balanced Sequential Insert,Random Large Span Large,2,9,2819679185.0
+Balanced Sequential Insert,Random Large Span Large,3,0,1743743243.0
+Balanced Sequential Insert,Random Large Span Large,3,1,1721057469.0
+Balanced Sequential Insert,Random Large Span Large,3,2,1792584310.0
+Balanced Sequential Insert,Random Large Span Large,3,3,1683359827.0
+Balanced Sequential Insert,Random Large Span Large,3,4,1800634350.0
+Balanced Sequential Insert,Random Large Span Large,3,5,1790366491.0
+Balanced Sequential Insert,Random Large Span Large,3,6,1687807603.0
+Balanced Sequential Insert,Random Large Span Large,3,7,1868848477.0
+Balanced Sequential Insert,Random Large Span Large,3,8,1789317310.0
+Balanced Sequential Insert,Random Large Span Large,3,9,1883654172.0
+Balanced Sequential Insert,Random Large Span Large,4,0,1339282059.0
+Balanced Sequential Insert,Random Large Span Large,4,1,1313330136.0
+Balanced Sequential Insert,Random Large Span Large,4,2,1350169183.0
+Balanced Sequential Insert,Random Large Span Large,4,3,1239611825.0
+Balanced Sequential Insert,Random Large Span Large,4,4,1367717018.0
+Balanced Sequential Insert,Random Large Span Large,4,5,1344032765.0
+Balanced Sequential Insert,Random Large Span Large,4,6,1243890664.0
+Balanced Sequential Insert,Random Large Span Large,4,7,1374672740.0
+Balanced Sequential Insert,Random Large Span Large,4,8,1314765952.0
+Balanced Sequential Insert,Random Large Span Large,4,9,1380437887.0
+Balanced Sequential Insert,"Random Half Low, Half High",2,0,3092774.0
+Balanced Sequential Insert,"Random Half Low, Half High",2,1,3115523.0
+Balanced Sequential Insert,"Random Half Low, Half High",2,2,3140738.0
+Balanced Sequential Insert,"Random Half Low, Half High",2,3,3114996.0
+Balanced Sequential Insert,"Random Half Low, Half High",2,4,3134888.0
+Balanced Sequential Insert,"Random Half Low, Half High",2,5,3094923.0
+Balanced Sequential Insert,"Random Half Low, Half High",2,6,3128084.0
+Balanced Sequential Insert,"Random Half Low, Half High",2,7,3120694.0
+Balanced Sequential Insert,"Random Half Low, Half High",2,8,3127277.0
+Balanced Sequential Insert,"Random Half Low, Half High",2,9,3122959.0
+Balanced Sequential Insert,"Random Half Low, Half High",3,0,1715537.0
+Balanced Sequential Insert,"Random Half Low, Half High",3,1,1685138.0
+Balanced Sequential Insert,"Random Half Low, Half High",3,2,1751802.0
+Balanced Sequential Insert,"Random Half Low, Half High",3,3,1730671.0
+Balanced Sequential Insert,"Random Half Low, Half High",3,4,1678196.0
+Balanced Sequential Insert,"Random Half Low, Half High",3,5,1713467.0
+Balanced Sequential Insert,"Random Half Low, Half High",3,6,1739623.0
+Balanced Sequential Insert,"Random Half Low, Half High",3,7,1737844.0
+Balanced Sequential Insert,"Random Half Low, Half High",3,8,1750421.0
+Balanced Sequential Insert,"Random Half Low, Half High",3,9,1731771.0
+Balanced Sequential Insert,"Random Half Low, Half High",4,0,1093746.0
+Balanced Sequential Insert,"Random Half Low, Half High",4,1,1103241.0
+Balanced Sequential Insert,"Random Half Low, Half High",4,2,1123571.0
+Balanced Sequential Insert,"Random Half Low, Half High",4,3,1109311.0
+Balanced Sequential Insert,"Random Half Low, Half High",4,4,1135318.0
+Balanced Sequential Insert,"Random Half Low, Half High",4,5,1093115.0
+Balanced Sequential Insert,"Random Half Low, Half High",4,6,1112826.0
+Balanced Sequential Insert,"Random Half Low, Half High",4,7,1113527.0
+Balanced Sequential Insert,"Random Half Low, Half High",4,8,1125493.0
+Balanced Sequential Insert,"Random Half Low, Half High",4,9,1107244.0
+Balanced Sequential Insert,"Random Half High, Half Low",2,0,1653953.0
+Balanced Sequential Insert,"Random Half High, Half Low",2,1,1629161.0
+Balanced Sequential Insert,"Random Half High, Half Low",2,2,1678727.0
+Balanced Sequential Insert,"Random Half High, Half Low",2,3,1629413.0
+Balanced Sequential Insert,"Random Half High, Half Low",2,4,1663108.0
+Balanced Sequential Insert,"Random Half High, Half Low",2,5,1631147.0
+Balanced Sequential Insert,"Random Half High, Half Low",2,6,1661092.0
+Balanced Sequential Insert,"Random Half High, Half Low",2,7,1658162.0
+Balanced Sequential Insert,"Random Half High, Half Low",2,8,1673972.0
+Balanced Sequential Insert,"Random Half High, Half Low",2,9,1661673.0
+Balanced Sequential Insert,"Random Half High, Half Low",3,0,1176754.0
+Balanced Sequential Insert,"Random Half High, Half Low",3,1,1151969.0
+Balanced Sequential Insert,"Random Half High, Half Low",3,2,1193219.0
+Balanced Sequential Insert,"Random Half High, Half Low",3,3,1152977.0
+Balanced Sequential Insert,"Random Half High, Half Low",3,4,1177765.0
+Balanced Sequential Insert,"Random Half High, Half Low",3,5,1156053.0
+Balanced Sequential Insert,"Random Half High, Half Low",3,6,1180827.0
+Balanced Sequential Insert,"Random Half High, Half Low",3,7,1176890.0
+Balanced Sequential Insert,"Random Half High, Half Low",3,8,1189937.0
+Balanced Sequential Insert,"Random Half High, Half Low",3,9,1179724.0
+Balanced Sequential Insert,"Random Half High, Half Low",4,0,964605.0
+Balanced Sequential Insert,"Random Half High, Half Low",4,1,916137.0
+Balanced Sequential Insert,"Random Half High, Half Low",4,2,977589.0
+Balanced Sequential Insert,"Random Half High, Half Low",4,3,916036.0
+Balanced Sequential Insert,"Random Half High, Half Low",4,4,962999.0
+Balanced Sequential Insert,"Random Half High, Half Low",4,5,918127.0
+Balanced Sequential Insert,"Random Half High, Half Low",4,6,969027.0
+Balanced Sequential Insert,"Random Half High, Half Low",4,7,963108.0
+Balanced Sequential Insert,"Random Half High, Half Low",4,8,973352.0
+Balanced Sequential Insert,"Random Half High, Half Low",4,9,968747.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,2,0,344999015.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,2,1,349200799.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,2,2,312870007.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,2,3,309505223.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,2,4,343776114.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,2,5,301331121.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,2,6,283125186.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,2,7,339737505.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,2,8,305921404.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,2,9,326352976.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,3,0,219252647.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,3,1,221620701.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,3,2,197494698.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,3,3,193990209.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,3,4,217244371.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,3,5,190643032.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,3,6,175405694.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,3,7,213612961.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,3,8,192291324.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,3,9,206470842.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,4,0,158461935.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,4,1,160239942.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,4,2,144419660.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,4,3,140806675.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,4,4,158797276.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,4,5,139088761.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,4,6,128322728.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,4,7,154703606.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,4,8,139629776.0
+Balanced Sequential Insert,Random Non-Decreasing Large Span,4,9,150291682.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,2,0,231888090.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,2,1,233187746.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,2,2,216464274.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,2,3,201859826.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,2,4,237459912.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,2,5,201928967.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,2,6,179638267.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,2,7,224394945.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,2,8,201919996.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,2,9,221544359.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,3,0,162133817.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,3,1,163023721.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,3,2,152027835.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,3,3,142992480.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,3,4,166935553.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,3,5,142605307.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,3,6,127710761.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,3,7,157540368.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,3,8,141914040.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,3,9,154835747.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,4,0,125664153.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,4,1,126738392.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,4,2,118414567.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,4,3,111839070.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,4,4,129115689.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,4,5,110800467.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,4,6,99716825.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,4,7,122576229.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,4,8,110861847.0
+Balanced Sequential Insert,Random Non-Increasing Large Span,4,9,120256805.0
+DP,Constant,2,0,5700.0
+DP,Constant,2,1,5700.0
+DP,Constant,2,2,5700.0
+DP,Constant,2,3,5700.0
+DP,Constant,2,4,5700.0
+DP,Constant,2,5,5700.0
+DP,Constant,2,6,5700.0
+DP,Constant,2,7,5700.0
+DP,Constant,2,8,5700.0
+DP,Constant,2,9,5700.0
+DP,Constant,3,0,3825.0
+DP,Constant,3,1,3825.0
+DP,Constant,3,2,3825.0
+DP,Constant,3,3,3825.0
+DP,Constant,3,4,3825.0
+DP,Constant,3,5,3825.0
+DP,Constant,3,6,3825.0
+DP,Constant,3,7,3825.0
+DP,Constant,3,8,3825.0
+DP,Constant,3,9,3825.0
+DP,Constant,4,0,2888.0
+DP,Constant,4,1,2888.0
+DP,Constant,4,2,2888.0
+DP,Constant,4,3,2888.0
+DP,Constant,4,4,2888.0
+DP,Constant,4,5,2888.0
+DP,Constant,4,6,2888.0
+DP,Constant,4,7,2888.0
+DP,Constant,4,8,2888.0
+DP,Constant,4,9,2888.0
+DP,+1 Increasing,2,0,484036.0
+DP,+1 Increasing,2,1,484036.0
+DP,+1 Increasing,2,2,484036.0
+DP,+1 Increasing,2,3,484036.0
+DP,+1 Increasing,2,4,484036.0
+DP,+1 Increasing,2,5,484036.0
+DP,+1 Increasing,2,6,484036.0
+DP,+1 Increasing,2,7,484036.0
+DP,+1 Increasing,2,8,484036.0
+DP,+1 Increasing,2,9,484036.0
+DP,+1 Increasing,3,0,304468.0
+DP,+1 Increasing,3,1,304468.0
+DP,+1 Increasing,3,2,304468.0
+DP,+1 Increasing,3,3,304468.0
+DP,+1 Increasing,3,4,304468.0
+DP,+1 Increasing,3,5,304468.0
+DP,+1 Increasing,3,6,304468.0
+DP,+1 Increasing,3,7,304468.0
+DP,+1 Increasing,3,8,304468.0
+DP,+1 Increasing,3,9,304468.0
+DP,+1 Increasing,4,0,221958.0
+DP,+1 Increasing,4,1,221958.0
+DP,+1 Increasing,4,2,221958.0
+DP,+1 Increasing,4,3,221958.0
+DP,+1 Increasing,4,4,221958.0
+DP,+1 Increasing,4,5,221958.0
+DP,+1 Increasing,4,6,221958.0
+DP,+1 Increasing,4,7,221958.0
+DP,+1 Increasing,4,8,221958.0
+DP,+1 Increasing,4,9,221958.0
+DP,-1 Decreasing,2,0,289750.0
+DP,-1 Decreasing,2,1,289750.0
+DP,-1 Decreasing,2,2,289750.0
+DP,-1 Decreasing,2,3,289750.0
+DP,-1 Decreasing,2,4,289750.0
+DP,-1 Decreasing,2,5,289750.0
+DP,-1 Decreasing,2,6,289750.0
+DP,-1 Decreasing,2,7,289750.0
+DP,-1 Decreasing,2,8,289750.0
+DP,-1 Decreasing,2,9,289750.0
+DP,-1 Decreasing,3,0,195075.0
+DP,-1 Decreasing,3,1,195075.0
+DP,-1 Decreasing,3,2,195075.0
+DP,-1 Decreasing,3,3,195075.0
+DP,-1 Decreasing,3,4,195075.0
+DP,-1 Decreasing,3,5,195075.0
+DP,-1 Decreasing,3,6,195075.0
+DP,-1 Decreasing,3,7,195075.0
+DP,-1 Decreasing,3,8,195075.0
+DP,-1 Decreasing,3,9,195075.0
+DP,-1 Decreasing,4,0,147744.0
+DP,-1 Decreasing,4,1,147744.0
+DP,-1 Decreasing,4,2,147744.0
+DP,-1 Decreasing,4,3,147744.0
+DP,-1 Decreasing,4,4,147744.0
+DP,-1 Decreasing,4,5,147744.0
+DP,-1 Decreasing,4,6,147744.0
+DP,-1 Decreasing,4,7,147744.0
+DP,-1 Decreasing,4,8,147744.0
+DP,-1 Decreasing,4,9,147744.0
+DP,Random Small,2,0,222600.0
+DP,Random Small,2,1,234910.0
+DP,Random Small,2,2,267736.0
+DP,Random Small,2,3,231116.0
+DP,Random Small,2,4,243722.0
+DP,Random Small,2,5,216650.0
+DP,Random Small,2,6,254748.0
+DP,Random Small,2,7,239155.0
+DP,Random Small,2,8,243500.0
+DP,Random Small,2,9,247185.0
+DP,Random Small,3,0,140383.0
+DP,Random Small,3,1,146760.0
+DP,Random Small,3,2,171500.0
+DP,Random Small,3,3,145847.0
+DP,Random Small,3,4,154454.0
+DP,Random Small,3,5,135469.0
+DP,Random Small,3,6,162837.0
+DP,Random Small,3,7,152439.0
+DP,Random Small,3,8,155093.0
+DP,Random Small,3,9,157217.0
+DP,Random Small,4,0,103119.0
+DP,Random Small,4,1,105861.0
+DP,Random Small,4,2,126426.0
+DP,Random Small,4,3,106273.0
+DP,Random Small,4,4,113787.0
+DP,Random Small,4,5,99098.0
+DP,Random Small,4,6,118251.0
+DP,Random Small,4,7,111366.0
+DP,Random Small,4,8,113251.0
+DP,Random Small,4,9,115413.0
+DP,Random Small Span Large,2,0,570228454.0
+DP,Random Small Span Large,2,1,570245038.0
+DP,Random Small Span Large,2,2,570273789.0
+DP,Random Small Span Large,2,3,570236061.0
+DP,Random Small Span Large,2,4,570247414.0
+DP,Random Small Span Large,2,5,570223092.0
+DP,Random Small Span Large,2,6,570261577.0
+DP,Random Small Span Large,2,7,570245698.0
+DP,Random Small Span Large,2,8,570249426.0
+DP,Random Small Span Large,2,9,570256145.0
+DP,Random Small Span Large,3,0,382644605.0
+DP,Random Small Span Large,3,1,382653731.0
+DP,Random Small Span Large,3,2,382674768.0
+DP,Random Small Span Large,3,3,382649457.0
+DP,Random Small Span Large,3,4,382657109.0
+DP,Random Small Span Large,3,5,382639930.0
+DP,Random Small Span Large,3,6,382665881.0
+DP,Random Small Span Large,3,7,382658256.0
+DP,Random Small Span Large,3,8,382658559.0
+DP,Random Small Span Large,3,9,382661267.0
+DP,Random Small Span Large,4,0,288905508.0
+DP,Random Small Span Large,4,1,288910830.0
+DP,Random Small Span Large,4,2,288928339.0
+DP,Random Small Span Large,4,3,288908427.0
+DP,Random Small Span Large,4,4,288916151.0
+DP,Random Small Span Large,4,5,288901384.0
+DP,Random Small Span Large,4,6,288920601.0
+DP,Random Small Span Large,4,7,288914585.0
+DP,Random Small Span Large,4,8,288915833.0
+DP,Random Small Span Large,4,9,288918183.0
+DP,Random Large Span Large,2,0,2330061083.0
+DP,Random Large Span Large,2,1,2381002738.0
+DP,Random Large Span Large,2,2,2470318545.0
+DP,Random Large Span Large,2,3,2219259169.0
+DP,Random Large Span Large,2,4,2357797815.0
+DP,Random Large Span Large,2,5,2424267549.0
+DP,Random Large Span Large,2,6,2229932561.0
+DP,Random Large Span Large,2,7,2495481175.0
+DP,Random Large Span Large,2,8,2453531745.0
+DP,Random Large Span Large,2,9,2562810229.0
+DP,Random Large Span Large,3,0,1477718852.0
+DP,Random Large Span Large,3,1,1493598884.0
+DP,Random Large Span Large,3,2,1561989831.0
+DP,Random Large Span Large,3,3,1377257113.0
+DP,Random Large Span Large,3,4,1496864590.0
+DP,Random Large Span Large,3,5,1529076558.0
+DP,Random Large Span Large,3,6,1396338494.0
+DP,Random Large Span Large,3,7,1569529230.0
+DP,Random Large Span Large,3,8,1540500441.0
+DP,Random Large Span Large,3,9,1613730260.0
+DP,Random Large Span Large,4,0,1091593321.0
+DP,Random Large Span Large,4,1,1089678251.0
+DP,Random Large Span Large,4,2,1147957900.0
+DP,Random Large Span Large,4,3,1005354401.0
+DP,Random Large Span Large,4,4,1102971298.0
+DP,Random Large Span Large,4,5,1128663987.0
+DP,Random Large Span Large,4,6,1025311316.0
+DP,Random Large Span Large,4,7,1150155769.0
+DP,Random Large Span Large,4,8,1122458653.0
+DP,Random Large Span Large,4,9,1183514792.0
+DP,"Random Half Low, Half High",2,0,2821420.0
+DP,"Random Half Low, Half High",2,1,2846123.0
+DP,"Random Half Low, Half High",2,2,2864801.0
+DP,"Random Half Low, Half High",2,3,2835661.0
+DP,"Random Half Low, Half High",2,4,2862816.0
+DP,"Random Half Low, Half High",2,5,2822056.0
+DP,"Random Half Low, Half High",2,6,2855941.0
+DP,"Random Half Low, Half High",2,7,2849715.0
+DP,"Random Half Low, Half High",2,8,2860214.0
+DP,"Random Half Low, Half High",2,9,2847689.0
+DP,"Random Half Low, Half High",3,0,1481941.0
+DP,"Random Half Low, Half High",3,1,1496610.0
+DP,"Random Half Low, Half High",3,2,1516422.0
+DP,"Random Half Low, Half High",3,3,1497863.0
+DP,"Random Half Low, Half High",3,4,1524054.0
+DP,"Random Half Low, Half High",3,5,1482258.0
+DP,"Random Half Low, Half High",3,6,1506280.0
+DP,"Random Half Low, Half High",3,7,1505593.0
+DP,"Random Half Low, Half High",3,8,1517498.0
+DP,"Random Half Low, Half High",3,9,1499313.0
+DP,"Random Half Low, Half High",4,0,1038981.0
+DP,"Random Half Low, Half High",4,1,1049936.0
+DP,"Random Half Low, Half High",4,2,1070013.0
+DP,"Random Half Low, Half High",4,3,1055027.0
+DP,"Random Half Low, Half High",4,4,1081459.0
+DP,"Random Half Low, Half High",4,5,1038333.0
+DP,"Random Half Low, Half High",4,6,1059794.0
+DP,"Random Half Low, Half High",4,7,1060321.0
+DP,"Random Half Low, Half High",4,8,1073005.0
+DP,"Random Half Low, Half High",4,9,1052687.0
+DP,"Random Half High, Half Low",2,0,1555650.0
+DP,"Random Half High, Half Low",2,1,1537823.0
+DP,"Random Half High, Half Low",2,2,1586052.0
+DP,"Random Half High, Half Low",2,3,1545950.0
+DP,"Random Half High, Half Low",2,4,1575763.0
+DP,"Random Half High, Half Low",2,5,1538826.0
+DP,"Random Half High, Half Low",2,6,1568530.0
+DP,"Random Half High, Half Low",2,7,1565600.0
+DP,"Random Half High, Half Low",2,8,1576928.0
+DP,"Random Half High, Half Low",2,9,1564257.0
+DP,"Random Half High, Half Low",3,0,1044443.0
+DP,"Random Half High, Half Low",3,1,1033617.0
+DP,"Random Half High, Half Low",3,2,1064790.0
+DP,"Random Half High, Half Low",3,3,1038274.0
+DP,"Random Half High, Half Low",3,4,1059627.0
+DP,"Random Half High, Half Low",3,5,1032992.0
+DP,"Random Half High, Half Low",3,6,1052955.0
+DP,"Random Half High, Half Low",3,7,1051436.0
+DP,"Random Half High, Half Low",3,8,1059845.0
+DP,"Random Half High, Half Low",3,9,1050316.0
+DP,"Random Half High, Half Low",4,0,790793.0
+DP,"Random Half High, Half Low",4,1,782451.0
+DP,"Random Half High, Half Low",4,2,805665.0
+DP,"Random Half High, Half Low",4,3,786393.0
+DP,"Random Half High, Half Low",4,4,802518.0
+DP,"Random Half High, Half Low",4,5,781937.0
+DP,"Random Half High, Half Low",4,6,797421.0
+DP,"Random Half High, Half Low",4,7,795727.0
+DP,"Random Half High, Half Low",4,8,802481.0
+DP,"Random Half High, Half Low",4,9,795101.0
+DP,Random Non-Decreasing Large Span,2,0,344179169.0
+DP,Random Non-Decreasing Large Span,2,1,348542395.0
+DP,Random Non-Decreasing Large Span,2,2,312790349.0
+DP,Random Non-Decreasing Large Span,2,3,308056014.0
+DP,Random Non-Decreasing Large Span,2,4,342803504.0
+DP,Random Non-Decreasing Large Span,2,5,300141969.0
+DP,Random Non-Decreasing Large Span,2,6,282262271.0
+DP,Random Non-Decreasing Large Span,2,7,339166854.0
+DP,Random Non-Decreasing Large Span,2,8,305762595.0
+DP,Random Non-Decreasing Large Span,2,9,326244076.0
+DP,Random Non-Decreasing Large Span,3,0,219115703.0
+DP,Random Non-Decreasing Large Span,3,1,221216050.0
+DP,Random Non-Decreasing Large Span,3,2,197235977.0
+DP,Random Non-Decreasing Large Span,3,3,193471766.0
+DP,Random Non-Decreasing Large Span,3,4,216985140.0
+DP,Random Non-Decreasing Large Span,3,5,190576013.0
+DP,Random Non-Decreasing Large Span,3,6,175362291.0
+DP,Random Non-Decreasing Large Span,3,7,213387629.0
+DP,Random Non-Decreasing Large Span,3,8,191253421.0
+DP,Random Non-Decreasing Large Span,3,9,205970301.0
+DP,Random Non-Decreasing Large Span,4,0,158418565.0
+DP,Random Non-Decreasing Large Span,4,1,160044848.0
+DP,Random Non-Decreasing Large Span,4,2,144224666.0
+DP,Random Non-Decreasing Large Span,4,3,140706647.0
+DP,Random Non-Decreasing Large Span,4,4,158635316.0
+DP,Random Non-Decreasing Large Span,4,5,138950408.0
+DP,Random Non-Decreasing Large Span,4,6,128240041.0
+DP,Random Non-Decreasing Large Span,4,7,153895706.0
+DP,Random Non-Decreasing Large Span,4,8,139568484.0
+DP,Random Non-Decreasing Large Span,4,9,150242495.0
+DP,Random Non-Increasing Large Span,2,0,210783522.0
+DP,Random Non-Increasing Large Span,2,1,212341399.0
+DP,Random Non-Increasing Large Span,2,2,193270368.0
+DP,Random Non-Increasing Large Span,2,3,182968329.0
+DP,Random Non-Increasing Large Span,2,4,214867995.0
+DP,Random Non-Increasing Large Span,2,5,181458406.0
+DP,Random Non-Increasing Large Span,2,6,158943632.0
+DP,Random Non-Increasing Large Span,2,7,204831461.0
+DP,Random Non-Increasing Large Span,2,8,180281077.0
+DP,Random Non-Increasing Large Span,2,9,197009616.0
+DP,Random Non-Increasing Large Span,3,0,141886299.0
+DP,Random Non-Increasing Large Span,3,1,142931433.0
+DP,Random Non-Increasing Large Span,3,2,130087825.0
+DP,Random Non-Increasing Large Span,3,3,123194878.0
+DP,Random Non-Increasing Large Span,3,4,144608858.0
+DP,Random Non-Increasing Large Span,3,5,122163683.0
+DP,Random Non-Increasing Large Span,3,6,107079749.0
+DP,Random Non-Increasing Large Span,3,7,137878571.0
+DP,Random Non-Increasing Large Span,3,8,121389830.0
+DP,Random Non-Increasing Large Span,3,9,132637304.0
+DP,Random Non-Increasing Large Span,4,0,107442412.0
+DP,Random Non-Increasing Large Span,4,1,108234744.0
+DP,Random Non-Increasing Large Span,4,2,98498923.0
+DP,Random Non-Increasing Large Span,4,3,93313379.0
+DP,Random Non-Increasing Large Span,4,4,109481369.0
+DP,Random Non-Increasing Large Span,4,5,92515486.0
+DP,Random Non-Increasing Large Span,4,6,81150945.0
+DP,Random Non-Increasing Large Span,4,7,104406449.0
+DP,Random Non-Increasing Large Span,4,8,91951248.0
+DP,Random Non-Increasing Large Span,4,9,100455636.0
+Heavy First,Constant,2,0,5700.0
+Heavy First,Constant,2,1,5700.0
+Heavy First,Constant,2,2,5700.0
+Heavy First,Constant,2,3,5700.0
+Heavy First,Constant,2,4,5700.0
+Heavy First,Constant,2,5,5700.0
+Heavy First,Constant,2,6,5700.0
+Heavy First,Constant,2,7,5700.0
+Heavy First,Constant,2,8,5700.0
+Heavy First,Constant,2,9,5700.0
+Heavy First,Constant,3,0,3825.0
+Heavy First,Constant,3,1,3825.0
+Heavy First,Constant,3,2,3825.0
+Heavy First,Constant,3,3,3825.0
+Heavy First,Constant,3,4,3825.0
+Heavy First,Constant,3,5,3825.0
+Heavy First,Constant,3,6,3825.0
+Heavy First,Constant,3,7,3825.0
+Heavy First,Constant,3,8,3825.0
+Heavy First,Constant,3,9,3825.0
+Heavy First,Constant,4,0,2888.0
+Heavy First,Constant,4,1,2888.0
+Heavy First,Constant,4,2,2888.0
+Heavy First,Constant,4,3,2888.0
+Heavy First,Constant,4,4,2888.0
+Heavy First,Constant,4,5,2888.0
+Heavy First,Constant,4,6,2888.0
+Heavy First,Constant,4,7,2888.0
+Heavy First,Constant,4,8,2888.0
+Heavy First,Constant,4,9,2888.0
+Heavy First,+1 Increasing,2,0,570950.0
+Heavy First,+1 Increasing,2,1,570950.0
+Heavy First,+1 Increasing,2,2,570950.0
+Heavy First,+1 Increasing,2,3,570950.0
+Heavy First,+1 Increasing,2,4,570950.0
+Heavy First,+1 Increasing,2,5,570950.0
+Heavy First,+1 Increasing,2,6,570950.0
+Heavy First,+1 Increasing,2,7,570950.0
+Heavy First,+1 Increasing,2,8,570950.0
+Heavy First,+1 Increasing,2,9,570950.0
+Heavy First,+1 Increasing,3,0,382500.0
+Heavy First,+1 Increasing,3,1,382500.0
+Heavy First,+1 Increasing,3,2,382500.0
+Heavy First,+1 Increasing,3,3,382500.0
+Heavy First,+1 Increasing,3,4,382500.0
+Heavy First,+1 Increasing,3,5,382500.0
+Heavy First,+1 Increasing,3,6,382500.0
+Heavy First,+1 Increasing,3,7,382500.0
+Heavy First,+1 Increasing,3,8,382500.0
+Heavy First,+1 Increasing,3,9,382500.0
+Heavy First,+1 Increasing,4,0,288268.0
+Heavy First,+1 Increasing,4,1,288268.0
+Heavy First,+1 Increasing,4,2,288268.0
+Heavy First,+1 Increasing,4,3,288268.0
+Heavy First,+1 Increasing,4,4,288268.0
+Heavy First,+1 Increasing,4,5,288268.0
+Heavy First,+1 Increasing,4,6,288268.0
+Heavy First,+1 Increasing,4,7,288268.0
+Heavy First,+1 Increasing,4,8,288268.0
+Heavy First,+1 Increasing,4,9,288268.0
+Heavy First,-1 Decreasing,2,0,289750.0
+Heavy First,-1 Decreasing,2,1,289750.0
+Heavy First,-1 Decreasing,2,2,289750.0
+Heavy First,-1 Decreasing,2,3,289750.0
+Heavy First,-1 Decreasing,2,4,289750.0
+Heavy First,-1 Decreasing,2,5,289750.0
+Heavy First,-1 Decreasing,2,6,289750.0
+Heavy First,-1 Decreasing,2,7,289750.0
+Heavy First,-1 Decreasing,2,8,289750.0
+Heavy First,-1 Decreasing,2,9,289750.0
+Heavy First,-1 Decreasing,3,0,195075.0
+Heavy First,-1 Decreasing,3,1,195075.0
+Heavy First,-1 Decreasing,3,2,195075.0
+Heavy First,-1 Decreasing,3,3,195075.0
+Heavy First,-1 Decreasing,3,4,195075.0
+Heavy First,-1 Decreasing,3,5,195075.0
+Heavy First,-1 Decreasing,3,6,195075.0
+Heavy First,-1 Decreasing,3,7,195075.0
+Heavy First,-1 Decreasing,3,8,195075.0
+Heavy First,-1 Decreasing,3,9,195075.0
+Heavy First,-1 Decreasing,4,0,147744.0
+Heavy First,-1 Decreasing,4,1,147744.0
+Heavy First,-1 Decreasing,4,2,147744.0
+Heavy First,-1 Decreasing,4,3,147744.0
+Heavy First,-1 Decreasing,4,4,147744.0
+Heavy First,-1 Decreasing,4,5,147744.0
+Heavy First,-1 Decreasing,4,6,147744.0
+Heavy First,-1 Decreasing,4,7,147744.0
+Heavy First,-1 Decreasing,4,8,147744.0
+Heavy First,-1 Decreasing,4,9,147744.0
+Heavy First,Random Small,2,0,263545.0
+Heavy First,Random Small,2,1,275243.0
+Heavy First,Random Small,2,2,307141.0
+Heavy First,Random Small,2,3,264551.0
+Heavy First,Random Small,2,4,274183.0
+Heavy First,Random Small,2,5,260684.0
+Heavy First,Random Small,2,6,286819.0
+Heavy First,Random Small,2,7,277045.0
+Heavy First,Random Small,2,8,278416.0
+Heavy First,Random Small,2,9,290253.0
+Heavy First,Random Small,3,0,169450.0
+Heavy First,Random Small,3,1,181402.0
+Heavy First,Random Small,3,2,200707.0
+Heavy First,Random Small,3,3,175559.0
+Heavy First,Random Small,3,4,182789.0
+Heavy First,Random Small,3,5,174009.0
+Heavy First,Random Small,3,6,192027.0
+Heavy First,Random Small,3,7,184344.0
+Heavy First,Random Small,3,8,185321.0
+Heavy First,Random Small,3,9,190928.0
+Heavy First,Random Small,4,0,126440.0
+Heavy First,Random Small,4,1,134773.0
+Heavy First,Random Small,4,2,150455.0
+Heavy First,Random Small,4,3,131876.0
+Heavy First,Random Small,4,4,139403.0
+Heavy First,Random Small,4,5,129414.0
+Heavy First,Random Small,4,6,143128.0
+Heavy First,Random Small,4,7,133005.0
+Heavy First,Random Small,4,8,139380.0
+Heavy First,Random Small,4,9,142512.0
+Heavy First,Random Small Span Large,2,0,570265974.0
+Heavy First,Random Small Span Large,2,1,570280911.0
+Heavy First,Random Small Span Large,2,2,570309214.0
+Heavy First,Random Small Span Large,2,3,570267322.0
+Heavy First,Random Small Span Large,2,4,570279756.0
+Heavy First,Random Small Span Large,2,5,570264960.0
+Heavy First,Random Small Span Large,2,6,570298504.0
+Heavy First,Random Small Span Large,2,7,570282996.0
+Heavy First,Random Small Span Large,2,8,570285339.0
+Heavy First,Random Small Span Large,2,9,570297026.0
+Heavy First,Random Small Span Large,3,0,382677063.0
+Heavy First,Random Small Span Large,3,1,382686350.0
+Heavy First,Random Small Span Large,3,2,382705984.0
+Heavy First,Random Small Span Large,3,3,382680091.0
+Heavy First,Random Small Span Large,3,4,382687357.0
+Heavy First,Random Small Span Large,3,5,382676795.0
+Heavy First,Random Small Span Large,3,6,382696072.0
+Heavy First,Random Small Span Large,3,7,382688361.0
+Heavy First,Random Small Span Large,3,8,382689151.0
+Heavy First,Random Small Span Large,3,9,382699386.0
+Heavy First,Random Small Span Large,4,0,288931841.0
+Heavy First,Random Small Span Large,4,1,288940950.0
+Heavy First,Random Small Span Large,4,2,288955881.0
+Heavy First,Random Small Span Large,4,3,288935311.0
+Heavy First,Random Small Span Large,4,4,288940405.0
+Heavy First,Random Small Span Large,4,5,288932926.0
+Heavy First,Random Small Span Large,4,6,288948797.0
+Heavy First,Random Small Span Large,4,7,288940404.0
+Heavy First,Random Small Span Large,4,8,288942649.0
+Heavy First,Random Small Span Large,4,9,288947543.0
+Heavy First,Random Large Span Large,2,0,2688949973.0
+Heavy First,Random Large Span Large,2,1,2733022178.0
+Heavy First,Random Large Span Large,2,2,2826529375.0
+Heavy First,Random Large Span Large,2,3,2624126066.0
+Heavy First,Random Large Span Large,2,4,2706389593.0
+Heavy First,Random Large Span Large,2,5,2803546583.0
+Heavy First,Random Large Span Large,2,6,2562580936.0
+Heavy First,Random Large Span Large,2,7,2882761936.0
+Heavy First,Random Large Span Large,2,8,2818591769.0
+Heavy First,Random Large Span Large,2,9,2939269878.0
+Heavy First,Random Large Span Large,3,0,1766875996.0
+Heavy First,Random Large Span Large,3,1,1832072970.0
+Heavy First,Random Large Span Large,3,2,1888736595.0
+Heavy First,Random Large Span Large,3,3,1725017497.0
+Heavy First,Random Large Span Large,3,4,1758037786.0
+Heavy First,Random Large Span Large,3,5,1847011573.0
+Heavy First,Random Large Span Large,3,6,1720746845.0
+Heavy First,Random Large Span Large,3,7,1870333447.0
+Heavy First,Random Large Span Large,3,8,1875548179.0
+Heavy First,Random Large Span Large,3,9,1958764255.0
+Heavy First,Random Large Span Large,4,0,1333464582.0
+Heavy First,Random Large Span Large,4,1,1371258319.0
+Heavy First,Random Large Span Large,4,2,1385028382.0
+Heavy First,Random Large Span Large,4,3,1296877157.0
+Heavy First,Random Large Span Large,4,4,1340748986.0
+Heavy First,Random Large Span Large,4,5,1390015577.0
+Heavy First,Random Large Span Large,4,6,1232834480.0
+Heavy First,Random Large Span Large,4,7,1409385456.0
+Heavy First,Random Large Span Large,4,8,1402909946.0
+Heavy First,Random Large Span Large,4,9,1442503176.0
+Heavy First,"Random Half Low, Half High",2,0,4090253.0
+Heavy First,"Random Half Low, Half High",2,1,4107528.0
+Heavy First,"Random Half Low, Half High",2,2,4133677.0
+Heavy First,"Random Half Low, Half High",2,3,4093769.0
+Heavy First,"Random Half Low, Half High",2,4,4107124.0
+Heavy First,"Random Half Low, Half High",2,5,4093306.0
+Heavy First,"Random Half Low, Half High",2,6,4121772.0
+Heavy First,"Random Half Low, Half High",2,7,4109486.0
+Heavy First,"Random Half Low, Half High",2,8,4108717.0
+Heavy First,"Random Half Low, Half High",2,9,4120932.0
+Heavy First,"Random Half Low, Half High",3,0,2742316.0
+Heavy First,"Random Half Low, Half High",3,1,2755303.0
+Heavy First,"Random Half Low, Half High",3,2,2770934.0
+Heavy First,"Random Half Low, Half High",3,3,2743542.0
+Heavy First,"Random Half Low, Half High",3,4,2751445.0
+Heavy First,"Random Half Low, Half High",3,5,2742846.0
+Heavy First,"Random Half Low, Half High",3,6,2763815.0
+Heavy First,"Random Half Low, Half High",3,7,2753874.0
+Heavy First,"Random Half Low, Half High",3,8,2754382.0
+Heavy First,"Random Half Low, Half High",3,9,2761830.0
+Heavy First,"Random Half Low, Half High",4,0,2058821.0
+Heavy First,"Random Half Low, Half High",4,1,2066151.0
+Heavy First,"Random Half Low, Half High",4,2,2081052.0
+Heavy First,"Random Half Low, Half High",4,3,2060581.0
+Heavy First,"Random Half Low, Half High",4,4,2068770.0
+Heavy First,"Random Half Low, Half High",4,5,2059185.0
+Heavy First,"Random Half Low, Half High",4,6,2074416.0
+Heavy First,"Random Half Low, Half High",4,7,2068101.0
+Heavy First,"Random Half Low, Half High",4,8,2068798.0
+Heavy First,"Random Half Low, Half High",4,9,2074880.0
+Heavy First,"Random Half High, Half Low",2,0,1578037.0
+Heavy First,"Random Half High, Half Low",2,1,1557265.0
+Heavy First,"Random Half High, Half Low",2,2,1605054.0
+Heavy First,"Random Half High, Half Low",2,3,1562585.0
+Heavy First,"Random Half High, Half Low",2,4,1590922.0
+Heavy First,"Random Half High, Half Low",2,5,1559996.0
+Heavy First,"Random Half High, Half Low",2,6,1586811.0
+Heavy First,"Random Half High, Half Low",2,7,1582161.0
+Heavy First,"Random Half High, Half Low",2,8,1594231.0
+Heavy First,"Random Half High, Half Low",2,9,1586545.0
+Heavy First,"Random Half High, Half Low",3,0,1062320.0
+Heavy First,"Random Half High, Half Low",3,1,1050353.0
+Heavy First,"Random Half High, Half Low",3,2,1079849.0
+Heavy First,"Random Half High, Half Low",3,3,1052656.0
+Heavy First,"Random Half High, Half Low",3,4,1071469.0
+Heavy First,"Random Half High, Half Low",3,5,1051430.0
+Heavy First,"Random Half High, Half Low",3,6,1069003.0
+Heavy First,"Random Half High, Half Low",3,7,1066060.0
+Heavy First,"Random Half High, Half Low",3,8,1074497.0
+Heavy First,"Random Half High, Half Low",3,9,1068766.0
+Heavy First,"Random Half High, Half Low",4,0,805848.0
+Heavy First,"Random Half High, Half Low",4,1,795038.0
+Heavy First,"Random Half High, Half Low",4,2,818382.0
+Heavy First,"Random Half High, Half Low",4,3,797351.0
+Heavy First,"Random Half High, Half Low",4,4,812796.0
+Heavy First,"Random Half High, Half Low",4,5,797443.0
+Heavy First,"Random Half High, Half Low",4,6,809806.0
+Heavy First,"Random Half High, Half Low",4,7,808243.0
+Heavy First,"Random Half High, Half Low",4,8,813934.0
+Heavy First,"Random Half High, Half Low",4,9,810349.0
+Heavy First,Random Non-Decreasing Large Span,2,0,404892022.0
+Heavy First,Random Non-Decreasing Large Span,2,1,406865789.0
+Heavy First,Random Non-Decreasing Large Span,2,2,365880252.0
+Heavy First,Random Non-Decreasing Large Span,2,3,365341347.0
+Heavy First,Random Non-Decreasing Large Span,2,4,399854357.0
+Heavy First,Random Non-Decreasing Large Span,2,5,355062550.0
+Heavy First,Random Non-Decreasing Large Span,2,6,344446396.0
+Heavy First,Random Non-Decreasing Large Span,2,7,392539027.0
+Heavy First,Random Non-Decreasing Large Span,2,8,362491467.0
+Heavy First,Random Non-Decreasing Large Span,2,9,387964740.0
+Heavy First,Random Non-Decreasing Large Span,3,0,271264395.0
+Heavy First,Random Non-Decreasing Large Span,3,1,272589040.0
+Heavy First,Random Non-Decreasing Large Span,3,2,245131670.0
+Heavy First,Random Non-Decreasing Large Span,3,3,244749773.0
+Heavy First,Random Non-Decreasing Large Span,3,4,267902194.0
+Heavy First,Random Non-Decreasing Large Span,3,5,237868890.0
+Heavy First,Random Non-Decreasing Large Span,3,6,230721454.0
+Heavy First,Random Non-Decreasing Large Span,3,7,262987980.0
+Heavy First,Random Non-Decreasing Large Span,3,8,242839114.0
+Heavy First,Random Non-Decreasing Large Span,3,9,259911277.0
+Heavy First,Random Non-Decreasing Large Span,4,0,204446548.0
+Heavy First,Random Non-Decreasing Large Span,4,1,205441704.0
+Heavy First,Random Non-Decreasing Large Span,4,2,184756952.0
+Heavy First,Random Non-Decreasing Large Span,4,3,184449632.0
+Heavy First,Random Non-Decreasing Large Span,4,4,201924156.0
+Heavy First,Random Non-Decreasing Large Span,4,5,179273917.0
+Heavy First,Random Non-Decreasing Large Span,4,6,173856247.0
+Heavy First,Random Non-Decreasing Large Span,4,7,198209040.0
+Heavy First,Random Non-Decreasing Large Span,4,8,183005303.0
+Heavy First,Random Non-Decreasing Large Span,4,9,195881828.0
+Heavy First,Random Non-Increasing Large Span,2,0,210783522.0
+Heavy First,Random Non-Increasing Large Span,2,1,212341399.0
+Heavy First,Random Non-Increasing Large Span,2,2,193270368.0
+Heavy First,Random Non-Increasing Large Span,2,3,182968329.0
+Heavy First,Random Non-Increasing Large Span,2,4,214867995.0
+Heavy First,Random Non-Increasing Large Span,2,5,181458406.0
+Heavy First,Random Non-Increasing Large Span,2,6,158943632.0
+Heavy First,Random Non-Increasing Large Span,2,7,204831461.0
+Heavy First,Random Non-Increasing Large Span,2,8,180281077.0
+Heavy First,Random Non-Increasing Large Span,2,9,197009616.0
+Heavy First,Random Non-Increasing Large Span,3,0,141886299.0
+Heavy First,Random Non-Increasing Large Span,3,1,142931433.0
+Heavy First,Random Non-Increasing Large Span,3,2,130087825.0
+Heavy First,Random Non-Increasing Large Span,3,3,123194878.0
+Heavy First,Random Non-Increasing Large Span,3,4,144608858.0
+Heavy First,Random Non-Increasing Large Span,3,5,122163683.0
+Heavy First,Random Non-Increasing Large Span,3,6,107079749.0
+Heavy First,Random Non-Increasing Large Span,3,7,137878571.0
+Heavy First,Random Non-Increasing Large Span,3,8,121389830.0
+Heavy First,Random Non-Increasing Large Span,3,9,132637304.0
+Heavy First,Random Non-Increasing Large Span,4,0,107442412.0
+Heavy First,Random Non-Increasing Large Span,4,1,108234744.0
+Heavy First,Random Non-Increasing Large Span,4,2,98498923.0
+Heavy First,Random Non-Increasing Large Span,4,3,93313379.0
+Heavy First,Random Non-Increasing Large Span,4,4,109481369.0
+Heavy First,Random Non-Increasing Large Span,4,5,92515486.0
+Heavy First,Random Non-Increasing Large Span,4,6,81150945.0
+Heavy First,Random Non-Increasing Large Span,4,7,104406449.0
+Heavy First,Random Non-Increasing Large Span,4,8,91951248.0
+Heavy First,Random Non-Increasing Large Span,4,9,100455636.0
+Least Loaded,Constant,2,0,5700.0
+Least Loaded,Constant,2,1,5700.0
+Least Loaded,Constant,2,2,5700.0
+Least Loaded,Constant,2,3,5700.0
+Least Loaded,Constant,2,4,5700.0
+Least Loaded,Constant,2,5,5700.0
+Least Loaded,Constant,2,6,5700.0
+Least Loaded,Constant,2,7,5700.0
+Least Loaded,Constant,2,8,5700.0
+Least Loaded,Constant,2,9,5700.0
+Least Loaded,Constant,3,0,3825.0
+Least Loaded,Constant,3,1,3825.0
+Least Loaded,Constant,3,2,3825.0
+Least Loaded,Constant,3,3,3825.0
+Least Loaded,Constant,3,4,3825.0
+Least Loaded,Constant,3,5,3825.0
+Least Loaded,Constant,3,6,3825.0
+Least Loaded,Constant,3,7,3825.0
+Least Loaded,Constant,3,8,3825.0
+Least Loaded,Constant,3,9,3825.0
+Least Loaded,Constant,4,0,2888.0
+Least Loaded,Constant,4,1,2888.0
+Least Loaded,Constant,4,2,2888.0
+Least Loaded,Constant,4,3,2888.0
+Least Loaded,Constant,4,4,2888.0
+Least Loaded,Constant,4,5,2888.0
+Least Loaded,Constant,4,6,2888.0
+Least Loaded,Constant,4,7,2888.0
+Least Loaded,Constant,4,8,2888.0
+Least Loaded,Constant,4,9,2888.0
+Least Loaded,+1 Increasing,2,0,570950.0
+Least Loaded,+1 Increasing,2,1,570950.0
+Least Loaded,+1 Increasing,2,2,570950.0
+Least Loaded,+1 Increasing,2,3,570950.0
+Least Loaded,+1 Increasing,2,4,570950.0
+Least Loaded,+1 Increasing,2,5,570950.0
+Least Loaded,+1 Increasing,2,6,570950.0
+Least Loaded,+1 Increasing,2,7,570950.0
+Least Loaded,+1 Increasing,2,8,570950.0
+Least Loaded,+1 Increasing,2,9,570950.0
+Least Loaded,+1 Increasing,3,0,382500.0
+Least Loaded,+1 Increasing,3,1,382500.0
+Least Loaded,+1 Increasing,3,2,382500.0
+Least Loaded,+1 Increasing,3,3,382500.0
+Least Loaded,+1 Increasing,3,4,382500.0
+Least Loaded,+1 Increasing,3,5,382500.0
+Least Loaded,+1 Increasing,3,6,382500.0
+Least Loaded,+1 Increasing,3,7,382500.0
+Least Loaded,+1 Increasing,3,8,382500.0
+Least Loaded,+1 Increasing,3,9,382500.0
+Least Loaded,+1 Increasing,4,0,288344.0
+Least Loaded,+1 Increasing,4,1,288344.0
+Least Loaded,+1 Increasing,4,2,288344.0
+Least Loaded,+1 Increasing,4,3,288344.0
+Least Loaded,+1 Increasing,4,4,288344.0
+Least Loaded,+1 Increasing,4,5,288344.0
+Least Loaded,+1 Increasing,4,6,288344.0
+Least Loaded,+1 Increasing,4,7,288344.0
+Least Loaded,+1 Increasing,4,8,288344.0
+Least Loaded,+1 Increasing,4,9,288344.0
+Least Loaded,-1 Decreasing,2,0,289750.0
+Least Loaded,-1 Decreasing,2,1,289750.0
+Least Loaded,-1 Decreasing,2,2,289750.0
+Least Loaded,-1 Decreasing,2,3,289750.0
+Least Loaded,-1 Decreasing,2,4,289750.0
+Least Loaded,-1 Decreasing,2,5,289750.0
+Least Loaded,-1 Decreasing,2,6,289750.0
+Least Loaded,-1 Decreasing,2,7,289750.0
+Least Loaded,-1 Decreasing,2,8,289750.0
+Least Loaded,-1 Decreasing,2,9,289750.0
+Least Loaded,-1 Decreasing,3,0,195075.0
+Least Loaded,-1 Decreasing,3,1,195075.0
+Least Loaded,-1 Decreasing,3,2,195075.0
+Least Loaded,-1 Decreasing,3,3,195075.0
+Least Loaded,-1 Decreasing,3,4,195075.0
+Least Loaded,-1 Decreasing,3,5,195075.0
+Least Loaded,-1 Decreasing,3,6,195075.0
+Least Loaded,-1 Decreasing,3,7,195075.0
+Least Loaded,-1 Decreasing,3,8,195075.0
+Least Loaded,-1 Decreasing,3,9,195075.0
+Least Loaded,-1 Decreasing,4,0,147744.0
+Least Loaded,-1 Decreasing,4,1,147744.0
+Least Loaded,-1 Decreasing,4,2,147744.0
+Least Loaded,-1 Decreasing,4,3,147744.0
+Least Loaded,-1 Decreasing,4,4,147744.0
+Least Loaded,-1 Decreasing,4,5,147744.0
+Least Loaded,-1 Decreasing,4,6,147744.0
+Least Loaded,-1 Decreasing,4,7,147744.0
+Least Loaded,-1 Decreasing,4,8,147744.0
+Least Loaded,-1 Decreasing,4,9,147744.0
+Least Loaded,Random Small,2,0,267626.0
+Least Loaded,Random Small,2,1,286196.0
+Least Loaded,Random Small,2,2,311200.0
+Least Loaded,Random Small,2,3,271448.0
+Least Loaded,Random Small,2,4,282758.0
+Least Loaded,Random Small,2,5,269686.0
+Least Loaded,Random Small,2,6,298967.0
+Least Loaded,Random Small,2,7,285735.0
+Least Loaded,Random Small,2,8,287105.0
+Least Loaded,Random Small,2,9,298824.0
+Least Loaded,Random Small,3,0,179545.0
+Least Loaded,Random Small,3,1,193042.0
+Least Loaded,Random Small,3,2,208708.0
+Least Loaded,Random Small,3,3,182642.0
+Least Loaded,Random Small,3,4,189489.0
+Least Loaded,Random Small,3,5,181206.0
+Least Loaded,Random Small,3,6,200973.0
+Least Loaded,Random Small,3,7,192062.0
+Least Loaded,Random Small,3,8,192589.0
+Least Loaded,Random Small,3,9,200870.0
+Least Loaded,Random Small,4,0,135542.0
+Least Loaded,Random Small,4,1,145748.0
+Least Loaded,Random Small,4,2,157116.0
+Least Loaded,Random Small,4,3,137607.0
+Least Loaded,Random Small,4,4,143515.0
+Least Loaded,Random Small,4,5,137132.0
+Least Loaded,Random Small,4,6,151823.0
+Least Loaded,Random Small,4,7,144579.0
+Least Loaded,Random Small,4,8,145864.0
+Least Loaded,Random Small,4,9,151739.0
+Least Loaded,Random Small Span Large,2,0,570267104.0
+Least Loaded,Random Small Span Large,2,1,570287001.0
+Least Loaded,Random Small Span Large,2,2,570311253.0
+Least Loaded,Random Small Span Large,2,3,570271214.0
+Least Loaded,Random Small Span Large,2,4,570282417.0
+Least Loaded,Random Small Span Large,2,5,570269438.0
+Least Loaded,Random Small Span Large,2,6,570298991.0
+Least Loaded,Random Small Span Large,2,7,570285497.0
+Least Loaded,Random Small Span Large,2,8,570286643.0
+Least Loaded,Random Small Span Large,2,9,570298629.0
+Least Loaded,Random Small Span Large,3,0,382679184.0
+Least Loaded,Random Small Span Large,3,1,382692425.0
+Least Loaded,Random Small Span Large,3,2,382708764.0
+Least Loaded,Random Small Span Large,3,3,382682086.0
+Least Loaded,Random Small Span Large,3,4,382689617.0
+Least Loaded,Random Small Span Large,3,5,382680773.0
+Least Loaded,Random Small Span Large,3,6,382700680.0
+Least Loaded,Random Small Span Large,3,7,382691613.0
+Least Loaded,Random Small Span Large,3,8,382692345.0
+Least Loaded,Random Small Span Large,3,9,382700353.0
+Least Loaded,Random Small Span Large,4,0,288935427.0
+Least Loaded,Random Small Span Large,4,1,288945362.0
+Least Loaded,Random Small Span Large,4,2,288957639.0
+Least Loaded,Random Small Span Large,4,3,288937518.0
+Least Loaded,Random Small Span Large,4,4,288943151.0
+Least Loaded,Random Small Span Large,4,5,288936594.0
+Least Loaded,Random Small Span Large,4,6,288951507.0
+Least Loaded,Random Small Span Large,4,7,288944640.0
+Least Loaded,Random Small Span Large,4,8,288945254.0
+Least Loaded,Random Small Span Large,4,9,288951342.0
+Least Loaded,Random Large Span Large,2,0,2732074181.0
+Least Loaded,Random Large Span Large,2,1,2807939551.0
+Least Loaded,Random Large Span Large,2,2,2895357180.0
+Least Loaded,Random Large Span Large,2,3,2716566372.0
+Least Loaded,Random Large Span Large,2,4,2769124790.0
+Least Loaded,Random Large Span Large,2,5,2854785590.0
+Least Loaded,Random Large Span Large,2,6,2665240965.0
+Least Loaded,Random Large Span Large,2,7,2923762986.0
+Least Loaded,Random Large Span Large,2,8,2892352125.0
+Least Loaded,Random Large Span Large,2,9,3008474514.0
+Least Loaded,Random Large Span Large,3,0,1832798443.0
+Least Loaded,Random Large Span Large,3,1,1881708920.0
+Least Loaded,Random Large Span Large,3,2,1943744098.0
+Least Loaded,Random Large Span Large,3,3,1821896830.0
+Least Loaded,Random Large Span Large,3,4,1861640949.0
+Least Loaded,Random Large Span Large,3,5,1913808392.0
+Least Loaded,Random Large Span Large,3,6,1793538630.0
+Least Loaded,Random Large Span Large,3,7,1969530743.0
+Least Loaded,Random Large Span Large,3,8,1939052251.0
+Least Loaded,Random Large Span Large,3,9,2021005995.0
+Least Loaded,Random Large Span Large,4,0,1382558256.0
+Least Loaded,Random Large Span Large,4,1,1415694395.0
+Least Loaded,Random Large Span Large,4,2,1467652147.0
+Least Loaded,Random Large Span Large,4,3,1374084185.0
+Least Loaded,Random Large Span Large,4,4,1406265105.0
+Least Loaded,Random Large Span Large,4,5,1445977206.0
+Least Loaded,Random Large Span Large,4,6,1353647165.0
+Least Loaded,Random Large Span Large,4,7,1488314100.0
+Least Loaded,Random Large Span Large,4,8,1464413683.0
+Least Loaded,Random Large Span Large,4,9,1526434959.0
+Least Loaded,"Random Half Low, Half High",2,0,4097657.0
+Least Loaded,"Random Half Low, Half High",2,1,4110023.0
+Least Loaded,"Random Half Low, Half High",2,2,4140813.0
+Least Loaded,"Random Half Low, Half High",2,3,4101598.0
+Least Loaded,"Random Half Low, Half High",2,4,4112962.0
+Least Loaded,"Random Half Low, Half High",2,5,4099956.0
+Least Loaded,"Random Half Low, Half High",2,6,4128453.0
+Least Loaded,"Random Half Low, Half High",2,7,4116026.0
+Least Loaded,"Random Half Low, Half High",2,8,4116336.0
+Least Loaded,"Random Half Low, Half High",2,9,4128095.0
+Least Loaded,"Random Half Low, Half High",3,0,2741371.0
+Least Loaded,"Random Half Low, Half High",3,1,2757757.0
+Least Loaded,"Random Half Low, Half High",3,2,2770429.0
+Least Loaded,"Random Half Low, Half High",3,3,2747447.0
+Least Loaded,"Random Half Low, Half High",3,4,2754427.0
+Least Loaded,"Random Half Low, Half High",3,5,2744123.0
+Least Loaded,"Random Half Low, Half High",3,6,2765719.0
+Least Loaded,"Random Half Low, Half High",3,7,2755213.0
+Least Loaded,"Random Half Low, Half High",3,8,2752928.0
+Least Loaded,"Random Half Low, Half High",3,9,2764738.0
+Least Loaded,"Random Half Low, Half High",4,0,2061443.0
+Least Loaded,"Random Half Low, Half High",4,1,2073271.0
+Least Loaded,"Random Half Low, Half High",4,2,2086029.0
+Least Loaded,"Random Half Low, Half High",4,3,2068780.0
+Least Loaded,"Random Half Low, Half High",4,4,2071958.0
+Least Loaded,"Random Half Low, Half High",4,5,2067893.0
+Least Loaded,"Random Half Low, Half High",4,6,2083008.0
+Least Loaded,"Random Half Low, Half High",4,7,2075064.0
+Least Loaded,"Random Half Low, Half High",4,8,2076161.0
+Least Loaded,"Random Half Low, Half High",4,9,2080948.0
+Least Loaded,"Random Half High, Half Low",2,0,1581388.0
+Least Loaded,"Random Half High, Half Low",2,1,1561145.0
+Least Loaded,"Random Half High, Half Low",2,2,1607256.0
+Least Loaded,"Random Half High, Half Low",2,3,1567794.0
+Least Loaded,"Random Half High, Half Low",2,4,1594026.0
+Least Loaded,"Random Half High, Half Low",2,5,1565503.0
+Least Loaded,"Random Half High, Half Low",2,6,1588169.0
+Least Loaded,"Random Half High, Half Low",2,7,1584955.0
+Least Loaded,"Random Half High, Half Low",2,8,1598388.0
+Least Loaded,"Random Half High, Half Low",2,9,1591944.0
+Least Loaded,"Random Half High, Half Low",3,0,1066163.0
+Least Loaded,"Random Half High, Half Low",3,1,1053096.0
+Least Loaded,"Random Half High, Half Low",3,2,1083185.0
+Least Loaded,"Random Half High, Half Low",3,3,1056825.0
+Least Loaded,"Random Half High, Half Low",3,4,1074450.0
+Least Loaded,"Random Half High, Half Low",3,5,1055080.0
+Least Loaded,"Random Half High, Half Low",3,6,1071551.0
+Least Loaded,"Random Half High, Half Low",3,7,1068279.0
+Least Loaded,"Random Half High, Half Low",3,8,1077921.0
+Least Loaded,"Random Half High, Half Low",3,9,1072727.0
+Least Loaded,"Random Half High, Half Low",4,0,810616.0
+Least Loaded,"Random Half High, Half Low",4,1,800785.0
+Least Loaded,"Random Half High, Half Low",4,2,822860.0
+Least Loaded,"Random Half High, Half Low",4,3,803871.0
+Least Loaded,"Random Half High, Half Low",4,4,816503.0
+Least Loaded,"Random Half High, Half Low",4,5,801602.0
+Least Loaded,"Random Half High, Half Low",4,6,814141.0
+Least Loaded,"Random Half High, Half Low",4,7,813160.0
+Least Loaded,"Random Half High, Half Low",4,8,818281.0
+Least Loaded,"Random Half High, Half Low",4,9,815128.0
+Least Loaded,Random Non-Decreasing Large Span,2,0,404892022.0
+Least Loaded,Random Non-Decreasing Large Span,2,1,406865789.0
+Least Loaded,Random Non-Decreasing Large Span,2,2,365880252.0
+Least Loaded,Random Non-Decreasing Large Span,2,3,365341347.0
+Least Loaded,Random Non-Decreasing Large Span,2,4,399854357.0
+Least Loaded,Random Non-Decreasing Large Span,2,5,355063594.0
+Least Loaded,Random Non-Decreasing Large Span,2,6,344446396.0
+Least Loaded,Random Non-Decreasing Large Span,2,7,392539027.0
+Least Loaded,Random Non-Decreasing Large Span,2,8,362491467.0
+Least Loaded,Random Non-Decreasing Large Span,2,9,387964740.0
+Least Loaded,Random Non-Decreasing Large Span,3,0,271264395.0
+Least Loaded,Random Non-Decreasing Large Span,3,1,272589180.0
+Least Loaded,Random Non-Decreasing Large Span,3,2,245131670.0
+Least Loaded,Random Non-Decreasing Large Span,3,3,244749773.0
+Least Loaded,Random Non-Decreasing Large Span,3,4,267902194.0
+Least Loaded,Random Non-Decreasing Large Span,3,5,237870817.0
+Least Loaded,Random Non-Decreasing Large Span,3,6,230721454.0
+Least Loaded,Random Non-Decreasing Large Span,3,7,262988467.0
+Least Loaded,Random Non-Decreasing Large Span,3,8,242839114.0
+Least Loaded,Random Non-Decreasing Large Span,3,9,259911277.0
+Least Loaded,Random Non-Decreasing Large Span,4,0,204496662.0
+Least Loaded,Random Non-Decreasing Large Span,4,1,205496939.0
+Least Loaded,Random Non-Decreasing Large Span,4,2,184803865.0
+Least Loaded,Random Non-Decreasing Large Span,4,3,184499888.0
+Least Loaded,Random Non-Decreasing Large Span,4,4,201974550.0
+Least Loaded,Random Non-Decreasing Large Span,4,5,179318080.0
+Least Loaded,Random Non-Decreasing Large Span,4,6,173902327.0
+Least Loaded,Random Non-Decreasing Large Span,4,7,198260232.0
+Least Loaded,Random Non-Decreasing Large Span,4,8,183056443.0
+Least Loaded,Random Non-Decreasing Large Span,4,9,195933198.0
+Least Loaded,Random Non-Increasing Large Span,2,0,210783522.0
+Least Loaded,Random Non-Increasing Large Span,2,1,212341399.0
+Least Loaded,Random Non-Increasing Large Span,2,2,193270368.0
+Least Loaded,Random Non-Increasing Large Span,2,3,182968329.0
+Least Loaded,Random Non-Increasing Large Span,2,4,214867995.0
+Least Loaded,Random Non-Increasing Large Span,2,5,181459274.0
+Least Loaded,Random Non-Increasing Large Span,2,6,158943632.0
+Least Loaded,Random Non-Increasing Large Span,2,7,204831461.0
+Least Loaded,Random Non-Increasing Large Span,2,8,180281077.0
+Least Loaded,Random Non-Increasing Large Span,2,9,197009616.0
+Least Loaded,Random Non-Increasing Large Span,3,0,141886299.0
+Least Loaded,Random Non-Increasing Large Span,3,1,142931449.0
+Least Loaded,Random Non-Increasing Large Span,3,2,130087825.0
+Least Loaded,Random Non-Increasing Large Span,3,3,123194878.0
+Least Loaded,Random Non-Increasing Large Span,3,4,144608858.0
+Least Loaded,Random Non-Increasing Large Span,3,5,122163728.0
+Least Loaded,Random Non-Increasing Large Span,3,6,107079749.0
+Least Loaded,Random Non-Increasing Large Span,3,7,137879219.0
+Least Loaded,Random Non-Increasing Large Span,3,8,121389830.0
+Least Loaded,Random Non-Increasing Large Span,3,9,132637304.0
+Least Loaded,Random Non-Increasing Large Span,4,0,107442412.0
+Least Loaded,Random Non-Increasing Large Span,4,1,108234760.0
+Least Loaded,Random Non-Increasing Large Span,4,2,98498923.0
+Least Loaded,Random Non-Increasing Large Span,4,3,93313379.0
+Least Loaded,Random Non-Increasing Large Span,4,4,109481369.0
+Least Loaded,Random Non-Increasing Large Span,4,5,92515974.0
+Least Loaded,Random Non-Increasing Large Span,4,6,81150945.0
+Least Loaded,Random Non-Increasing Large Span,4,7,104406449.0
+Least Loaded,Random Non-Increasing Large Span,4,8,91951707.0
+Least Loaded,Random Non-Increasing Large Span,4,9,100455636.0
+Lookahead 15,Constant,2,0,5700.0
+Lookahead 15,Constant,2,1,5700.0
+Lookahead 15,Constant,2,2,5700.0
+Lookahead 15,Constant,2,3,5700.0
+Lookahead 15,Constant,2,4,5700.0
+Lookahead 15,Constant,2,5,5700.0
+Lookahead 15,Constant,2,6,5700.0
+Lookahead 15,Constant,2,7,5700.0
+Lookahead 15,Constant,2,8,5700.0
+Lookahead 15,Constant,2,9,5700.0
+Lookahead 15,Constant,3,0,3825.0
+Lookahead 15,Constant,3,1,3825.0
+Lookahead 15,Constant,3,2,3825.0
+Lookahead 15,Constant,3,3,3825.0
+Lookahead 15,Constant,3,4,3825.0
+Lookahead 15,Constant,3,5,3825.0
+Lookahead 15,Constant,3,6,3825.0
+Lookahead 15,Constant,3,7,3825.0
+Lookahead 15,Constant,3,8,3825.0
+Lookahead 15,Constant,3,9,3825.0
+Lookahead 15,Constant,4,0,2888.0
+Lookahead 15,Constant,4,1,2888.0
+Lookahead 15,Constant,4,2,2888.0
+Lookahead 15,Constant,4,3,2888.0
+Lookahead 15,Constant,4,4,2888.0
+Lookahead 15,Constant,4,5,2888.0
+Lookahead 15,Constant,4,6,2888.0
+Lookahead 15,Constant,4,7,2888.0
+Lookahead 15,Constant,4,8,2888.0
+Lookahead 15,Constant,4,9,2888.0
+Lookahead 15,+1 Increasing,2,0,562883.0
+Lookahead 15,+1 Increasing,2,1,562883.0
+Lookahead 15,+1 Increasing,2,2,562883.0
+Lookahead 15,+1 Increasing,2,3,562883.0
+Lookahead 15,+1 Increasing,2,4,562883.0
+Lookahead 15,+1 Increasing,2,5,562883.0
+Lookahead 15,+1 Increasing,2,6,562883.0
+Lookahead 15,+1 Increasing,2,7,562883.0
+Lookahead 15,+1 Increasing,2,8,562883.0
+Lookahead 15,+1 Increasing,2,9,562883.0
+Lookahead 15,+1 Increasing,3,0,372794.0
+Lookahead 15,+1 Increasing,3,1,372794.0
+Lookahead 15,+1 Increasing,3,2,372794.0
+Lookahead 15,+1 Increasing,3,3,372794.0
+Lookahead 15,+1 Increasing,3,4,372794.0
+Lookahead 15,+1 Increasing,3,5,372794.0
+Lookahead 15,+1 Increasing,3,6,372794.0
+Lookahead 15,+1 Increasing,3,7,372794.0
+Lookahead 15,+1 Increasing,3,8,372794.0
+Lookahead 15,+1 Increasing,3,9,372794.0
+Lookahead 15,+1 Increasing,4,0,278346.0
+Lookahead 15,+1 Increasing,4,1,278346.0
+Lookahead 15,+1 Increasing,4,2,278346.0
+Lookahead 15,+1 Increasing,4,3,278346.0
+Lookahead 15,+1 Increasing,4,4,278346.0
+Lookahead 15,+1 Increasing,4,5,278346.0
+Lookahead 15,+1 Increasing,4,6,278346.0
+Lookahead 15,+1 Increasing,4,7,278346.0
+Lookahead 15,+1 Increasing,4,8,278346.0
+Lookahead 15,+1 Increasing,4,9,278346.0
+Lookahead 15,-1 Decreasing,2,0,289750.0
+Lookahead 15,-1 Decreasing,2,1,289750.0
+Lookahead 15,-1 Decreasing,2,2,289750.0
+Lookahead 15,-1 Decreasing,2,3,289750.0
+Lookahead 15,-1 Decreasing,2,4,289750.0
+Lookahead 15,-1 Decreasing,2,5,289750.0
+Lookahead 15,-1 Decreasing,2,6,289750.0
+Lookahead 15,-1 Decreasing,2,7,289750.0
+Lookahead 15,-1 Decreasing,2,8,289750.0
+Lookahead 15,-1 Decreasing,2,9,289750.0
+Lookahead 15,-1 Decreasing,3,0,195075.0
+Lookahead 15,-1 Decreasing,3,1,195075.0
+Lookahead 15,-1 Decreasing,3,2,195075.0
+Lookahead 15,-1 Decreasing,3,3,195075.0
+Lookahead 15,-1 Decreasing,3,4,195075.0
+Lookahead 15,-1 Decreasing,3,5,195075.0
+Lookahead 15,-1 Decreasing,3,6,195075.0
+Lookahead 15,-1 Decreasing,3,7,195075.0
+Lookahead 15,-1 Decreasing,3,8,195075.0
+Lookahead 15,-1 Decreasing,3,9,195075.0
+Lookahead 15,-1 Decreasing,4,0,147744.0
+Lookahead 15,-1 Decreasing,4,1,147744.0
+Lookahead 15,-1 Decreasing,4,2,147744.0
+Lookahead 15,-1 Decreasing,4,3,147744.0
+Lookahead 15,-1 Decreasing,4,4,147744.0
+Lookahead 15,-1 Decreasing,4,5,147744.0
+Lookahead 15,-1 Decreasing,4,6,147744.0
+Lookahead 15,-1 Decreasing,4,7,147744.0
+Lookahead 15,-1 Decreasing,4,8,147744.0
+Lookahead 15,-1 Decreasing,4,9,147744.0
+Lookahead 15,Random Small,2,0,251407.0
+Lookahead 15,Random Small,2,1,266724.0
+Lookahead 15,Random Small,2,2,295864.0
+Lookahead 15,Random Small,2,3,253490.0
+Lookahead 15,Random Small,2,4,268498.0
+Lookahead 15,Random Small,2,5,250289.0
+Lookahead 15,Random Small,2,6,282923.0
+Lookahead 15,Random Small,2,7,268266.0
+Lookahead 15,Random Small,2,8,270139.0
+Lookahead 15,Random Small,2,9,282335.0
+Lookahead 15,Random Small,3,0,167710.0
+Lookahead 15,Random Small,3,1,176126.0
+Lookahead 15,Random Small,3,2,196819.0
+Lookahead 15,Random Small,3,3,168384.0
+Lookahead 15,Random Small,3,4,177969.0
+Lookahead 15,Random Small,3,5,166575.0
+Lookahead 15,Random Small,3,6,188866.0
+Lookahead 15,Random Small,3,7,178097.0
+Lookahead 15,Random Small,3,8,179195.0
+Lookahead 15,Random Small,3,9,188028.0
+Lookahead 15,Random Small,4,0,125262.0
+Lookahead 15,Random Small,4,1,133538.0
+Lookahead 15,Random Small,4,2,147887.0
+Lookahead 15,Random Small,4,3,126485.0
+Lookahead 15,Random Small,4,4,133909.0
+Lookahead 15,Random Small,4,5,125044.0
+Lookahead 15,Random Small,4,6,141710.0
+Lookahead 15,Random Small,4,7,133590.0
+Lookahead 15,Random Small,4,8,134376.0
+Lookahead 15,Random Small,4,9,140385.0
+Lookahead 15,Random Small Span Large,2,0,570255769.0
+Lookahead 15,Random Small Span Large,2,1,570273266.0
+Lookahead 15,Random Small Span Large,2,2,570299610.0
+Lookahead 15,Random Small Span Large,2,3,570259373.0
+Lookahead 15,Random Small Span Large,2,4,570272180.0
+Lookahead 15,Random Small Span Large,2,5,570256445.0
+Lookahead 15,Random Small Span Large,2,6,570287357.0
+Lookahead 15,Random Small Span Large,2,7,570271905.0
+Lookahead 15,Random Small Span Large,2,8,570273841.0
+Lookahead 15,Random Small Span Large,2,9,570285930.0
+Lookahead 15,Random Small Span Large,3,0,382669127.0
+Lookahead 15,Random Small Span Large,3,1,382680182.0
+Lookahead 15,Random Small Span Large,3,2,382698760.0
+Lookahead 15,Random Small Span Large,3,3,382671261.0
+Lookahead 15,Random Small Span Large,3,4,382679835.0
+Lookahead 15,Random Small Span Large,3,5,382669645.0
+Lookahead 15,Random Small Span Large,3,6,382690884.0
+Lookahead 15,Random Small Span Large,3,7,382680676.0
+Lookahead 15,Random Small Span Large,3,8,382681252.0
+Lookahead 15,Random Small Span Large,3,9,382690128.0
+Lookahead 15,Random Small Span Large,4,0,288926966.0
+Lookahead 15,Random Small Span Large,4,1,288935535.0
+Lookahead 15,Random Small Span Large,4,2,288949400.0
+Lookahead 15,Random Small Span Large,4,3,288928240.0
+Lookahead 15,Random Small Span Large,4,4,288935327.0
+Lookahead 15,Random Small Span Large,4,5,288927229.0
+Lookahead 15,Random Small Span Large,4,6,288943530.0
+Lookahead 15,Random Small Span Large,4,7,288935540.0
+Lookahead 15,Random Small Span Large,4,8,288936044.0
+Lookahead 15,Random Small Span Large,4,9,288942172.0
+Lookahead 15,Random Large Span Large,2,0,2569025344.0
+Lookahead 15,Random Large Span Large,2,1,2632158943.0
+Lookahead 15,Random Large Span Large,2,2,2724087113.0
+Lookahead 15,Random Large Span Large,2,3,2502932292.0
+Lookahead 15,Random Large Span Large,2,4,2605035144.0
+Lookahead 15,Random Large Span Large,2,5,2706278436.0
+Lookahead 15,Random Large Span Large,2,6,2515148006.0
+Lookahead 15,Random Large Span Large,2,7,2760893872.0
+Lookahead 15,Random Large Span Large,2,8,2720904669.0
+Lookahead 15,Random Large Span Large,2,9,2850395246.0
+Lookahead 15,Random Large Span Large,3,0,1698345741.0
+Lookahead 15,Random Large Span Large,3,1,1748100461.0
+Lookahead 15,Random Large Span Large,3,2,1809029510.0
+Lookahead 15,Random Large Span Large,3,3,1664505533.0
+Lookahead 15,Random Large Span Large,3,4,1731654260.0
+Lookahead 15,Random Large Span Large,3,5,1788336008.0
+Lookahead 15,Random Large Span Large,3,6,1664173754.0
+Lookahead 15,Random Large Span Large,3,7,1839509556.0
+Lookahead 15,Random Large Span Large,3,8,1798906848.0
+Lookahead 15,Random Large Span Large,3,9,1892927211.0
+Lookahead 15,Random Large Span Large,4,0,1278624230.0
+Lookahead 15,Random Large Span Large,4,1,1316252404.0
+Lookahead 15,Random Large Span Large,4,2,1358342133.0
+Lookahead 15,Random Large Span Large,4,3,1259667783.0
+Lookahead 15,Random Large Span Large,4,4,1304236013.0
+Lookahead 15,Random Large Span Large,4,5,1339835294.0
+Lookahead 15,Random Large Span Large,4,6,1248143739.0
+Lookahead 15,Random Large Span Large,4,7,1379802384.0
+Lookahead 15,Random Large Span Large,4,8,1358531087.0
+Lookahead 15,Random Large Span Large,4,9,1427018261.0
+Lookahead 15,"Random Half Low, Half High",2,0,3922609.0
+Lookahead 15,"Random Half Low, Half High",2,1,3985584.0
+Lookahead 15,"Random Half Low, Half High",2,2,4010315.0
+Lookahead 15,"Random Half Low, Half High",2,3,3970944.0
+Lookahead 15,"Random Half Low, Half High",2,4,3964170.0
+Lookahead 15,"Random Half Low, Half High",2,5,3946209.0
+Lookahead 15,"Random Half Low, Half High",2,6,3978401.0
+Lookahead 15,"Random Half Low, Half High",2,7,3963645.0
+Lookahead 15,"Random Half Low, Half High",2,8,3986439.0
+Lookahead 15,"Random Half Low, Half High",2,9,3954360.0
+Lookahead 15,"Random Half Low, Half High",3,0,2657447.0
+Lookahead 15,"Random Half Low, Half High",3,1,2660453.0
+Lookahead 15,"Random Half Low, Half High",3,2,2669324.0
+Lookahead 15,"Random Half Low, Half High",3,3,2659957.0
+Lookahead 15,"Random Half Low, Half High",3,4,2685026.0
+Lookahead 15,"Random Half Low, Half High",3,5,2660418.0
+Lookahead 15,"Random Half Low, Half High",3,6,2678147.0
+Lookahead 15,"Random Half Low, Half High",3,7,2677547.0
+Lookahead 15,"Random Half Low, Half High",3,8,2674666.0
+Lookahead 15,"Random Half Low, Half High",3,9,2683366.0
+Lookahead 15,"Random Half Low, Half High",4,0,1985805.0
+Lookahead 15,"Random Half Low, Half High",4,1,2009926.0
+Lookahead 15,"Random Half Low, Half High",4,2,2028038.0
+Lookahead 15,"Random Half Low, Half High",4,3,1992289.0
+Lookahead 15,"Random Half Low, Half High",4,4,2005100.0
+Lookahead 15,"Random Half Low, Half High",4,5,2007583.0
+Lookahead 15,"Random Half Low, Half High",4,6,2011710.0
+Lookahead 15,"Random Half Low, Half High",4,7,2016669.0
+Lookahead 15,"Random Half Low, Half High",4,8,2012407.0
+Lookahead 15,"Random Half Low, Half High",4,9,2006032.0
+Lookahead 15,"Random Half High, Half Low",2,0,1565624.0
+Lookahead 15,"Random Half High, Half Low",2,1,1547476.0
+Lookahead 15,"Random Half High, Half Low",2,2,1593551.0
+Lookahead 15,"Random Half High, Half Low",2,3,1553993.0
+Lookahead 15,"Random Half High, Half Low",2,4,1582389.0
+Lookahead 15,"Random Half High, Half Low",2,5,1547988.0
+Lookahead 15,"Random Half High, Half Low",2,6,1575849.0
+Lookahead 15,"Random Half High, Half Low",2,7,1572616.0
+Lookahead 15,"Random Half High, Half Low",2,8,1585080.0
+Lookahead 15,"Random Half High, Half Low",2,9,1576967.0
+Lookahead 15,"Random Half High, Half Low",3,0,1055037.0
+Lookahead 15,"Random Half High, Half Low",3,1,1041161.0
+Lookahead 15,"Random Half High, Half Low",3,2,1073855.0
+Lookahead 15,"Random Half High, Half Low",3,3,1045710.0
+Lookahead 15,"Random Half High, Half Low",3,4,1065314.0
+Lookahead 15,"Random Half High, Half Low",3,5,1042268.0
+Lookahead 15,"Random Half High, Half Low",3,6,1062025.0
+Lookahead 15,"Random Half High, Half Low",3,7,1058118.0
+Lookahead 15,"Random Half High, Half Low",3,8,1066664.0
+Lookahead 15,"Random Half High, Half Low",3,9,1061480.0
+Lookahead 15,"Random Half High, Half Low",4,0,800060.0
+Lookahead 15,"Random Half High, Half Low",4,1,789768.0
+Lookahead 15,"Random Half High, Half Low",4,2,813975.0
+Lookahead 15,"Random Half High, Half Low",4,3,793619.0
+Lookahead 15,"Random Half High, Half Low",4,4,807807.0
+Lookahead 15,"Random Half High, Half Low",4,5,790616.0
+Lookahead 15,"Random Half High, Half Low",4,6,805201.0
+Lookahead 15,"Random Half High, Half Low",4,7,802466.0
+Lookahead 15,"Random Half High, Half Low",4,8,809316.0
+Lookahead 15,"Random Half High, Half Low",4,9,804850.0
+Lookahead 15,Random Non-Decreasing Large Span,2,0,399184261.0
+Lookahead 15,Random Non-Decreasing Large Span,2,1,401023621.0
+Lookahead 15,Random Non-Decreasing Large Span,2,2,360985894.0
+Lookahead 15,Random Non-Decreasing Large Span,2,3,359747216.0
+Lookahead 15,Random Non-Decreasing Large Span,2,4,394742315.0
+Lookahead 15,Random Non-Decreasing Large Span,2,5,349988007.0
+Lookahead 15,Random Non-Decreasing Large Span,2,6,338819421.0
+Lookahead 15,Random Non-Decreasing Large Span,2,7,386739566.0
+Lookahead 15,Random Non-Decreasing Large Span,2,8,357071078.0
+Lookahead 15,Random Non-Decreasing Large Span,2,9,382435935.0
+Lookahead 15,Random Non-Decreasing Large Span,3,0,264584420.0
+Lookahead 15,Random Non-Decreasing Large Span,3,1,265739674.0
+Lookahead 15,Random Non-Decreasing Large Span,3,2,239073353.0
+Lookahead 15,Random Non-Decreasing Large Span,3,3,238248144.0
+Lookahead 15,Random Non-Decreasing Large Span,3,4,261672490.0
+Lookahead 15,Random Non-Decreasing Large Span,3,5,231580096.0
+Lookahead 15,Random Non-Decreasing Large Span,3,6,223929068.0
+Lookahead 15,Random Non-Decreasing Large Span,3,7,255872276.0
+Lookahead 15,Random Non-Decreasing Large Span,3,8,236251323.0
+Lookahead 15,Random Non-Decreasing Large Span,3,9,253162031.0
+Lookahead 15,Random Non-Decreasing Large Span,4,0,197888009.0
+Lookahead 15,Random Non-Decreasing Large Span,4,1,198643433.0
+Lookahead 15,Random Non-Decreasing Large Span,4,2,178557796.0
+Lookahead 15,Random Non-Decreasing Large Span,4,3,177508185.0
+Lookahead 15,Random Non-Decreasing Large Span,4,4,195589512.0
+Lookahead 15,Random Non-Decreasing Large Span,4,5,172782716.0
+Lookahead 15,Random Non-Decreasing Large Span,4,6,166868311.0
+Lookahead 15,Random Non-Decreasing Large Span,4,7,191493383.0
+Lookahead 15,Random Non-Decreasing Large Span,4,8,176234792.0
+Lookahead 15,Random Non-Decreasing Large Span,4,9,189172496.0
+Lookahead 15,Random Non-Increasing Large Span,2,0,210783522.0
+Lookahead 15,Random Non-Increasing Large Span,2,1,212341399.0
+Lookahead 15,Random Non-Increasing Large Span,2,2,193270368.0
+Lookahead 15,Random Non-Increasing Large Span,2,3,182968329.0
+Lookahead 15,Random Non-Increasing Large Span,2,4,214867995.0
+Lookahead 15,Random Non-Increasing Large Span,2,5,181458406.0
+Lookahead 15,Random Non-Increasing Large Span,2,6,158943632.0
+Lookahead 15,Random Non-Increasing Large Span,2,7,204831461.0
+Lookahead 15,Random Non-Increasing Large Span,2,8,180281077.0
+Lookahead 15,Random Non-Increasing Large Span,2,9,197009616.0
+Lookahead 15,Random Non-Increasing Large Span,3,0,141886299.0
+Lookahead 15,Random Non-Increasing Large Span,3,1,142931433.0
+Lookahead 15,Random Non-Increasing Large Span,3,2,130087825.0
+Lookahead 15,Random Non-Increasing Large Span,3,3,123194878.0
+Lookahead 15,Random Non-Increasing Large Span,3,4,144608858.0
+Lookahead 15,Random Non-Increasing Large Span,3,5,122163683.0
+Lookahead 15,Random Non-Increasing Large Span,3,6,107079749.0
+Lookahead 15,Random Non-Increasing Large Span,3,7,137878571.0
+Lookahead 15,Random Non-Increasing Large Span,3,8,121389830.0
+Lookahead 15,Random Non-Increasing Large Span,3,9,132637304.0
+Lookahead 15,Random Non-Increasing Large Span,4,0,107442412.0
+Lookahead 15,Random Non-Increasing Large Span,4,1,108234744.0
+Lookahead 15,Random Non-Increasing Large Span,4,2,98498923.0
+Lookahead 15,Random Non-Increasing Large Span,4,3,93313379.0
+Lookahead 15,Random Non-Increasing Large Span,4,4,109481369.0
+Lookahead 15,Random Non-Increasing Large Span,4,5,92515486.0
+Lookahead 15,Random Non-Increasing Large Span,4,6,81150945.0
+Lookahead 15,Random Non-Increasing Large Span,4,7,104406449.0
+Lookahead 15,Random Non-Increasing Large Span,4,8,91951248.0
+Lookahead 15,Random Non-Increasing Large Span,4,9,100455636.0
+Lookahead 5,Constant,2,0,5700.0
+Lookahead 5,Constant,2,1,5700.0
+Lookahead 5,Constant,2,2,5700.0
+Lookahead 5,Constant,2,3,5700.0
+Lookahead 5,Constant,2,4,5700.0
+Lookahead 5,Constant,2,5,5700.0
+Lookahead 5,Constant,2,6,5700.0
+Lookahead 5,Constant,2,7,5700.0
+Lookahead 5,Constant,2,8,5700.0
+Lookahead 5,Constant,2,9,5700.0
+Lookahead 5,Constant,3,0,3825.0
+Lookahead 5,Constant,3,1,3825.0
+Lookahead 5,Constant,3,2,3825.0
+Lookahead 5,Constant,3,3,3825.0
+Lookahead 5,Constant,3,4,3825.0
+Lookahead 5,Constant,3,5,3825.0
+Lookahead 5,Constant,3,6,3825.0
+Lookahead 5,Constant,3,7,3825.0
+Lookahead 5,Constant,3,8,3825.0
+Lookahead 5,Constant,3,9,3825.0
+Lookahead 5,Constant,4,0,2888.0
+Lookahead 5,Constant,4,1,2888.0
+Lookahead 5,Constant,4,2,2888.0
+Lookahead 5,Constant,4,3,2888.0
+Lookahead 5,Constant,4,4,2888.0
+Lookahead 5,Constant,4,5,2888.0
+Lookahead 5,Constant,4,6,2888.0
+Lookahead 5,Constant,4,7,2888.0
+Lookahead 5,Constant,4,8,2888.0
+Lookahead 5,Constant,4,9,2888.0
+Lookahead 5,+1 Increasing,2,0,570215.0
+Lookahead 5,+1 Increasing,2,1,570215.0
+Lookahead 5,+1 Increasing,2,2,570215.0
+Lookahead 5,+1 Increasing,2,3,570215.0
+Lookahead 5,+1 Increasing,2,4,570215.0
+Lookahead 5,+1 Increasing,2,5,570215.0
+Lookahead 5,+1 Increasing,2,6,570215.0
+Lookahead 5,+1 Increasing,2,7,570215.0
+Lookahead 5,+1 Increasing,2,8,570215.0
+Lookahead 5,+1 Increasing,2,9,570215.0
+Lookahead 5,+1 Increasing,3,0,381555.0
+Lookahead 5,+1 Increasing,3,1,381555.0
+Lookahead 5,+1 Increasing,3,2,381555.0
+Lookahead 5,+1 Increasing,3,3,381555.0
+Lookahead 5,+1 Increasing,3,4,381555.0
+Lookahead 5,+1 Increasing,3,5,381555.0
+Lookahead 5,+1 Increasing,3,6,381555.0
+Lookahead 5,+1 Increasing,3,7,381555.0
+Lookahead 5,+1 Increasing,3,8,381555.0
+Lookahead 5,+1 Increasing,3,9,381555.0
+Lookahead 5,+1 Increasing,4,0,287293.0
+Lookahead 5,+1 Increasing,4,1,287293.0
+Lookahead 5,+1 Increasing,4,2,287293.0
+Lookahead 5,+1 Increasing,4,3,287293.0
+Lookahead 5,+1 Increasing,4,4,287293.0
+Lookahead 5,+1 Increasing,4,5,287293.0
+Lookahead 5,+1 Increasing,4,6,287293.0
+Lookahead 5,+1 Increasing,4,7,287293.0
+Lookahead 5,+1 Increasing,4,8,287293.0
+Lookahead 5,+1 Increasing,4,9,287293.0
+Lookahead 5,-1 Decreasing,2,0,289750.0
+Lookahead 5,-1 Decreasing,2,1,289750.0
+Lookahead 5,-1 Decreasing,2,2,289750.0
+Lookahead 5,-1 Decreasing,2,3,289750.0
+Lookahead 5,-1 Decreasing,2,4,289750.0
+Lookahead 5,-1 Decreasing,2,5,289750.0
+Lookahead 5,-1 Decreasing,2,6,289750.0
+Lookahead 5,-1 Decreasing,2,7,289750.0
+Lookahead 5,-1 Decreasing,2,8,289750.0
+Lookahead 5,-1 Decreasing,2,9,289750.0
+Lookahead 5,-1 Decreasing,3,0,195075.0
+Lookahead 5,-1 Decreasing,3,1,195075.0
+Lookahead 5,-1 Decreasing,3,2,195075.0
+Lookahead 5,-1 Decreasing,3,3,195075.0
+Lookahead 5,-1 Decreasing,3,4,195075.0
+Lookahead 5,-1 Decreasing,3,5,195075.0
+Lookahead 5,-1 Decreasing,3,6,195075.0
+Lookahead 5,-1 Decreasing,3,7,195075.0
+Lookahead 5,-1 Decreasing,3,8,195075.0
+Lookahead 5,-1 Decreasing,3,9,195075.0
+Lookahead 5,-1 Decreasing,4,0,147744.0
+Lookahead 5,-1 Decreasing,4,1,147744.0
+Lookahead 5,-1 Decreasing,4,2,147744.0
+Lookahead 5,-1 Decreasing,4,3,147744.0
+Lookahead 5,-1 Decreasing,4,4,147744.0
+Lookahead 5,-1 Decreasing,4,5,147744.0
+Lookahead 5,-1 Decreasing,4,6,147744.0
+Lookahead 5,-1 Decreasing,4,7,147744.0
+Lookahead 5,-1 Decreasing,4,8,147744.0
+Lookahead 5,-1 Decreasing,4,9,147744.0
+Lookahead 5,Random Small,2,0,262436.0
+Lookahead 5,Random Small,2,1,281153.0
+Lookahead 5,Random Small,2,2,307106.0
+Lookahead 5,Random Small,2,3,265353.0
+Lookahead 5,Random Small,2,4,278432.0
+Lookahead 5,Random Small,2,5,263526.0
+Lookahead 5,Random Small,2,6,294624.0
+Lookahead 5,Random Small,2,7,280138.0
+Lookahead 5,Random Small,2,8,280892.0
+Lookahead 5,Random Small,2,9,293835.0
+Lookahead 5,Random Small,3,0,175362.0
+Lookahead 5,Random Small,3,1,187374.0
+Lookahead 5,Random Small,3,2,205071.0
+Lookahead 5,Random Small,3,3,177977.0
+Lookahead 5,Random Small,3,4,185999.0
+Lookahead 5,Random Small,3,5,176349.0
+Lookahead 5,Random Small,3,6,197079.0
+Lookahead 5,Random Small,3,7,187652.0
+Lookahead 5,Random Small,3,8,188237.0
+Lookahead 5,Random Small,3,9,196205.0
+Lookahead 5,Random Small,4,0,132424.0
+Lookahead 5,Random Small,4,1,141613.0
+Lookahead 5,Random Small,4,2,154559.0
+Lookahead 5,Random Small,4,3,134137.0
+Lookahead 5,Random Small,4,4,140574.0
+Lookahead 5,Random Small,4,5,133067.0
+Lookahead 5,Random Small,4,6,148769.0
+Lookahead 5,Random Small,4,7,141281.0
+Lookahead 5,Random Small,4,8,141927.0
+Lookahead 5,Random Small,4,9,148134.0
+Lookahead 5,Random Small Span Large,2,0,570263515.0
+Lookahead 5,Random Small Span Large,2,1,570282977.0
+Lookahead 5,Random Small Span Large,2,2,570307968.0
+Lookahead 5,Random Small Span Large,2,3,570267786.0
+Lookahead 5,Random Small Span Large,2,4,570279729.0
+Lookahead 5,Random Small Span Large,2,5,570265082.0
+Lookahead 5,Random Small Span Large,2,6,570295904.0
+Lookahead 5,Random Small Span Large,2,7,570281661.0
+Lookahead 5,Random Small Span Large,2,8,570282829.0
+Lookahead 5,Random Small Span Large,2,9,570295137.0
+Lookahead 5,Random Small Span Large,3,0,382675979.0
+Lookahead 5,Random Small Span Large,3,1,382689064.0
+Lookahead 5,Random Small Span Large,3,2,382705618.0
+Lookahead 5,Random Small Span Large,3,3,382678727.0
+Lookahead 5,Random Small Span Large,3,4,382686689.0
+Lookahead 5,Random Small Span Large,3,5,382677133.0
+Lookahead 5,Random Small Span Large,3,6,382697611.0
+Lookahead 5,Random Small Span Large,3,7,382688219.0
+Lookahead 5,Random Small Span Large,3,8,382688956.0
+Lookahead 5,Random Small Span Large,3,9,382696943.0
+Lookahead 5,Random Small Span Large,4,0,288932669.0
+Lookahead 5,Random Small Span Large,4,1,288942221.0
+Lookahead 5,Random Small Span Large,4,2,288954793.0
+Lookahead 5,Random Small Span Large,4,3,288934245.0
+Lookahead 5,Random Small Span Large,4,4,288940790.0
+Lookahead 5,Random Small Span Large,4,5,288933529.0
+Lookahead 5,Random Small Span Large,4,6,288949111.0
+Lookahead 5,Random Small Span Large,4,7,288941673.0
+Lookahead 5,Random Small Span Large,4,8,288942463.0
+Lookahead 5,Random Small Span Large,4,9,288948319.0
+Lookahead 5,Random Large Span Large,2,0,2675833381.0
+Lookahead 5,Random Large Span Large,2,1,2753691689.0
+Lookahead 5,Random Large Span Large,2,2,2843918038.0
+Lookahead 5,Random Large Span Large,2,3,2649029912.0
+Lookahead 5,Random Large Span Large,2,4,2717866850.0
+Lookahead 5,Random Large Span Large,2,5,2799466593.0
+Lookahead 5,Random Large Span Large,2,6,2614386629.0
+Lookahead 5,Random Large Span Large,2,7,2880586561.0
+Lookahead 5,Random Large Span Large,2,8,2834791278.0
+Lookahead 5,Random Large Span Large,2,9,2953471711.0
+Lookahead 5,Random Large Span Large,3,0,1792224071.0
+Lookahead 5,Random Large Span Large,3,1,1844213588.0
+Lookahead 5,Random Large Span Large,3,2,1898660147.0
+Lookahead 5,Random Large Span Large,3,3,1775519578.0
+Lookahead 5,Random Large Span Large,3,4,1816567258.0
+Lookahead 5,Random Large Span Large,3,5,1874080330.0
+Lookahead 5,Random Large Span Large,3,6,1749557828.0
+Lookahead 5,Random Large Span Large,3,7,1921419957.0
+Lookahead 5,Random Large Span Large,3,8,1898231353.0
+Lookahead 5,Random Large Span Large,3,9,1980704983.0
+Lookahead 5,Random Large Span Large,4,0,1355322855.0
+Lookahead 5,Random Large Span Large,4,1,1389581168.0
+Lookahead 5,Random Large Span Large,4,2,1430765315.0
+Lookahead 5,Random Large Span Large,4,3,1339697402.0
+Lookahead 5,Random Large Span Large,4,4,1369287651.0
+Lookahead 5,Random Large Span Large,4,5,1414862459.0
+Lookahead 5,Random Large Span Large,4,6,1319112006.0
+Lookahead 5,Random Large Span Large,4,7,1448708984.0
+Lookahead 5,Random Large Span Large,4,8,1430162890.0
+Lookahead 5,Random Large Span Large,4,9,1491595135.0
+Lookahead 5,"Random Half Low, Half High",2,0,4076240.0
+Lookahead 5,"Random Half Low, Half High",2,1,4101821.0
+Lookahead 5,"Random Half Low, Half High",2,2,4127224.0
+Lookahead 5,"Random Half Low, Half High",2,3,4091487.0
+Lookahead 5,"Random Half Low, Half High",2,4,4104234.0
+Lookahead 5,"Random Half Low, Half High",2,5,4084221.0
+Lookahead 5,"Random Half Low, Half High",2,6,4115008.0
+Lookahead 5,"Random Half Low, Half High",2,7,4100503.0
+Lookahead 5,"Random Half Low, Half High",2,8,4094937.0
+Lookahead 5,"Random Half Low, Half High",2,9,4114212.0
+Lookahead 5,"Random Half Low, Half High",3,0,2734500.0
+Lookahead 5,"Random Half Low, Half High",3,1,2745270.0
+Lookahead 5,"Random Half Low, Half High",3,2,2763758.0
+Lookahead 5,"Random Half Low, Half High",3,3,2739704.0
+Lookahead 5,"Random Half Low, Half High",3,4,2745068.0
+Lookahead 5,"Random Half Low, Half High",3,5,2731379.0
+Lookahead 5,"Random Half Low, Half High",3,6,2755891.0
+Lookahead 5,"Random Half Low, Half High",3,7,2746680.0
+Lookahead 5,"Random Half Low, Half High",3,8,2747153.0
+Lookahead 5,"Random Half Low, Half High",3,9,2755304.0
+Lookahead 5,"Random Half Low, Half High",4,0,2059686.0
+Lookahead 5,"Random Half Low, Half High",4,1,2069774.0
+Lookahead 5,"Random Half Low, Half High",4,2,2078745.0
+Lookahead 5,"Random Half Low, Half High",4,3,2063860.0
+Lookahead 5,"Random Half Low, Half High",4,4,2070319.0
+Lookahead 5,"Random Half Low, Half High",4,5,2060305.0
+Lookahead 5,"Random Half Low, Half High",4,6,2076705.0
+Lookahead 5,"Random Half Low, Half High",4,7,2071113.0
+Lookahead 5,"Random Half Low, Half High",4,8,2069045.0
+Lookahead 5,"Random Half Low, Half High",4,9,2076179.0
+Lookahead 5,"Random Half High, Half Low",2,0,1576522.0
+Lookahead 5,"Random Half High, Half Low",2,1,1555066.0
+Lookahead 5,"Random Half High, Half Low",2,2,1602152.0
+Lookahead 5,"Random Half High, Half Low",2,3,1561532.0
+Lookahead 5,"Random Half High, Half Low",2,4,1589156.0
+Lookahead 5,"Random Half High, Half Low",2,5,1557893.0
+Lookahead 5,"Random Half High, Half Low",2,6,1583418.0
+Lookahead 5,"Random Half High, Half Low",2,7,1580043.0
+Lookahead 5,"Random Half High, Half Low",2,8,1593460.0
+Lookahead 5,"Random Half High, Half Low",2,9,1585863.0
+Lookahead 5,"Random Half High, Half Low",3,0,1062578.0
+Lookahead 5,"Random Half High, Half Low",3,1,1048557.0
+Lookahead 5,"Random Half High, Half Low",3,2,1080153.0
+Lookahead 5,"Random Half High, Half Low",3,3,1052617.0
+Lookahead 5,"Random Half High, Half Low",3,4,1071271.0
+Lookahead 5,"Random Half High, Half Low",3,5,1050618.0
+Lookahead 5,"Random Half High, Half Low",3,6,1068195.0
+Lookahead 5,"Random Half High, Half Low",3,7,1065115.0
+Lookahead 5,"Random Half High, Half Low",3,8,1073461.0
+Lookahead 5,"Random Half High, Half Low",3,9,1068843.0
+Lookahead 5,"Random Half High, Half Low",4,0,806270.0
+Lookahead 5,"Random Half High, Half Low",4,1,796083.0
+Lookahead 5,"Random Half High, Half Low",4,2,819624.0
+Lookahead 5,"Random Half High, Half Low",4,3,798888.0
+Lookahead 5,"Random Half High, Half Low",4,4,812723.0
+Lookahead 5,"Random Half High, Half Low",4,5,797283.0
+Lookahead 5,"Random Half High, Half Low",4,6,810642.0
+Lookahead 5,"Random Half High, Half Low",4,7,808396.0
+Lookahead 5,"Random Half High, Half Low",4,8,814742.0
+Lookahead 5,"Random Half High, Half Low",4,9,811138.0
+Lookahead 5,Random Non-Decreasing Large Span,2,0,404386047.0
+Lookahead 5,Random Non-Decreasing Large Span,2,1,406338789.0
+Lookahead 5,Random Non-Decreasing Large Span,2,2,365420303.0
+Lookahead 5,Random Non-Decreasing Large Span,2,3,364865912.0
+Lookahead 5,Random Non-Decreasing Large Span,2,4,399367463.0
+Lookahead 5,Random Non-Decreasing Large Span,2,5,354555287.0
+Lookahead 5,Random Non-Decreasing Large Span,2,6,343979060.0
+Lookahead 5,Random Non-Decreasing Large Span,2,7,391982151.0
+Lookahead 5,Random Non-Decreasing Large Span,2,8,361998220.0
+Lookahead 5,Random Non-Decreasing Large Span,2,9,387491225.0
+Lookahead 5,Random Non-Decreasing Large Span,3,0,270633572.0
+Lookahead 5,Random Non-Decreasing Large Span,3,1,271927466.0
+Lookahead 5,Random Non-Decreasing Large Span,3,2,244534333.0
+Lookahead 5,Random Non-Decreasing Large Span,3,3,244130504.0
+Lookahead 5,Random Non-Decreasing Large Span,3,4,267277442.0
+Lookahead 5,Random Non-Decreasing Large Span,3,5,237218548.0
+Lookahead 5,Random Non-Decreasing Large Span,3,6,230099788.0
+Lookahead 5,Random Non-Decreasing Large Span,3,7,262292550.0
+Lookahead 5,Random Non-Decreasing Large Span,3,8,242197178.0
+Lookahead 5,Random Non-Decreasing Large Span,3,9,259289862.0
+Lookahead 5,Random Non-Decreasing Large Span,4,0,203780858.0
+Lookahead 5,Random Non-Decreasing Large Span,4,1,204774342.0
+Lookahead 5,Random Non-Decreasing Large Span,4,2,184138128.0
+Lookahead 5,Random Non-Decreasing Large Span,4,3,183802063.0
+Lookahead 5,Random Non-Decreasing Large Span,4,4,201298213.0
+Lookahead 5,Random Non-Decreasing Large Span,4,5,178597722.0
+Lookahead 5,Random Non-Decreasing Large Span,4,6,173195349.0
+Lookahead 5,Random Non-Decreasing Large Span,4,7,197546747.0
+Lookahead 5,Random Non-Decreasing Large Span,4,8,182351391.0
+Lookahead 5,Random Non-Decreasing Large Span,4,9,195247044.0
+Lookahead 5,Random Non-Increasing Large Span,2,0,210783522.0
+Lookahead 5,Random Non-Increasing Large Span,2,1,212341399.0
+Lookahead 5,Random Non-Increasing Large Span,2,2,193270368.0
+Lookahead 5,Random Non-Increasing Large Span,2,3,182968329.0
+Lookahead 5,Random Non-Increasing Large Span,2,4,214867995.0
+Lookahead 5,Random Non-Increasing Large Span,2,5,181458406.0
+Lookahead 5,Random Non-Increasing Large Span,2,6,158943632.0
+Lookahead 5,Random Non-Increasing Large Span,2,7,204831461.0
+Lookahead 5,Random Non-Increasing Large Span,2,8,180281077.0
+Lookahead 5,Random Non-Increasing Large Span,2,9,197009616.0
+Lookahead 5,Random Non-Increasing Large Span,3,0,141886299.0
+Lookahead 5,Random Non-Increasing Large Span,3,1,142931433.0
+Lookahead 5,Random Non-Increasing Large Span,3,2,130087825.0
+Lookahead 5,Random Non-Increasing Large Span,3,3,123194878.0
+Lookahead 5,Random Non-Increasing Large Span,3,4,144608858.0
+Lookahead 5,Random Non-Increasing Large Span,3,5,122163683.0
+Lookahead 5,Random Non-Increasing Large Span,3,6,107079749.0
+Lookahead 5,Random Non-Increasing Large Span,3,7,137878571.0
+Lookahead 5,Random Non-Increasing Large Span,3,8,121389830.0
+Lookahead 5,Random Non-Increasing Large Span,3,9,132637304.0
+Lookahead 5,Random Non-Increasing Large Span,4,0,107442412.0
+Lookahead 5,Random Non-Increasing Large Span,4,1,108234744.0
+Lookahead 5,Random Non-Increasing Large Span,4,2,98498923.0
+Lookahead 5,Random Non-Increasing Large Span,4,3,93313379.0
+Lookahead 5,Random Non-Increasing Large Span,4,4,109481369.0
+Lookahead 5,Random Non-Increasing Large Span,4,5,92515486.0
+Lookahead 5,Random Non-Increasing Large Span,4,6,81150945.0
+Lookahead 5,Random Non-Increasing Large Span,4,7,104406449.0
+Lookahead 5,Random Non-Increasing Large Span,4,8,91951248.0
+Lookahead 5,Random Non-Increasing Large Span,4,9,100455636.0
+Simple Sort & Split,Constant,2,0,5700.0
+Simple Sort & Split,Constant,2,1,5700.0
+Simple Sort & Split,Constant,2,2,5700.0
+Simple Sort & Split,Constant,2,3,5700.0
+Simple Sort & Split,Constant,2,4,5700.0
+Simple Sort & Split,Constant,2,5,5700.0
+Simple Sort & Split,Constant,2,6,5700.0
+Simple Sort & Split,Constant,2,7,5700.0
+Simple Sort & Split,Constant,2,8,5700.0
+Simple Sort & Split,Constant,2,9,5700.0
+Simple Sort & Split,Constant,3,0,3825.0
+Simple Sort & Split,Constant,3,1,3825.0
+Simple Sort & Split,Constant,3,2,3825.0
+Simple Sort & Split,Constant,3,3,3825.0
+Simple Sort & Split,Constant,3,4,3825.0
+Simple Sort & Split,Constant,3,5,3825.0
+Simple Sort & Split,Constant,3,6,3825.0
+Simple Sort & Split,Constant,3,7,3825.0
+Simple Sort & Split,Constant,3,8,3825.0
+Simple Sort & Split,Constant,3,9,3825.0
+Simple Sort & Split,Constant,4,0,2888.0
+Simple Sort & Split,Constant,4,1,2888.0
+Simple Sort & Split,Constant,4,2,2888.0
+Simple Sort & Split,Constant,4,3,2888.0
+Simple Sort & Split,Constant,4,4,2888.0
+Simple Sort & Split,Constant,4,5,2888.0
+Simple Sort & Split,Constant,4,6,2888.0
+Simple Sort & Split,Constant,4,7,2888.0
+Simple Sort & Split,Constant,4,8,2888.0
+Simple Sort & Split,Constant,4,9,2888.0
+Simple Sort & Split,+1 Increasing,2,0,500650.0
+Simple Sort & Split,+1 Increasing,2,1,500650.0
+Simple Sort & Split,+1 Increasing,2,2,500650.0
+Simple Sort & Split,+1 Increasing,2,3,500650.0
+Simple Sort & Split,+1 Increasing,2,4,500650.0
+Simple Sort & Split,+1 Increasing,2,5,500650.0
+Simple Sort & Split,+1 Increasing,2,6,500650.0
+Simple Sort & Split,+1 Increasing,2,7,500650.0
+Simple Sort & Split,+1 Increasing,2,8,500650.0
+Simple Sort & Split,+1 Increasing,2,9,500650.0
+Simple Sort & Split,+1 Increasing,3,0,320025.0
+Simple Sort & Split,+1 Increasing,3,1,320025.0
+Simple Sort & Split,+1 Increasing,3,2,320025.0
+Simple Sort & Split,+1 Increasing,3,3,320025.0
+Simple Sort & Split,+1 Increasing,3,4,320025.0
+Simple Sort & Split,+1 Increasing,3,5,320025.0
+Simple Sort & Split,+1 Increasing,3,6,320025.0
+Simple Sort & Split,+1 Increasing,3,7,320025.0
+Simple Sort & Split,+1 Increasing,3,8,320025.0
+Simple Sort & Split,+1 Increasing,3,9,320025.0
+Simple Sort & Split,+1 Increasing,4,0,237025.0
+Simple Sort & Split,+1 Increasing,4,1,237025.0
+Simple Sort & Split,+1 Increasing,4,2,237025.0
+Simple Sort & Split,+1 Increasing,4,3,237025.0
+Simple Sort & Split,+1 Increasing,4,4,237025.0
+Simple Sort & Split,+1 Increasing,4,5,237025.0
+Simple Sort & Split,+1 Increasing,4,6,237025.0
+Simple Sort & Split,+1 Increasing,4,7,237025.0
+Simple Sort & Split,+1 Increasing,4,8,237025.0
+Simple Sort & Split,+1 Increasing,4,9,237025.0
+Simple Sort & Split,-1 Decreasing,2,0,360050.0
+Simple Sort & Split,-1 Decreasing,2,1,360050.0
+Simple Sort & Split,-1 Decreasing,2,2,360050.0
+Simple Sort & Split,-1 Decreasing,2,3,360050.0
+Simple Sort & Split,-1 Decreasing,2,4,360050.0
+Simple Sort & Split,-1 Decreasing,2,5,360050.0
+Simple Sort & Split,-1 Decreasing,2,6,360050.0
+Simple Sort & Split,-1 Decreasing,2,7,360050.0
+Simple Sort & Split,-1 Decreasing,2,8,360050.0
+Simple Sort & Split,-1 Decreasing,2,9,360050.0
+Simple Sort & Split,-1 Decreasing,3,0,257550.0
+Simple Sort & Split,-1 Decreasing,3,1,257550.0
+Simple Sort & Split,-1 Decreasing,3,2,257550.0
+Simple Sort & Split,-1 Decreasing,3,3,257550.0
+Simple Sort & Split,-1 Decreasing,3,4,257550.0
+Simple Sort & Split,-1 Decreasing,3,5,257550.0
+Simple Sort & Split,-1 Decreasing,3,6,257550.0
+Simple Sort & Split,-1 Decreasing,3,7,257550.0
+Simple Sort & Split,-1 Decreasing,3,8,257550.0
+Simple Sort & Split,-1 Decreasing,3,9,257550.0
+Simple Sort & Split,-1 Decreasing,4,0,201875.0
+Simple Sort & Split,-1 Decreasing,4,1,201875.0
+Simple Sort & Split,-1 Decreasing,4,2,201875.0
+Simple Sort & Split,-1 Decreasing,4,3,201875.0
+Simple Sort & Split,-1 Decreasing,4,4,201875.0
+Simple Sort & Split,-1 Decreasing,4,5,201875.0
+Simple Sort & Split,-1 Decreasing,4,6,201875.0
+Simple Sort & Split,-1 Decreasing,4,7,201875.0
+Simple Sort & Split,-1 Decreasing,4,8,201875.0
+Simple Sort & Split,-1 Decreasing,4,9,201875.0
+Simple Sort & Split,Random Small,2,0,270806.0
+Simple Sort & Split,Random Small,2,1,280759.0
+Simple Sort & Split,Random Small,2,2,308034.0
+Simple Sort & Split,Random Small,2,3,268776.0
+Simple Sort & Split,Random Small,2,4,289587.0
+Simple Sort & Split,Random Small,2,5,269743.0
+Simple Sort & Split,Random Small,2,6,304150.0
+Simple Sort & Split,Random Small,2,7,286406.0
+Simple Sort & Split,Random Small,2,8,299104.0
+Simple Sort & Split,Random Small,2,9,303462.0
+Simple Sort & Split,Random Small,3,0,184201.0
+Simple Sort & Split,Random Small,3,1,186536.0
+Simple Sort & Split,Random Small,3,2,208198.0
+Simple Sort & Split,Random Small,3,3,182286.0
+Simple Sort & Split,Random Small,3,4,191095.0
+Simple Sort & Split,Random Small,3,5,181602.0
+Simple Sort & Split,Random Small,3,6,196610.0
+Simple Sort & Split,Random Small,3,7,192241.0
+Simple Sort & Split,Random Small,3,8,196814.0
+Simple Sort & Split,Random Small,3,9,197597.0
+Simple Sort & Split,Random Small,4,0,140019.0
+Simple Sort & Split,Random Small,4,1,141486.0
+Simple Sort & Split,Random Small,4,2,158336.0
+Simple Sort & Split,Random Small,4,3,138191.0
+Simple Sort & Split,Random Small,4,4,147600.0
+Simple Sort & Split,Random Small,4,5,137746.0
+Simple Sort & Split,Random Small,4,6,150394.0
+Simple Sort & Split,Random Small,4,7,145604.0
+Simple Sort & Split,Random Small,4,8,149478.0
+Simple Sort & Split,Random Small,4,9,151006.0
+Simple Sort & Split,Random Small Span Large,2,0,570270806.0
+Simple Sort & Split,Random Small Span Large,2,1,570280759.0
+Simple Sort & Split,Random Small Span Large,2,2,570308034.0
+Simple Sort & Split,Random Small Span Large,2,3,570268776.0
+Simple Sort & Split,Random Small Span Large,2,4,570289587.0
+Simple Sort & Split,Random Small Span Large,2,5,570269743.0
+Simple Sort & Split,Random Small Span Large,2,6,570304150.0
+Simple Sort & Split,Random Small Span Large,2,7,570286406.0
+Simple Sort & Split,Random Small Span Large,2,8,570299104.0
+Simple Sort & Split,Random Small Span Large,2,9,570303462.0
+Simple Sort & Split,Random Small Span Large,3,0,382684201.0
+Simple Sort & Split,Random Small Span Large,3,1,382686536.0
+Simple Sort & Split,Random Small Span Large,3,2,382708198.0
+Simple Sort & Split,Random Small Span Large,3,3,382682286.0
+Simple Sort & Split,Random Small Span Large,3,4,382691095.0
+Simple Sort & Split,Random Small Span Large,3,5,382681602.0
+Simple Sort & Split,Random Small Span Large,3,6,382696610.0
+Simple Sort & Split,Random Small Span Large,3,7,382692241.0
+Simple Sort & Split,Random Small Span Large,3,8,382696814.0
+Simple Sort & Split,Random Small Span Large,3,9,382697597.0
+Simple Sort & Split,Random Small Span Large,4,0,288940019.0
+Simple Sort & Split,Random Small Span Large,4,1,288941486.0
+Simple Sort & Split,Random Small Span Large,4,2,288958336.0
+Simple Sort & Split,Random Small Span Large,4,3,288938191.0
+Simple Sort & Split,Random Small Span Large,4,4,288947600.0
+Simple Sort & Split,Random Small Span Large,4,5,288937746.0
+Simple Sort & Split,Random Small Span Large,4,6,288950394.0
+Simple Sort & Split,Random Small Span Large,4,7,288945604.0
+Simple Sort & Split,Random Small Span Large,4,8,288949478.0
+Simple Sort & Split,Random Small Span Large,4,9,288951006.0
+Simple Sort & Split,Random Large Span Large,2,0,2772744108.0
+Simple Sort & Split,Random Large Span Large,2,1,2748563990.0
+Simple Sort & Split,Random Large Span Large,2,2,2895762457.0
+Simple Sort & Split,Random Large Span Large,2,3,2746100259.0
+Simple Sort & Split,Random Large Span Large,2,4,2828233862.0
+Simple Sort & Split,Random Large Span Large,2,5,2914532425.0
+Simple Sort & Split,Random Large Span Large,2,6,2725878774.0
+Simple Sort & Split,Random Large Span Large,2,7,2952528480.0
+Simple Sort & Split,Random Large Span Large,2,8,2885601824.0
+Simple Sort & Split,Random Large Span Large,2,9,2960404259.0
+Simple Sort & Split,Random Large Span Large,3,0,1887247808.0
+Simple Sort & Split,Random Large Span Large,3,1,1877379330.0
+Simple Sort & Split,Random Large Span Large,3,2,1943096216.0
+Simple Sort & Split,Random Large Span Large,3,3,1792942736.0
+Simple Sort & Split,Random Large Span Large,3,4,1955680430.0
+Simple Sort & Split,Random Large Span Large,3,5,1948249342.0
+Simple Sort & Split,Random Large Span Large,3,6,1806938695.0
+Simple Sort & Split,Random Large Span Large,3,7,1956227184.0
+Simple Sort & Split,Random Large Span Large,3,8,1876447616.0
+Simple Sort & Split,Random Large Span Large,3,9,1952222748.0
+Simple Sort & Split,Random Large Span Large,4,0,1420132462.0
+Simple Sort & Split,Random Large Span Large,4,1,1411762768.0
+Simple Sort & Split,Random Large Span Large,4,2,1474186296.0
+Simple Sort & Split,Random Large Span Large,4,3,1395707782.0
+Simple Sort & Split,Random Large Span Large,4,4,1460275989.0
+Simple Sort & Split,Random Large Span Large,4,5,1491695744.0
+Simple Sort & Split,Random Large Span Large,4,6,1396302280.0
+Simple Sort & Split,Random Large Span Large,4,7,1499824671.0
+Simple Sort & Split,Random Large Span Large,4,8,1445991994.0
+Simple Sort & Split,Random Large Span Large,4,9,1501403623.0
+Simple Sort & Split,"Random Half Low, Half High",2,0,2823481.0
+Simple Sort & Split,"Random Half Low, Half High",2,1,2848201.0
+Simple Sort & Split,"Random Half Low, Half High",2,2,2867871.0
+Simple Sort & Split,"Random Half Low, Half High",2,3,2837940.0
+Simple Sort & Split,"Random Half Low, Half High",2,4,2864694.0
+Simple Sort & Split,"Random Half Low, Half High",2,5,2824620.0
+Simple Sort & Split,"Random Half Low, Half High",2,6,2859285.0
+Simple Sort & Split,"Random Half Low, Half High",2,7,2851970.0
+Simple Sort & Split,"Random Half Low, Half High",2,8,2862306.0
+Simple Sort & Split,"Random Half Low, Half High",2,9,2849663.0
+Simple Sort & Split,"Random Half Low, Half High",3,0,2163738.0
+Simple Sort & Split,"Random Half Low, Half High",3,1,2172186.0
+Simple Sort & Split,"Random Half Low, Half High",3,2,2190213.0
+Simple Sort & Split,"Random Half Low, Half High",3,3,2168830.0
+Simple Sort & Split,"Random Half Low, Half High",3,4,2177064.0
+Simple Sort & Split,"Random Half Low, Half High",3,5,2162273.0
+Simple Sort & Split,"Random Half Low, Half High",3,6,2184373.0
+Simple Sort & Split,"Random Half Low, Half High",3,7,2172217.0
+Simple Sort & Split,"Random Half Low, Half High",3,8,2175120.0
+Simple Sort & Split,"Random Half Low, Half High",3,9,2177774.0
+Simple Sort & Split,"Random Half Low, Half High",4,0,1468402.0
+Simple Sort & Split,"Random Half Low, Half High",4,1,1470375.0
+Simple Sort & Split,"Random Half Low, Half High",4,2,1487144.0
+Simple Sort & Split,"Random Half Low, Half High",4,3,1468381.0
+Simple Sort & Split,"Random Half Low, Half High",4,4,1479716.0
+Simple Sort & Split,"Random Half Low, Half High",4,5,1465486.0
+Simple Sort & Split,"Random Half Low, Half High",4,6,1485020.0
+Simple Sort & Split,"Random Half Low, Half High",4,7,1477260.0
+Simple Sort & Split,"Random Half Low, Half High",4,8,1483045.0
+Simple Sort & Split,"Random Half Low, Half High",4,9,1480464.0
+Simple Sort & Split,"Random Half High, Half Low",2,0,2854251.0
+Simple Sort & Split,"Random Half High, Half Low",2,1,2829607.0
+Simple Sort & Split,"Random Half High, Half Low",2,2,2879477.0
+Simple Sort & Split,"Random Half High, Half Low",2,3,2829684.0
+Simple Sort & Split,"Random Half High, Half Low",2,4,2840930.0
+Simple Sort & Split,"Random Half High, Half Low",2,5,2838520.0
+Simple Sort & Split,"Random Half High, Half Low",2,6,2858347.0
+Simple Sort & Split,"Random Half High, Half Low",2,7,2848258.0
+Simple Sort & Split,"Random Half High, Half Low",2,8,2852286.0
+Simple Sort & Split,"Random Half High, Half Low",2,9,2869185.0
+Simple Sort & Split,"Random Half High, Half Low",3,0,1647070.0
+Simple Sort & Split,"Random Half High, Half Low",3,1,1637922.0
+Simple Sort & Split,"Random Half High, Half Low",3,2,1668095.0
+Simple Sort & Split,"Random Half High, Half Low",3,3,1634444.0
+Simple Sort & Split,"Random Half High, Half Low",3,4,1651841.0
+Simple Sort & Split,"Random Half High, Half Low",3,5,1639245.0
+Simple Sort & Split,"Random Half High, Half Low",3,6,1652742.0
+Simple Sort & Split,"Random Half High, Half Low",3,7,1652936.0
+Simple Sort & Split,"Random Half High, Half Low",3,8,1660606.0
+Simple Sort & Split,"Random Half High, Half Low",3,9,1659874.0
+Simple Sort & Split,"Random Half High, Half Low",4,0,1441929.0
+Simple Sort & Split,"Random Half High, Half Low",4,1,1439957.0
+Simple Sort & Split,"Random Half High, Half Low",4,2,1459118.0
+Simple Sort & Split,"Random Half High, Half Low",4,3,1436576.0
+Simple Sort & Split,"Random Half High, Half Low",4,4,1445629.0
+Simple Sort & Split,"Random Half High, Half Low",4,5,1438017.0
+Simple Sort & Split,"Random Half High, Half Low",4,6,1445387.0
+Simple Sort & Split,"Random Half High, Half Low",4,7,1444857.0
+Simple Sort & Split,"Random Half High, Half Low",4,8,1445479.0
+Simple Sort & Split,"Random Half High, Half Low",4,9,1450674.0
+Simple Sort & Split,Random Non-Decreasing Large Span,2,0,353429269.0
+Simple Sort & Split,Random Non-Decreasing Large Span,2,1,358007735.0
+Simple Sort & Split,Random Non-Decreasing Large Span,2,2,325237031.0
+Simple Sort & Split,Random Non-Decreasing Large Span,2,3,317559984.0
+Simple Sort & Split,Random Non-Decreasing Large Span,2,4,351983039.0
+Simple Sort & Split,Random Non-Decreasing Large Span,2,5,311844201.0
+Simple Sort & Split,Random Non-Decreasing Large Span,2,6,297259511.0
+Simple Sort & Split,Random Non-Decreasing Large Span,2,7,348937224.0
+Simple Sort & Split,Random Non-Decreasing Large Span,2,8,319282309.0
+Simple Sort & Split,Random Non-Decreasing Large Span,2,9,340364056.0
+Simple Sort & Split,Random Non-Decreasing Large Span,3,0,226979769.0
+Simple Sort & Split,Random Non-Decreasing Large Span,3,1,229344035.0
+Simple Sort & Split,Random Non-Decreasing Large Span,3,2,206800081.0
+Simple Sort & Split,Random Non-Decreasing Large Span,3,3,204834659.0
+Simple Sort & Split,Random Non-Decreasing Large Span,3,4,226087314.0
+Simple Sort & Split,Random Non-Decreasing Large Span,3,5,201408451.0
+Simple Sort & Split,Random Non-Decreasing Large Span,3,6,190346436.0
+Simple Sort & Split,Random Non-Decreasing Large Span,3,7,221471199.0
+Simple Sort & Split,Random Non-Decreasing Large Span,3,8,202311084.0
+Simple Sort & Split,Random Non-Decreasing Large Span,3,9,215756706.0
+Simple Sort & Split,Random Non-Decreasing Large Span,4,0,168448598.0
+Simple Sort & Split,Random Non-Decreasing Large Span,4,1,169827361.0
+Simple Sort & Split,Random Non-Decreasing Large Span,4,2,153441189.0
+Simple Sort & Split,Random Non-Decreasing Large Span,4,3,151889156.0
+Simple Sort & Split,Random Non-Decreasing Large Span,4,4,168208199.0
+Simple Sort & Split,Random Non-Decreasing Large Span,4,5,149075430.0
+Simple Sort & Split,Random Non-Decreasing Large Span,4,6,139514358.0
+Simple Sort & Split,Random Non-Decreasing Large Span,4,7,164538202.0
+Simple Sort & Split,Random Non-Decreasing Large Span,4,8,150320211.0
+Simple Sort & Split,Random Non-Decreasing Large Span,4,9,160663615.0
+Simple Sort & Split,Random Non-Increasing Large Span,2,0,262246275.0
+Simple Sort & Split,Random Non-Increasing Large Span,2,1,261199453.0
+Simple Sort & Split,Random Non-Increasing Large Span,2,2,233913589.0
+Simple Sort & Split,Random Non-Increasing Large Span,2,3,230749692.0
+Simple Sort & Split,Random Non-Increasing Large Span,2,4,262739313.0
+Simple Sort & Split,Random Non-Increasing Large Span,2,5,224677799.0
+Simple Sort & Split,Random Non-Increasing Large Span,2,6,206130517.0
+Simple Sort & Split,Random Non-Increasing Large Span,2,7,248433264.0
+Simple Sort & Split,Random Non-Increasing Large Span,2,8,223490235.0
+Simple Sort & Split,Random Non-Increasing Large Span,2,9,244610300.0
+Simple Sort & Split,Random Non-Increasing Large Span,3,0,186170925.0
+Simple Sort & Split,Random Non-Increasing Large Span,3,1,186176578.0
+Simple Sort & Split,Random Non-Increasing Large Span,3,2,168419414.0
+Simple Sort & Split,Random Non-Increasing Large Span,3,3,163109992.0
+Simple Sort & Split,Random Non-Increasing Large Span,3,4,186423738.0
+Simple Sort & Split,Random Non-Increasing Large Span,3,5,158626049.0
+Simple Sort & Split,Random Non-Increasing Large Span,3,6,147454767.0
+Simple Sort & Split,Random Non-Increasing Large Span,3,7,179395839.0
+Simple Sort & Split,Random Non-Increasing Large Span,3,8,161917860.0
+Simple Sort & Split,Random Non-Increasing Large Span,3,9,176791875.0
+Simple Sort & Split,Random Non-Increasing Large Span,4,0,145475390.0
+Simple Sort & Split,Random Non-Increasing Large Span,4,1,145853119.0
+Simple Sort & Split,Random Non-Increasing Large Span,4,2,131553168.0
+Simple Sort & Split,Random Non-Increasing Large Span,4,3,127774270.0
+Simple Sort & Split,Random Non-Increasing Large Span,4,4,145121674.0
+Simple Sort & Split,Random Non-Increasing Large Span,4,5,124491914.0
+Simple Sort & Split,Random Non-Increasing Large Span,4,6,117399777.0
+Simple Sort & Split,Random Non-Increasing Large Span,4,7,139963682.0
+Simple Sort & Split,Random Non-Increasing Large Span,4,8,126474089.0
+Simple Sort & Split,Random Non-Increasing Large Span,4,9,137628865.0
