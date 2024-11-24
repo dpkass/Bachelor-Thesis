@@ -16,8 +16,11 @@ def generate(n=150, seeds=range(10)):
     :return: DataArray with generated instances
     """
     generator_names = [g.name for g in gs]
+    generator_random = [g.is_random for g in gs]
 
     data = np.array([[g(n, seed) for seed in seeds] for g in gs], dtype=object)
     return xr.DataArray(data,
-                        coords={'generator': generator_names, 'seed': seeds},
+                        coords={'generator': generator_names,
+                                'seed': seeds,
+                                'randomized': ('generator', generator_random)},
                         dims=['generator', 'seed', 'a']).astype(dtype)
