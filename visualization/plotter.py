@@ -1,17 +1,3 @@
-"""
-plotter.py
-
-Module to generate generalized and configurable plots for different statistical metrics using xarray datasets.
-
-Functions:
-- plot_line: Generate line plots.
-- plot_heatmap: Generate heatmaps.
-- plot_bar: Generate bar charts.
-- plot_box: Generate box plots.
-- plot_scatter: Generate scatter plots.
-- plot_violin: Generate violin plots.
-"""
-
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
@@ -32,29 +18,6 @@ def plot_line(
     filename: str = None,
     **kwargs
 ):
-    """
-    Generate a line plot for a specified metric.
-
-    **Usage**:
-    Ideal for visualizing how a metric changes with a continuous variable (e.g., number of machines `m`).
-
-    Parameters:
-    - data (xr.Dataset): Dataset containing the metric to plot.
-    - metric (str): The metric variable name in the dataset.
-    - x (str): The dimension to plot on the x-axis.
-    - hue (str, optional): Dimension for color encoding (e.g., 'Algorithm').
-    - style (str, optional): Dimension for line style encoding.
-    - title (str, optional): Title of the plot.
-    - xlabel (str, optional): Label for the x-axis.
-    - ylabel (str, optional): Label for the y-axis.
-    - palette (str, optional): Color palette for the plot.
-    - output_dir (str, optional): Directory to save the plot.
-    - filename (str, optional): Name of the saved plot file. If None, generated from metric and plot type.
-    - **kwargs: Additional keyword arguments for Seaborn's lineplot.
-
-    Returns:
-    - None: Saves the plot to the specified directory.
-    """
     plt.figure(figsize=(10, 6))
     sns.lineplot(
         data=data.to_dataframe().reset_index(),
@@ -64,6 +27,7 @@ def plot_line(
         style=style,
         palette=palette,
         marker="o",
+        errorbar=None,
         **kwargs
     )
     plt.title(title or f"{metric} vs {x}")
@@ -95,37 +59,12 @@ def plot_heatmap(
     filename: str = None,
     **kwargs
 ):
-    """
-    Generate a heatmap for a specified metric.
-
-    **Usage**:
-    Ideal for visualizing the relationship between two categorical variables and the corresponding metric value.
-
-    Parameters:
-    - data (xr.Dataset): Dataset containing the metric to plot.
-    - metric (str): The metric variable name in the dataset.
-    - x (str): The dimension to plot on the x-axis.
-    - y (str): The dimension to plot on the y-axis.
-    - facet (str, optional): Dimension to create separate heatmaps (e.g., 'Algorithm').
-    - title (str, optional): Title of the plot.
-    - xlabel (str, optional): Label for the x-axis.
-    - ylabel (str, optional): Label for the y-axis.
-    - cmap (str, optional): Colormap for the heatmap.
-    - annot (bool, optional): Whether to annotate the heatmap with metric values.
-    - fmt (str, optional): String formatting code for annotations.
-    - output_dir (str, optional): Directory to save the plot.
-    - filename (str, optional): Name of the saved plot file. If None, generated from metric and plot type.
-    - **kwargs: Additional keyword arguments for Seaborn's heatmap.
-
-    Returns:
-    - None: Saves the plot to the specified directory.
-    """
     if facet:
         unique_facets = data.coords[facet].values
         num_facets = len(unique_facets)
-        plt.figure(figsize=(8 * num_facets, 6))
+        plt.figure(figsize=(10, 6 * num_facets))
         for i, facet_val in enumerate(unique_facets, 1):
-            plt.subplot(1, num_facets, i)
+            plt.subplot(num_facets, 1, i)
             subset = data.sel({facet: facet_val})[metric].to_dataframe().reset_index()
             pivot_table = subset.pivot(index=y, columns=x, values=metric)
             sns.heatmap(
@@ -179,42 +118,20 @@ def plot_bar(
     ci: float = 95,
     **kwargs
 ):
-    """
-    Generate a bar chart for a specified metric.
-
-    **Usage**:
-    Ideal for comparing average metric values across categories (e.g., algorithms, generators).
-
-    Parameters:
-    - data (xr.Dataset): Dataset containing the metric to plot.
-    - metric (str): The metric variable name in the dataset.
-    - x (str): The categorical dimension to plot on the x-axis.
-    - hue (str, optional): Dimension for color encoding (e.g., 'Algorithm').
-    - title (str, optional): Title of the plot.
-    - xlabel (str, optional): Label for the x-axis.
-    - ylabel (str, optional): Label for the y-axis.
-    - palette (str, optional): Color palette for the plot.
-    - output_dir (str, optional): Directory to save the plot.
-    - filename (str, optional): Name of the saved plot file. If None, generated from metric and plot type.
-    - ci (float, optional): Size of confidence intervals to draw around estimated values.
-    - **kwargs: Additional keyword arguments for Seaborn's barplot.
-
-    Returns:
-    - None: Saves the plot to the specified directory.
-    """
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(14, 6))
     sns.barplot(
         data=data.to_dataframe().reset_index(),
         x=x,
         y=metric,
         hue=hue,
         palette=palette,
-        ci=ci,
+        errorbar=('ci', ci),
         **kwargs
     )
     plt.title(title or f"{metric} Bar Chart")
     plt.xlabel(xlabel or x)
     plt.ylabel(ylabel or metric)
+    plt.xticks(rotation=45, ha='right')
     plt.legend(title=hue if hue else "")
     plt.tight_layout()
 
@@ -238,28 +155,6 @@ def plot_box(
     filename: str = None,
     **kwargs
 ):
-    """
-    Generate a box plot for a specified metric.
-
-    **Usage**:
-    Ideal for visualizing the distribution and variability of a metric across different categories.
-
-    Parameters:
-    - data (xr.Dataset): Dataset containing the metric to plot.
-    - metric (str): The metric variable name in the dataset.
-    - x (str): The categorical dimension to plot on the x-axis.
-    - hue (str, optional): Dimension for color encoding (e.g., 'Algorithm').
-    - title (str, optional): Title of the plot.
-    - xlabel (str, optional): Label for the x-axis.
-    - ylabel (str, optional): Label for the y-axis.
-    - palette (str, optional): Color palette for the plot.
-    - output_dir (str, optional): Directory to save the plot.
-    - filename (str, optional): Name of the saved plot file. If None, generated from metric and plot type.
-    - **kwargs: Additional keyword arguments for Seaborn's boxplot.
-
-    Returns:
-    - None: Saves the plot to the specified directory.
-    """
     plt.figure(figsize=(10, 6))
     sns.boxplot(
         data=data.to_dataframe().reset_index(),
@@ -297,30 +192,6 @@ def plot_scatter(
     filename: str = None,
     **kwargs
 ):
-    """
-    Generate a scatter plot for two specified metrics.
-
-    **Usage**:
-    Ideal for examining the relationship between two numerical metrics (e.g., Relative Performance Ratio vs. Optimality Gap).
-
-    Parameters:
-    - data (xr.Dataset): Dataset containing the metrics to plot.
-    - x_metric (str): The metric variable name for the x-axis.
-    - y_metric (str): The metric variable name for the y-axis.
-    - hue (str, optional): Dimension for color encoding (e.g., 'Algorithm').
-    - size (str, optional): Dimension for size encoding (e.g., 'Generator').
-    - title (str, optional): Title of the plot.
-    - xlabel (str, optional): Label for the x-axis.
-    - ylabel (str, optional): Label for the y-axis.
-    - palette (str, optional): Color palette for the plot.
-    - size_palette (str, optional): Color palette for size encoding.
-    - output_dir (str, optional): Directory to save the plot.
-    - filename (str, optional): Name of the saved plot file. If None, generated from metric and plot type.
-    - **kwargs: Additional keyword arguments for Seaborn's scatterplot.
-
-    Returns:
-    - None: Saves the plot to the specified directory.
-    """
     plt.figure(figsize=(10, 6))
     sns.scatterplot(
         data=data.to_dataframe().reset_index(),
