@@ -35,7 +35,7 @@ if __name__ == "__main__":
     n = 150
     ms = [2, 3, 4]
 
-    # _test_algorithm(Greedy())
+    # _test_algorithm(LeastLoaded())
     # _test_algorithm(Lookahead(5))
     # _test_algorithm(Lookahead(15))
     # _test_algorithm(Lookahead(30))

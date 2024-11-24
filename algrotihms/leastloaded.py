@@ -3,12 +3,12 @@ from queue import PriorityQueue as PQ
 from algrotihms.base import Solver
 
 
-class Greedy(Solver):
+class LeastLoaded(Solver):
     """
-    Greedy. Linear complexity.
+    Always select least loaded machine.
     """
 
-    name = "Greedy"
+    name = "Least Loaded"
 
     def fit(self, n, m):
         self.n, self.m = n, m
