@@ -1,5 +1,29 @@
 import xarray as xr
-from plotter import plot_heatmap, plot_bar, plot_box, plot_line
+from plotter import plot_heatmap, plot_bar, plot_line
+
+interesting_rename_algos = {
+    'DP': 'DP',
+    'Least Loaded': 'Greedy',
+    'Balanced Sequential Insert': 'BSI'
+}
+
+interesting_rename_gens = {
+    '+1 Increasing': 'Non-Decreasing',
+    '-1 Decreasing': 'Non-Increasing',
+    'Random Small': 'Uniform Random',
+    'Random Half Low, Half High': 'LoHi',
+    'Random Half High, Half Low': 'HiLo',
+}
+
+interesting_algos_only = lambda ds: ds.sel(algorithm=list(interesting_rename_algos)).assign_coords(
+    algorithm=list(interesting_rename_algos.values()))
+
+interesting_gens_only = lambda ds: ds.sel(generator=list(interesting_rename_gens)).assign_coords(
+    generator=list(interesting_rename_gens.values()))
+
+interesting_only = lambda ds: interesting_algos_only(interesting_gens_only(ds))
+
+random_only = lambda ds: ds.sel(generator=solutions.randomized)
 
 
 def plot_relative_performance_ratio_heatmap_A_vs_G_per_m(metrics_ds: xr.Dataset, **kwargs):
@@ -76,13 +100,11 @@ def plot_relative_improvement_line_A_vs_m(metrics_ds: xr.Dataset, **kwargs):
 
 
 def plot_all_metrics(metrics_ds: xr.Dataset, **kwargs):
-    random_only = metrics_ds.sel(generator=solutions.randomized)
-
     plot_relative_performance_ratio_heatmap_A_vs_G_per_m(metrics_ds, **kwargs)
     plot_relative_performance_ratio_heatmap_G_vs_m_per_A(metrics_ds, **kwargs)
-    plot_variation_coefficient_bar_A_vs_G(random_only, **kwargs)
-    plot_variation_coefficient_heatmap_A_vs_G_per_m(random_only, **kwargs)
-    plot_relative_improvement_line_A_vs_m(metrics_ds, **kwargs)
+    plot_variation_coefficient_bar_A_vs_G(random_only(metrics_ds), **kwargs)
+    plot_variation_coefficient_heatmap_A_vs_G_per_m(random_only(metrics_ds), **kwargs)
+    plot_relative_improvement_line_A_vs_m(interesting_algos_only(metrics_ds), **kwargs)
 
 
 if __name__ == "__main__":
