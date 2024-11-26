@@ -1,7 +1,12 @@
 import matplotlib.pyplot as plt
+from matplotlib.ticker import PercentFormatter
 import seaborn as sns
+
 import os
+
 import xarray as xr
+
+from math import ceil
 
 
 def plot_line(
@@ -16,6 +21,7 @@ def plot_line(
     palette: str = "viridis",
     output_dir: str = "plots",
     filename: str = None,
+    percent: bool = False,
     **kwargs
 ):
     plt.figure(figsize=(10, 6))
@@ -30,10 +36,10 @@ def plot_line(
         errorbar=None,
         **kwargs
     )
+    if percent: plt.gca().yaxis.set_major_formatter(PercentFormatter(1, 0))
     plt.title(title or f"{metric} vs {x}")
     plt.xlabel(xlabel or x)
     plt.ylabel(ylabel or metric)
-    plt.legend(title=hue if hue else "")
     plt.tight_layout()
 
     os.makedirs(output_dir, exist_ok=True)
@@ -57,16 +63,23 @@ def plot_heatmap(
     fmt: str = ".2f",
     output_dir: str = "plots",
     filename: str = None,
+    nrows: callable = 2,
+    figsize: tuple = (8, 6),
     **kwargs
 ):
+    x_order = data.coords[x].values
+    y_order = data.coords[y].values
+
     if facet:
         unique_facets = data.coords[facet].values
         num_facets = len(unique_facets)
-        plt.figure(figsize=(10, 6 * num_facets))
+        ncols = ceil(num_facets / nrows)
+        plt.figure(figsize=(figsize[0] * ncols, figsize[1] * nrows))
         for i, facet_val in enumerate(unique_facets, 1):
-            plt.subplot(num_facets, 1, i)
+            plt.subplot(nrows, ncols, i)
             subset = data.sel({facet: facet_val})[metric].to_dataframe().reset_index()
             pivot_table = subset.pivot(index=y, columns=x, values=metric)
+            pivot_table = pivot_table.reindex(index=y_order, columns=x_order)
             sns.heatmap(
                 pivot_table,
                 annot=annot,
@@ -83,6 +96,7 @@ def plot_heatmap(
         plt.figure(figsize=(10, 8))
         subset = data[metric].to_dataframe().reset_index()
         pivot_table = subset.pivot(index=y, columns=x, values=metric)
+        pivot_table = pivot_table.reindex(index=y_order, columns=x_order)
         sns.heatmap(
             pivot_table,
             annot=annot,
@@ -116,6 +130,7 @@ def plot_bar(
     output_dir: str = "plots",
     filename: str = None,
     ci: float = 95,
+    percent: bool = False,
     **kwargs
 ):
     plt.figure(figsize=(14, 6))
@@ -125,13 +140,14 @@ def plot_bar(
         y=metric,
         hue=hue,
         palette=palette,
-        errorbar=('ci', ci),
+        errorbar=("ci", ci),
         **kwargs
     )
+    if percent: plt.gca().yaxis.set_major_formatter(PercentFormatter(1))
     plt.title(title or f"{metric} Bar Chart")
     plt.xlabel(xlabel or x)
     plt.ylabel(ylabel or metric)
-    plt.xticks(rotation=45, ha='right')
+    plt.xticks(rotation=45, ha="right")
     plt.legend(title=hue if hue else "")
     plt.tight_layout()
 
