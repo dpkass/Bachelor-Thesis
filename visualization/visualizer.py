@@ -127,16 +127,16 @@ def plot_relative_performance_ratio_heatmap_G_vs_m_per_A_interesting(metrics_ds,
     )
 
 
-def plot_coefficient_of_variation_bar_A_vs_G(metrics_ds, **kwargs):
+def plot_standard_deviation_bar_G_vs_A(metrics_ds, **kwargs):
     plot_bar(
-        data=metrics_ds.sel(m=5).drop_sel(algorithm="DP"),
-        metric="Coefficient_of_Variation",
+        data=metrics_ds.sel(m=3).drop_sel(algorithm="DP"),
+        metric="Standard_Deviation",
         x="generator",
         hue="algorithm",
-        title="Coefficient of Variation of RPR ($m=5$)",
+        title="Standard Deviation of RPR ($m=5$)",
         xlabel="Generator",
-        ylabel="Coefficient of Variation",
-        filename="CV-BAR-A-G.png",
+        ylabel="Standard Deviation",
+        filename="RPR_STD-BAR-G-A.png",
         percent=True,
         **kwargs
     )
@@ -162,7 +162,7 @@ def plot_all_metrics(metrics_ds, **kwargs):
     plot_relative_performance_ratio_heatmap_G_vs_A_per_m(metrics_ds, **kwargs)
     plot_relative_performance_ratio_heatmap_G_vs_m_per_A_interesting(metrics_ds, **kwargs)
     plot_relative_performance_ratio_line_G_vs_A_per_m_interesting(metrics_ds, **kwargs)
-    plot_coefficient_of_variation_bar_A_vs_G(random_only(metrics_ds), **kwargs)
+    plot_standard_deviation_bar_G_vs_A(random_only(metrics_ds), **kwargs)
     plot_relative_improvement_line_A_vs_m(sel_algos(metrics_ds, interesting_algos), **kwargs)
 
 
