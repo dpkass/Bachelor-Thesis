@@ -63,8 +63,8 @@ def plot_heatmap(
     fmt: str = ".2f",
     output_dir: str = "plots",
     filename: str = None,
-    nrows: callable = 2,
     figsize: tuple = (8, 6),
+    nrows: int = None,
     **kwargs
 ):
     x_order = data.coords[x].values
@@ -73,6 +73,7 @@ def plot_heatmap(
     if facet:
         unique_facets = data.coords[facet].values
         num_facets = len(unique_facets)
+        nrows = nrows or num_facets
         ncols = ceil(num_facets / nrows)
         plt.figure(figsize=(figsize[0] * ncols, figsize[1] * nrows))
         for i, facet_val in enumerate(unique_facets, 1):

@@ -1,5 +1,4 @@
 import xarray as xr
-import numpy as np
 from plotter import plot_heatmap, plot_bar, plot_line
 
 interesting_algos = ['Least Loaded', 'Balanced Sequential Insert', 'Simple Sort & Split']
@@ -87,8 +86,8 @@ def plot_relative_performance_ratio_heatmap_G_vs_A_per_m(metrics_ds, **kwargs):
         title="Relative Performance Ratio",
         xlabel="Algorithm",
         ylabel="Generator",
-        nrows=1,
         filename="RPR-HEAT-G-A-m.png",
+        figsize=(8, 5),
         **kwargs
     )
 
@@ -121,7 +120,6 @@ def plot_relative_performance_ratio_heatmap_G_vs_m_per_A_interesting(metrics_ds,
         xlabel="Number of Machines (m)",
         ylabel="Generator",
         filename="RPR-HEAT-G-m-A-INTERESTING.png",
-        nrows=1,
         figsize=(5, 3),
         **kwargs
     )
