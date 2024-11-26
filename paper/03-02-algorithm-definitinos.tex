@@ -11,14 +11,14 @@ The following notation is introduced:
 
 We consider two implementations of the dynamic programming (DP) approach:
 
-\textbf{Dictionary-Based DP (DP\_DICT)}: Utilizes a dictionary to store state-value pairs, enhancing memory efficiency by only retaining relevant states. This approach may introduce minimal computational overhead due to dictionary operations.
+\textbf{Dictionary-Based DP (DP-DICT)}: Utilizes a dictionary to store state-value pairs, enhancing memory efficiency by only retaining relevant states. This approach may introduce minimal computational overhead due to dictionary operations.
 
-\textbf{Multi-Dimensional Array DP (DP\_MDIM)}: Employs a multi-dimensional array to represent states, allowing for faster access times. However, this method incurs significantly higher memory consumption, especially as the number of machines increases.
+\textbf{Multi-Dimensional Array DP (DP-MDIM)}: Employs a multi-dimensional array to represent states, allowing for faster access times. However, this method incurs significantly higher memory consumption, especially as the number of machines increases.
 
 For detailed theoretical underpinnings and the correctness of the DP approach, please refer back to Chapter~\ref{chap:problem_definition}.
 
 \begin{algorithm}[H]
-    \caption{Dictionary-Based Dynamic Programming (DP\_DICT)}\label{alg:dpdict}
+    \caption{Dictionary-Based Dynamic Programming (DP-DICT)}\label{alg:dpdict}
     \begin{algorithmic}[1]
         \State \textbf{Input:} Ordered set of jobs $J$, set of machines $M$, job weights $w$
         \State \textbf{Output:} Minimum weighted sum of completion times
@@ -40,10 +40,10 @@ For detailed theoretical underpinnings and the correctness of the DP approach, p
     \end{algorithmic}
 \end{algorithm}
 
-The DP\_DICT algorithm iteratively builds a dictionary of states, where each state $p$ represents a possible distribution of jobs across machines. For each job $j$, it considers assigning it to each machine $k$ under the symmetry-breaking condition ($p[k] < p[k-1]$ or $k = 1$) to avoid redundant computations. The cost of a state is updated based on the cumulative weighted completion time. By using a dictionary, the algorithm efficiently stores only relevant states, optimizing memory usage.
+The DP-DICT algorithm iteratively builds a dictionary of states, where each state $p$ represents a possible distribution of jobs across machines. For each job $j$, it considers assigning it to each machine $k$ under the symmetry-breaking condition ($p[k] < p[k-1]$ or $k = 1$) to avoid redundant computations. The cost of a state is updated based on the cumulative weighted completion time. By using a dictionary, the algorithm efficiently stores only relevant states, optimizing memory usage.
 
 \begin{algorithm}[H]
-    \caption{Multi-Dimensional Array Dynamic Programming (DP\_MDIM)}\label{alg:dpmdim}
+    \caption{Multi-Dimensional Array Dynamic Programming (DP-MDIM)}\label{alg:dpmdim}
     \begin{algorithmic}[1]
         \State \textbf{Input:} Ordered set of jobs $J$, set of machines $M$, job weights $w$
         \State \textbf{Output:} Minimum weighted sum of completion times
@@ -67,10 +67,10 @@ The DP\_DICT algorithm iteratively builds a dictionary of states, where each sta
     \end{algorithmic}
 \end{algorithm}
 
-Similar to DP\_DICT, the DP\_MDIM algorithm explores possible job assignments to machines but uses a multi-dimensional array for state storage. Each dimension corresponds to a machine, and indices represent the number of jobs assigned. The algorithm updates the array by considering all valid states and keeps track of the minimal cost. While access times are faster, this method requires more memory, making it less practical for larger problems.
+Similar to DP-DICT, the DP-MDIM algorithm explores possible job assignments to machines but uses a multi-dimensional array for state storage. Each dimension corresponds to a machine, and indices represent the number of jobs assigned. The algorithm updates the array by considering all valid states and keeps track of the minimal cost. While access times are faster, this method requires more memory, making it less practical for larger problems.
 
 \begin{algorithm}[H]
-    \caption{Greedy}\label{alg:greedy}
+    \caption{Least Loaded}\label{alg:leastloaded}
     \begin{algorithmic}[1]
         \State \textbf{Input:} Ordered set of jobs $J$, set of machines $M$, job weights $w$
         \State \textbf{Output:} Weighted sum of completion times
@@ -85,7 +85,7 @@ Similar to DP\_DICT, the DP\_MDIM algorithm explores possible job assignments to
     \end{algorithmic}
 \end{algorithm}
 
-The Greedy algorithm assigns each job in the order of $J$ to the machine with the current minimal total weighted completion time. By always choosing the least loaded machine, it aims to balance the cost. The sum of completion times $t_m$ and job count $c_m$ are updated for each machine. This approach is particularly fast and simple.
+The Least Loaded algorithm assigns each job in the order of $J$ to the machine with the current minimal total weighted completion time. By always choosing the least loaded machine, it aims to balance the cost. The sum of completion times $t_m$ and job count $c_m$ are updated for each machine. This greedy approach is particularly fast and simple.
 
 \begin{algorithm}[H]
     \caption{Heavy First}\label{alg:heavyfirst}
@@ -123,7 +123,7 @@ The Heavy First algorithm assigns jobs in order of decreasing weight, in a greed
     \end{algorithmic}
 \end{algorithm}
 
-The $k$-Lookahead algorithm also improves upon the Greedy approach by considering the impact of current decisions on the next $k$ jobs. For each job $j$, it simulates assigning it to each machine $m$ and computes the potential cost using DP for the subsequent $k-1$ jobs. It then selects the machine that results in the minimal estimated total cost, aiming for better long-term scheduling decisions. To compute \texttt{$potential\_cost$}, simply adjust Algorithm \eqref{alg:dpdict} by initializing $dp[( \left| S_1 \right|, \dots, \left| S_m \right|)] \gets \sum_{m \in M} t(S_m)$.
+The $k$-Lookahead algorithm also improves upon the greedy approaches by considering the impact of current decisions on the next $k$ jobs. For each job $j$, it simulates assigning it to each machine $m$ and computes the potential cost using DP for the subsequent $k-1$ jobs. It then selects the machine that results in the minimal estimated total cost, aiming for better long-term scheduling decisions. To compute \texttt{$potential\_cost$}, simply adjust Algorithm \eqref{alg:dpdict} by initializing $dp[( \left| S_1 \right|, \dots, \left| S_m \right|)] \gets \sum_{m \in M} t(S_m)$.
 
 \begin{algorithm}[H]
     \caption{Sort \& Split}\label{alg:sortsplit}

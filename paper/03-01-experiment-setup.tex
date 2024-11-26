@@ -6,7 +6,7 @@ We evaluated six algorithms designed to address the scheduling problem with loca
 
 \begin{itemize}
     \item \textbf{Dynamic Programming (DP) Algorithm}: Serves as the optimal solution and benchmark for comparing other algorithms.
-    \item \textbf{Greedy Algorithm}: A simple heuristic that assigns jobs to machines in a way that minimally increases the total weighted completion time.
+    \item \textbf{Least Loaded}: A simple heuristic that assigns jobs sequentially to the machine that has the lowest sum of weighted completion times.
     \item \textbf{Heavy First}: Sorts jobs by weight in non-increasing order and assigns the heaviest jobs first, following a greedy strategy.
     \item \textbf{$k$-Lookahead Algorithm}: Incorporates future job information by considering the next $k$ jobs before making a scheduling decision.
     \item \textbf{Sort \& Split}: Sorts jobs by weight and splits them into $m$ equally sized arrays, then assigns each array to a machine while maintaining local precedence.
@@ -43,14 +43,11 @@ The experiments were conducted using the following parameters:
     \item \textbf{Random Seeds}: $0$ to $9$
 \end{itemize}
 
-The random seeds ensure reproducibility and allow us to assess performance stability across different random states.
-
-To evaluate and compare the algorithms, we employed several performance metrics:
+The random seeds ensure reproducibility and allow us to assess performance stability across different random states. To evaluate and compare the algorithms, we employed the following performance metrics:
 
 \begin{itemize}
     \item \textbf{Relative Performance Ratio (Quality)}: The ratio of the algorithm's total weighted completion time to that of the optimal solution.
-    \item \textbf{Softmax Scaled Performance}: Normalized performance scores using the softmax function.
-    \item \textbf{Variation Coefficient}: The coefficient of variation over different seeds.
+    \item \textbf{Standard Deviation of RPR}: The standard deviation of the relative performance ratio over different seeds.
     \item \textbf{Relative Improvement}: The improvement in performance relative to increasing the number of machines $m$.
 \end{itemize}
 

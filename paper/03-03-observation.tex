@@ -1,88 +1,70 @@
 \section{Observations}
 
-In this section, we present the results of our experiments, analyze the performance metrics, and provide insights into the behavior of each algorithm across different instance types and machine counts.
+In this section, we analyze the performance of the scheduling algorithms across different instances and configurations, focusing on the Relative Performance Ratio (RPR), the standard deviation of RPR, and the Relative Improvement when increasing the number of machines.
 
-\subsection*{Presentation of Results}
+\subsection{Relative Performance Ratio}
 
-The performance metrics for each algorithm were collected and organized into tables and heatmaps for clear visualization. The primary metric, the Relative Performance Ratio (RPR), is presented for each combination of algorithm, instance generator, and number of machines.
+The Relative Performance Ratio (RPR) is defined as the ratio of an algorithm's solution to the optimal solution, averaged over different seeds. Figure~\ref{fig:RPR-HEAT-G-A-m} presents a heatmap of the RPR for all combinations of generators and algorithms at $m = 2, 4, 6$ machines.
 
-\begin{table}[H]
+\begin{figure}
     \centering
-    \caption{Relative Performance Ratio (RPR) of Algorithms}
-    \begin{tabular}{lcccc}
-        \hline
-        \textbf{Algorithm} & \textbf{Instance Type} & \textbf{$m=2$} & \textbf{$m=3$} & \textbf{$m=4$} \\
-        \hline
-        Greedy             & Increasing Weights     & 1.182          & 1.260          & 1.304          \\
-        Greedy             & Decreasing Weights     & 1.000          & 1.000          & 1.000          \\
-        Greedy             & Small Random Weights   & 1.199          & 1.273          & 1.316          \\
-% ... other data entries
-        \hline
-    \end{tabular}
-    \label{tab:rpr}
-\end{table}
+    \includegraphics[width=.8\textwidth]{RPR-HEAT-G-A-m.png}
+    \caption{Relative Performance Ratio heatmap for all generators and algorithms at $m = 2, 4, 6$}
+    \label{fig:RPR-HEAT-G-A-m}
+\end{figure}
 
-\subsection*{Analysis of Metrics}
+To facilitate analysis, we organized the generators and algorithms in a deliberate order, grouping similar ones together. For the generators, certain pairs exhibit equivalent behavior: \textit{Constant} and \textit{Random Small Span Large}, \textit{+1 Increasing} and \textit{Random Non-Decreasing Large Span}, \textit{$-1$ Decreasing} and \textit{Random Non-Increasing Large Span}, and \textit{Random Small} and \textit{Random Large Span Large}. Thus, we simplified the set of generators to six distinct types. The \textbf{Constant} generator represents trivial cases and is not examined further. The \textbf{Non-Increasing} category, originally \textit{$-1$ Decreasing} and \textit{Random Non-Increasing Large Span}, henceforth represented by \textit{$-1$ Decreasing}. Analogously, the \textbf{Non-Decreasing} category includes \textit{+1 Increasing} and \textit{Random Non-Decreasing Large Span}, represented by \textit{+1 Increasing}. The \textbf{Uniform Random} category, originally \textit{Random Small} and \textit{Random Large Span Large}, is represented by \textit{Random Small}; it is important that the maximum weight is several times greater than the minimum to avoid behavior similar to the \textit{Constant} generator. The \textbf{LoHi} and \textbf{HiLo} generators are originally named \textit{Half Low, then Half High} and \textit{Half High, then Half Low}, respectively.
 
-\subsubsection*{Relative Performance Ratio (Quality)}
+For the algorithms, we observed that \textit{Least Loaded}, \textit{Heavy First}, \textit{Lookahead 5}, and \textit{Lookahead 15} perform very similarly, with \textit{Lookahead 15} having a slight edge. The \textit{Sort \& Split} algorithm generally underperforms compared to others, while the \textit{Balanced Sequential Insert (BSI)} algorithm maintains consistent performance as the number of machines increases and clearly outperforms \textit{Sort \& Split}. Therefore, we simplified the set of algorithms to four main categories: \textbf{Dynamic Programming (DP)} as the optimal solution, \textbf{Balanced Sequential Insert (BSI)}, \textbf{Sort \& Split (S\&S)}, and \textbf{Greedy}, which represents the group of algorithms originally called \textit{Least Loaded}, \textit{Heavy First}, \textit{Lookahead 5}, and \textit{Lookahead 15}.
 
-The RPR indicates how close an algorithm's performance is to the optimal solution. An RPR of $1$ means the algorithm achieved the optimal result.
+Focusing on the \textit{Greedy}, \textit{BSI}, and \textit{S\&S} algorithms with the simplified set of generators, Figure~\ref{fig:RPR-LINE-G-A-m-INTERESTING} shows the RPR for these algorithms at $m = 3, 4, 5$.
 
-\begin{itemize}
-    \item \textbf{Greedy Algorithm}: Performs optimally on instances with decreasing weights but shows significant deviations on increasing weights and random instances.
-    \item \textbf{BSI Algorithm}: Consistently achieves RPRs close to $1$, especially on instances with increasing weights and high variance in job weights.
-    \item \textbf{$k$-Lookahead Algorithm}: Performance improves with larger $k$, reducing the RPR towards $1$ but at the cost of increased computational time.
-\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{RPR-LINE-G-A-m-INTERESTING.png}
+    \caption{Relative Performance Ratio for selected algorithms and generators at $m = 3, 4, 5$}
+    \label{fig:RPR-LINE-G-A-m-INTERESTING}
+\end{figure}
 
-\subsubsection*{Variation Coefficient}
+From the figure, we observe that the \textit{BSI} algorithm generally outperforms the others, except for the \textit{Non-Increasing} and \textit{HiLo} generators, where the \textit{Greedy} algorithm performs better. In these instances, the weights are such that they benefit from being uniformly distributed across the machines, aligning with the behavior of the \textit{Greedy} algorithm. This suggests that combining the strengths of both \textit{BSI} and \textit{Greedy} algorithms could lead to near-optimal performance across different types of instances.
 
-The variation coefficient measures the stability of an algorithm's performance across different random seeds.
+Figure~\ref{fig:RPR-HEAT-G-m-A-INTERESTING} provides a heatmap highlighting the strengths and weaknesses of each algorithm for the selected generators across a range of machines from $m = 2$ to $6$.
 
-\begin{itemize}
-    \item \textbf{Greedy and BSI Algorithms}: Show low variation coefficients, indicating stable performance.
-    \item \textbf{$k$-Lookahead Algorithm}: Higher variation, particularly for small $k$, suggesting sensitivity to specific instances.
-\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{RPR-HEAT-G-m-A-INTERESTING.png}
+    \caption{Relative Performance Ratio heatmap for selected algorithms and generators across $m = 2$ to $6$}
+    \label{fig:RPR-HEAT-G-m-A-INTERESTING}
+\end{figure}
 
-\subsubsection*{Scalability}
+The \textit{Greedy} algorithm exhibits three distinct performance groups. It performs very well on the \textit{Non-Increasing} and \textit{HiLo} generators, with RPR in the range [1.0, 1.02]. On the \textit{Non-Decreasing} and \textit{Uniform Random} generators, its performance is poor, with RPR in the range [1.18, 1.35]. The algorithm performs very poorly on the \textit{LoHi} generator, with RPR ranging from 1.45 to 1.98.
 
-As the number of machines increases:
+The \textit{BSI} algorithm shows relatively stable performance across generators and machine counts. It performs very well on the \textit{Non-Decreasing} generator, with an RPR around 1.0. On the \textit{LoHi} generator, it performs well, with RPR between 1.01 and 1.15. For the \textit{Non-Increasing} and \textit{Uniform Random} generators, it achieves mediocre performance, with RPR between 1.11 and 1.23. However, its performance fluctuates on the \textit{HiLo} generator, with RPR ranging from 1.06 to 1.31.
 
-\begin{itemize}
-    \item \textbf{Greedy Algorithm}: Slight improvement in RPR but remains suboptimal on certain instances.
-    \item \textbf{BSI Algorithm}: RPR approaches $1$, especially for instances with high variance in weights.
-    \item \textbf{$k$-Lookahead Algorithm}: Performance continues to improve with more machines and larger $k$.
-\end{itemize}
+The \textit{Sort \& Split} algorithm performs poorly to very poorly across the board, showing acceptable performance only with the \textit{Non-Decreasing} generator. These observations reinforce the potential benefit of combining the \textit{Greedy} and \textit{BSI} algorithms to exploit their respective strengths. By selecting the appropriate algorithm based on the instance characteristics, we can achieve near-optimal performance across different generators. Together, they provide very good performance on the \textit{Non-Increasing}, \textit{Non-Decreasing}, and \textit{HiLo} generators, with RPR between 1.0 and 1.02; good performance on the \textit{LoHi} generator, with RPR between 1.01 and 1.15; and mediocre performance on the \textit{Uniform Random} generator, with RPR between 1.11 and 1.23.
 
-\subsection*{Instance Type Insights}
+\subsection{Standard Deviation of RPR}
 
-\subsubsection*{Decreasing Weights}
+We examined the standard deviation of the RPR over different seeds to assess the stability of the algorithms. Figure~\ref{fig:RPR-STD-BAR-G-A} displays a bar chart of the standard deviation for all randomized generators and algorithms (excluding \textit{DP}) at $m = 5$.
 
-All algorithms perform optimally on decreasing weight instances due to the predictable ordering, which aligns well with local precedence constraints.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{RPR_STD-BAR-G-A.png}
+    \caption{Standard deviation of Relative Performance Ratio over seeds for randomized generators at $m = 5$}
+    \label{fig:RPR-STD-BAR-G-A}
+\end{figure}
 
-\subsubsection*{Increasing Weights}
+Overall, the standard deviations are relatively low, less than $4\%$, indicating consistent performance across different seeds. The \textit{Uniform Random} generators exhibit the highest variability. The standard deviation is largely indifferent to the number of machines $m$, showing minimal differences. While this variability is acceptable in the current context, it could become problematic at larger scales, suggesting an area for future work.
 
-Algorithms that effectively manage heavier jobs early (e.g., BSI and Heavy First) perform better, as they mitigate the impact of large weights accumulating later in the schedule.
+\subsection{Relative Improvement}
 
-\subsubsection*{Random Weights}
+We analyzed the Relative Improvement in the solution when increasing the number of machines from $m-1$ to $m$, defined as the percentage reduction in the solution value. Figure~\ref{fig:RI-LINE-A-m} illustrates the Relative Improvement for all algorithms (excluding \textit{DP}), averaged over randomized generators and seeds, across $m = 2, 3, 4, 6$.
 
-Performance varies across algorithms:
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{RI-LINE-A-m.png}
+    \caption{Relative Improvement in solution quality when increasing the number of machines}
+    \label{fig:RI-LINE-A-m}
+\end{figure}
 
-\begin{itemize}
-    \item \textbf{Greedy Algorithm}: Less effective due to the lack of consideration for weight distribution.
-    \item \textbf{BSI Algorithm}: Performs better by balancing heavy and light jobs.
-    \item \textbf{$k$-Lookahead Algorithm}: Improved performance with higher $k$, but computationally intensive.
-\end{itemize}
-
-\subsection*{Comparative Analysis}
-
-When comparing algorithms:
-
-\begin{itemize}
-    \item \textbf{BSI vs. Greedy}: BSI consistently outperforms Greedy on instances with high variance in weights.
-    \item \textbf{$k$-Lookahead vs. Greedy}: $k$-Lookahead provides better results than Greedy, especially as $k$ increases.
-    \item \textbf{Heavy First}: Performs similarly to BSI on certain instances but may be less effective when not combined with balancing strategies.
-\end{itemize}
-
-\subsection*{Unexpected Findings}
-
-An interesting observation is that the BSI algorithm's computational time decreases as the number of machines increases. Initially surprising, this can be attributed to the reduced number of iterations needed to balance workloads when more machines are available.
+The results show no major differences among the algorithms, with all following a similar trend. This suggests that the algorithms neither asymptotically approach the optimal solution as the number of machines increases nor significantly diverge. Further investigation into asymptotic behavior over larger numbers of jobs ($n$) could provide additional insights.
