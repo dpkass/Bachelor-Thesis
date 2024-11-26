@@ -47,13 +47,7 @@ def precompute(algorithms, n=150, ms=range(1, 7), seeds=range(10)):
 
 if __name__ == "__main__":
     all = [
-        DP_DICT(),
-        LeastLoaded(),
-        HeavyFirst(),
-        Lookahead(5),
-        Lookahead(15),
-        SimpleSortAndSplit(),
-        BalancedSequentialInsert()
+        BalancedSequentialInsertPP()
     ]
 
     precompute(all)

@@ -2,7 +2,10 @@ import xarray as xr
 import numpy as np
 from plotter import plot_heatmap, plot_bar, plot_line
 
-interesting_algos = ['Least Loaded', 'Balanced Sequential Insert', 'Simple Sort & Split']
+interesting_algos = ['Least Loaded',
+                     'Simple Sort & Split',
+                     'Balanced Sequential Insert',
+                     'Balanced Sequential Insert++']
 
 algos_order = [
     'DP',
@@ -11,7 +14,8 @@ algos_order = [
     'Lookahead 5',
     'Lookahead 15',
     'Simple Sort & Split',
-    'Balanced Sequential Insert'
+    'Balanced Sequential Insert',
+    'Balanced Sequential Insert++'
 ]
 
 rename_algos = {
@@ -21,7 +25,8 @@ rename_algos = {
     'Lookahead 5': 'L5',
     'Lookahead 15': 'L15',
     'Simple Sort & Split': 'S&S',
-    'Balanced Sequential Insert': 'BSI'
+    'Balanced Sequential Insert': 'BSI',
+    'Balanced Sequential Insert++': 'BSI++'
 }
 
 interesting_gens = [

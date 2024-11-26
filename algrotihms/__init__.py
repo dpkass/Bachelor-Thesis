@@ -5,6 +5,7 @@ from algrotihms.lookahead import Lookahead
 from algrotihms.heavy_first import HeavyFirst
 from algrotihms.sort_and_split import SimpleSortAndSplit
 from algrotihms.balanced_sequential_insert import BalancedSequentialInsert
+from algrotihms.balanced_sequential_insert_pp import BalancedSequentialInsertPP
 
 __all__ = [
     'DP_MDIM',
@@ -13,5 +14,6 @@ __all__ = [
     'Lookahead',
     'HeavyFirst',
     'SimpleSortAndSplit',
-    'BalancedSequentialInsert'
+    'BalancedSequentialInsert',
+    'BalancedSequentialInsertPP'
 ]
