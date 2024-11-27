@@ -1,16 +1,12 @@
 \documentclass{report}
 
-\usepackage{unicode-math}
 \usepackage{markdown}
-\usepackage{amsmath}
-\usepackage{amsthm}
+\usepackage{amsmath, amsfonts, amssymb, amsthm, thmtools}
 \usepackage{hyperref}
-\usepackage{graphicx}
-\usepackage{svg}
-\usepackage{mathtools}
+\usepackage{graphicx, svg}
+\usepackage{mathtools, unicode-math}
 \usepackage{tikz}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
+\usepackage{algorithm, algpseudocode}
 
 \graphicspath{ {./images/} }
 
@@ -18,10 +14,10 @@
 \usegdlibrary{layered}
 
 \title{
-    \begin{figure}
-        \centering
-        \includesvg[width=0.75\linewidth]{images/HHU_Logo.svg}
-    \end{figure}
+\begin{figure}
+    \centering
+    \includesvg[width=0.75\linewidth]{images/HHU_Logo.svg}
+\end{figure}
 
     Scheduling with local Precedence Constraints\\
     {\Large Heinrich-Heine University Düsseldorf}
@@ -47,7 +43,11 @@
     \include{04-future-work}
 
     \appendix
+    \include{A-omitted-proofs}
+    \listoftheorems[ignore={example}, swapnumber]
+    \listofalgorithms
     \bibliographystyle{abbrv}
     \bibliography{refs}
+
 
 \end{document}

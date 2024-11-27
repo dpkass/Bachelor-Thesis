@@ -1,0 +1,93 @@
+\section{Formal Problem Definition}
+
+To formally define the scheduling problem under consideration, we introduce the following components and notations:
+
+\begin{definition}[Jobs]
+    Let $J = \{1, 2, \dots, n\}$ denote an ordered set of $n$ jobs. Each job $j \in J$ is associated with a weight $w_j \in \mathbb{R}^+$, representing its importance or cost.
+\end{definition}
+
+\begin{definition}[Machines]
+    Let $M = \{1, 2, \dots, m\}$ denote a set of $m$ identical machines available for processing the jobs.
+
+    Let $S_k$ denote the sequence of jobs assigned to machine $k \in M$.
+\end{definition}
+
+Precedence constraints are defined based on the global order of jobs in $J$, but are restricted to processing on a specific machine.
+\begin{definition}[Local Precedence Constraints]
+    Within each machine $k \in M$, if job $i$ is processed before job $j$, then it must hold that $i < j$ in the global ordering of $J$.
+\end{definition}
+Note, that there are no precedence relations between jobs assigned to different machines. We assume that each job has a unit processing time.
+\begin{definition}[Completion Time]
+    The completion time $C_j$ of a job $j$ is defined as the time at which the job finishes processing on its assigned machine $m$, which is the number of jobs which precede $j$ on $m$ plus $1$.
+\end{definition}
+
+\begin{definition}[Objective Function]
+    The primary objective is to \textbf{minimize the total weighted sum of completion times}, defined as:
+    \[
+        \min \sum_{j \in J} w_j C_j\text{,}
+    \]
+    whilst adhering to the local precedence constraints.
+\end{definition}
+
+To elucidate the concept of local precedence constraints based on a global job order, consider the following example:
+
+Suppose we have three jobs $J = \{1, 2, 3\}$ with weights $w_1 = 2$, $w_2 = 3$, and $w_3 = 1$, and two machines $M = \{A, B\}$. The jobs are globally ordered as $1 < 2 < 3$. The local precedence constraints require that on any given machine, if a job precedes another, it must do so in the global order.
+
+One feasible schedule could be:
+
+\begin{example}[Schedule 1] \hfill
+    \begin{itemize}
+        \item Machine $A$: Jobs $1 \rightarrow 3$
+        \item Machine $B$: Job $2$
+    \end{itemize}
+
+    Here, on Machine $A$, job $1$ precedes job $3$, which is consistent with the global order ($1 < 3$). Job $2$ on Machine $B$ can be scheduled independently, even if it starts before job $3$ on Machine $A$, as there are no precedence relations between machines.
+
+    The completion times would be:
+    \[
+        C_1 = 1, \quad C_3 = 2, \quad C_2 = 1.
+    \]
+
+    The total weighted sum of completion times is:
+    \[
+        \sum_{j \in J} w_j C_j = 2 \times 1 + 3 \times 1 + 1 \times 2 = 2 + 3 + 2 = 7.
+    \]
+\end{example}
+
+Another feasible schedule could be:
+
+\begin{example}[Schedule 2] \hfill
+    \begin{itemize}
+        \item Machine $A$: Jobs $1 \rightarrow 2$
+        \item Machine $B$: Job $3$
+    \end{itemize}
+
+    The completion times would be:
+    \[
+        C_1 = 1, \quad C_2 = 2, \quad C_3 = 1.
+    \]
+
+    The total weighted sum of completion times is:
+    \[
+        \sum_{j \in J} w_j C_j = 2 \times 1 + 3 \times 2 + 1 \times 1 = 2 + 6 + 1 = 9.
+    \]
+\end{example}
+
+Comparing both schedules, Schedule 1 has a lower total weighted sum of completion times, illustrating how the assignment and sequencing of jobs affect the objective.
+
+%\textbf{ADD DIAGRAM}
+
+\begin{definition}[Mathematical Formulation]
+    The scheduling problem can be mathematically formulated as a surjective function $ \phi: J \to M $, while optimizing
+
+    \[
+        \begin{aligned}
+            \min \quad & \sum_{j=1}^n w_j C_j \\
+            \text{subject to} \quad & C_j = 1 + \sum_{\substack{i \in J \\ i < j, \phi(i) = \phi(j)}} 1 && \forall j \in J.
+        \end{aligned}
+    \]
+\end{definition}
+
+Scheduling with local precedence constraints presents unique challenges compared to traditional scheduling problems. The global order of jobs imposes a structured flexibility, allowing jobs to be assigned to different machines while maintaining local precedence within each machine. This structure can be exploited to design more efficient algorithms. However, balancing the load across multiple machines while adhering to the global order constraints introduces complexity in finding optimal or near-optimal solutions.
+
+Moreover, this problem variant models real-world scenarios where tasks have inherent priorities or dependencies, but these constraints are localized within specific resources or processes. Examples include manufacturing assembly lines, parallel processing tasks in computing, and project management with resource-specific task dependencies. Addressing this problem can lead to more efficient scheduling algorithms that are both computationally feasible and effective in minimizing the total weighted completion time, thereby enhancing operational efficiency in various domains.

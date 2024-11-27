@@ -1,0 +1,243 @@
+\section{Dynamic Programming Approach}
+
+To address the computational challenges posed by the scheduling problem with local precedence constraints, we explore a \textbf{Dynamic Programming (DP)} approach aimed at finding the optimal solution. This approach systematically examines all possible job assignments and sequences across machines to identify the schedule that minimizes the total weighted sum of completion times.
+
+\begin{definition}[State] \label{def:state}
+    A \textbf{state} is defined as a tuple $\boldsymbol{p} = (p_1, p_2, \dots, p_m)$, where $p_k$ denotes the number of jobs assigned to machine $k$. Each state represents a unique configuration of job assignments across the machines.
+\end{definition}
+
+\begin{theorem}[Optimality of the DP Algorithm]
+    The Dynamic Programming algorithm correctly computes the optimal schedule that minimizes the total weighted sum of completion times under local precedence constraints.
+\end{theorem}
+
+\begin{proof}
+    We establish the correctness of the DP algorithm by invoking the \textbf{Principle of Optimality}, which states that an optimal solution to a problem contains within it optimal solutions to its subproblems.
+
+    \textbf{Base Case}: The DP algorithm initializes with the base state where no jobs have been assigned to any machine. For this state, the total weighted completion time is zero:
+    \[
+        DP(0, 0, \dots, 0) = 0.
+    \]
+    
+    \textbf{Inductive Step}: Assume that for all states representing assignments of the first $j-1$ jobs, the DP table correctly stores the minimum total weighted completion time. We proceed to assign the $j$-th job by considering all possible machine assignments. Let $p = (p_1, p_2, \dots, p_m)$ represent the current state, where $p_k$ indicates the number of jobs assigned to machine $k$.
+
+    The next state $p'$ is determined by assigning job $j$ to machine $k$, resulting in:
+    \[
+        p' = (p_1, p_2, \dots, p_k + 1, \dots, p_m),
+    \]
+    where $k \in M$. For each successor state $p'$, the new completion time for job $j$, denoted as $C_{j,k}$, is calculated as $p_k + 1$, indicating the position of job $j$ on machine $k$.
+
+    The DP value for the successor state $p'$ is computed using the recurrence relation:
+    \[
+        DP(p') = \min_{k \in M} \left\{ DP(p) + w_j \times C_{j,k} \right\},
+    \]
+    where $w_j$ is the weight of job $j$. This ensures that for each state, the minimum total weighted completion time is recorded.
+
+    It is important to note that different paths may lead to the same successor state. In such cases, the DP table retains only the minimum DP value for that state across all possible paths leading to it. This process guarantees that the optimal solution is built incrementally by considering all possible assignments in a structured manner.
+
+    By iterating through all $n$ jobs and considering all machine assignments at each step, the DP algorithm ensures that the optimal schedule is found. The algorithm terminates with the state that has all jobs assigned, representing the minimum total weighted completion time across all possible schedules.
+\end{proof}
+
+\begin{definition}[State Space] \label{def:state-space}
+    The \textbf{state space}, denoted as $S$, is the set of all possible states $\boldsymbol{p} = (p_1, p_2, \dots, p_m)$ that the DP algorithm may encounter during its execution.
+\end{definition}
+
+\begin{theorem}[Time and Space Complexity of the DP Algorithm] \label{thm:dp-time-space-complexity}
+    The Dynamic Programming algorithm has a time complexity of 
+    \[
+        \mathcal{O}\left( \frac{n^m}{(m!)^2} \right)\text{,}
+    \]
+    and a space complexity of 
+    \[
+        \mathcal{O}\left( p_m(n) - p_m(n-2) \right)\text{,}
+    \]
+    where $p_k(n)$ denotes the number of integer partitions of $n$ into at most $k$ non-negative parts.
+\end{theorem}
+
+To analyze the computational complexities of the DP algorithm, we progressively refine our upper bounds through a series of lemmas, ultimately leading to the main theorem regarding time and space complexity.
+
+\begin{lemma}[Naive Upper Bound]
+    The size of the state space $|S|$, and consequently the space and time complexities, are bounded above by $m^n$.
+\end{lemma}
+
+\begin{proof}
+    In the naive approach, each of the $n$ jobs can be assigned to any of the $m$ machines independently. Therefore, the total number of possible assignments is $m^n$.
+\end{proof}
+
+This naive upper bound of $m^n$ indicates that the state space grows exponentially with the number of jobs, which becomes computationally infeasible for large $n$.
+
+\begin{lemma}[State Space Upper Bound]
+    The size of the state space $|S|$ is bounded above by $n^m$.
+\end{lemma}
+
+\begin{proof}
+    Each machine can have up to $n$ jobs, and there are $m$ machines. Thus, the total number of possible states is bounded by $n^m$.
+\end{proof}
+
+This upper bound of $n^m$ is significantly smaller than $m^n$, because the number of machines $m$ is much less than the number of jobs $n$. This upper bound applies primarily to the space complexity, as each state could (and will) require its own computation.
+
+The next step in finding a smaller upper bound involves determining how many successors overlap, or equivalently, how many predecessors each state has. A state has as many predecessors as there are machines with more than $0$ jobs assigned to them, since each $p_k > 0$ can be decremented by $1$ to yield a distinct predecessor.
+
+\begin{figure}
+    \centering
+    \input{graphs/full-ss-overlapping-successors}
+    \caption{State Space for $m=3$, $n=2$ with overlapping successors.}
+    \label{fig:full-ss-overlapping-successors}
+\end{figure}
+
+Before deriving the number of overlapping successors, let's revisit our definition of states. A state is solely defined by the number of jobs assigned to each machine. These can overlap, as illustrated in \autoref{fig:full-ss-overlapping-successors}.
+
+For the following derivation, we augment the state definition by including its predecessor:
+
+\begin{definition}[State With Predecessor] \label{def:state-with-predecessor}
+    A state is defined as $s = (p, s')$, where $s'$ is the predecessor of $s$, and $p$ remains $(p_1, p_2, \dots, p_m)$.
+    
+    \textbf{Note:} This definition is only valid until the proof of \autoref{cor:ss-without-overlap}.
+\end{definition}
+
+This modification eliminates overlapping successors, as seen in \autoref{fig:full-ss-no-overlapping-successors}. Using this definition, we calculate the number of states that share the same value $p$ but have different predecessors $s'$.
+
+\begin{figure}
+    \centering
+    \input{graphs/full-ss-no-overlapping-successors}
+    \caption{State Space for $m=3$, $n=2$ without overlapping successors.}
+    \label{fig:full-ss-no-overlapping-successors}
+\end{figure}
+
+\begin{proposition}[Number of States with $l$ Predecessors (No Overlap)] \label{prop:sp}
+    The number of states that have $l$ predecessors for given $n$ and $m$ is described by the following function:
+    \[
+        SP_{n,m}(l) = \sum_{n_i=0}^{n} \binom{m}{l} \stirlingS{n_i}{l} l!\text{,}
+    \]
+    where $\stirlingS{n_i}{l}$ denotes the Stirling number of the second kind.
+\end{proposition}
+
+\begin{proof}
+    There are $\binom{m}{l}$ ways to select $l$ out of the $m$ machines. For each selected subset of $l$ machines, there are $\stirlingS{n_i}{l}$ ways to partition $n_i$ jobs into $l$ non-empty subsets. Additionally, there are $l!$ ways to assign these subsets to the selected machines. Therefore, the total number of states with $l$ predecessors is given by:
+    \[
+        SP_{n,m}(l) = \sum_{n_i=0}^{n} \binom{m}{l} \stirlingS{n_i}{l} l!\text{.}
+    \]
+\end{proof}
+
+\begin{corollary}[Exact State Space Size \& Time Complexity without Overlapping Successors] \label{cor:ss-without-overlap}
+    Following \autoref{prop:sp}, the exact number of states and the corresponding time complexity (using \autoref{def:state-with-predecessor}) is given by $|S| = \sum_{l=0}^m SP_{n,m}(l)$.
+\end{corollary}
+
+\begin{proof}
+    The state space size is the sum of the number of states with each possible number of predecessors. Since each state has only one predecessor in this configuration, the time complexity is exactly proportional to the state space size.
+\end{proof}
+
+Thus, the state space size is the sum of all possible configurations with different numbers of predecessors, calculated without accounting for overlapping states.
+
+Now, reverting back to our original definition of states \ref{def:state}, we consider merging states by taking the minimum of the possible values for that state. To calculate the state space size under this new definition, we introduce a new counting function for the number of states with a given number of predecessors.
+
+\begin{proposition}[Number of States with $l$ Predecessors] \label{prop:sp'}
+    The number of states that have $l$ predecessors for given $n$ and $m$ is described by the following function:
+    \[
+        SP'_{n,m}(l) = \sum_{n_i=0}^{n} \binom{m}{l} c_l(n_i)\text{,}
+    \]
+    where $c_k(n) = \binom{n - 1}{k - 1}$ is the number of compositions (ordered partitions) of $n$ into exactly $k$ parts.
+\end{proposition}
+
+\begin{proof}
+    Basically, we replaced $\binom{m}{l} \stirlingS{n_i}{l}$ with $c_l(n_i)$. $l!$ can be discarded, because compositions already account for the ordering. The Stirling number $\stirlingS{n_i}{l}$ counts the ways to partition $n_i$ jobs into $l$ subsets, while $c_l(n_i) = \binom{n_i - 1}{l - 1}$ represents the number of ordered partitions of $n_i$ into $l$ parts. By focusing on the cardinality of each subset, which defines the state $p$, we align with the definition of integer compositions.
+\end{proof}
+
+\begin{lemma}[State Space Size with Overlapping Successors]
+    The size of the state space considering overlapping successors is $n^{\overline{m}} \in \mathcal{O}\left( n^m \right)$, where $n^{\overline{m}}$ denotes the Pochhammer symbol (rising factorial).
+\end{lemma}
+
+\begin{proof}
+    Analogously to \autoref{cor:ss-without-overlap}, we derive the state space size as $|S| = \sum_{l=0}^m SP'_{n,m}(l)$.
+
+    Using the following binomial identity (proven in \ref{apx:proof-bin-id-1})
+    \begin{equation} \label{eq:bin-id-1}
+        \sum_{k=0}^m \binom{m}{k} \binom{n - 1}{k - 1} = \binom{n + m - 1}{m}\text{,}
+    \end{equation}
+    and the identity
+    \begin{equation} \label{eq:bin-id-2}
+        \sum_{k=0}^m \binom{n + k}{n} = \binom{n + m + 1}{m}~\cite{spiegel1968mathhandbook}\text{,}
+    \end{equation}
+    we obtain:
+    \begin{align*}
+    |S| 
+    &= \sum_{l=0}^m \sum_{n_i=0}^{n} \binom{m}{l} c_l(n_i) \\
+    &= \sum_{n_i=0}^{n} \sum_{l=0}^m \binom{m}{l} \binom{n_i - 1}{l - 1}  & \text{(composition definition)} \\
+    &= \sum_{n_i=0}^{n} \binom{n_i + m - 1}{m} & \text{\eqref{eq:bin-id-1}} \\
+    &= \binom{n + m}{m} & \text{\eqref{eq:bin-id-2}} \\
+    &= n^{\overline{m}} \in \mathcal{O} \left( n^m \right) & \text{(Pochhammer symbol definition)}
+    \end{align*}
+\end{proof}
+
+\begin{corollary}[Time Complexity with Overlapping Successors]
+    When considering overlapping successors, the time complexity is reduced to $n^{\overline{m}} \cdot m \in \mathcal{O} \left( n^m \cdot m \right)$
+\end{corollary}
+
+This is true, because we calculate each state from it's predecessors, each of which can have up to $m$.
+
+\begin{table}
+    \centering
+    \begin{tabular}{c|cccccc}
+    \hline
+    \textbf{\(m\)} $\backslash$ \textbf{\(n\)} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+    \hline
+    1 & 1 & 2 & 3 & 4 & 5 & 6 \\
+    2 & 1 & 3 & 6 & 10 & 15 & 21 \\
+    3 & 1 & 4 & 10 & 20 & 35 & 56 \\
+    4 & 1 & 5 & 15 & 35 & 70 & 126 \\
+    \hline
+    \end{tabular}
+    \label{tab:sss-merged-successors}
+    \caption{\( n^{\overline{m}} \) for Selected Indices \(m\) and \(n\)}
+\end{table}
+
+To further optimize the time and space complexities, we employ \textbf{symmetry breaking} techniques. Since assigning jobs to machines in different orders but with the same number of jobs per machine results in equivalent states, we can enforce an ordering to eliminate redundant states. Specifically, when multiple machines have the same number of assigned jobs, we always choose the machine with the smallest index.
+
+By transitioning from compositions (ordered partitions) to unordered partitions, we effectively reduces the state space by recognizing symmetric states as identical.
+
+\begin{lemma}[State Space Size with Symmetry Breaking] \label{lemma:symmetry-breaking}
+    By enforcing an ordering on machine assignments, the state space size can be further reduced to:
+    \begin{equation} \label{eq:partition-sum}
+        |S| = \sum_{n_i=0}^n p_m(n_i) \in \mathcal{O}\left( \frac{n^m}{m \cdot (m!)^2} \right),
+    \end{equation}
+    where $p_k(n)$ denotes the number of integer partitions of $n$ into at most $k$ non-negative parts.
+\end{lemma}
+
+Note that the asymptotic growth of $p_m(n_i)$, for fixed $m$, is
+\[
+    p_m(n_i) \sim \mathcal{O}\left( \frac{n^{m - 1}}{m!(m-1)!} \right) \cite{k-parititions}\text{.}
+\]
+See the proof for \autoref{eq:partition-sum} in \ref{apx:proof-partition-sum}.
+
+\begin{lemma}[Space Complexity with Layer-by-Layer Processing] \label{lemma:space-layer-by-layer}
+    By storing only the current and preceding layers of states, the space complexity can be further optimized to:
+    \[
+        \text{Space Complexity: } \mathcal{O}\left( p_m(n) - p_m(n-2) \right)\text{,}
+    \]
+    where $p_m(n)$ is the number of integer partitions of $n$ into at most $m$ parts.
+\end{lemma}
+
+\begin{proof}
+    Each state depends only on its preceding states. We define a layer of states as all states that represent having processed $i$ jobs, formally $L_i = \{ p \mid \sum_k p_k = i \}$. 
+    
+    Each layer $L_i$ depends only on the preceding layer $L_{i-1}$, since each state $p \in L_i$ is derived from assigning a job to one of the machines in states from $L_{i-1}$. By maintaining only the current and preceding layers and discarding older layers, we limit the number of stored states at any time to:
+    \[
+        |L_i| + |L_{i-1}| = p_m(n_i) - p_m(n_{i-2}) \text{ for each step } i.
+    \]
+    Therefore, the space complexity is bounded by:
+    \[
+        \text{Space Complexity: } \mathcal{O}\left( p_m(n) - p_m(n-2) \right)\text{.}
+    \]
+\end{proof}
+
+\begin{proof}[Proof for \autoref{thm:dp-time-space-complexity}]
+    In \autoref{lemma:space-layer-by-layer}, the space complexity was already proven.
+
+    From \autoref{lemma:symmetry-breaking}, by applying symmetry breaking, the state space size is reduced to
+    \[
+        |S| \in \mathcal{O}\left( \frac{n^m}{m \cdot (m!)^2} \right)\text{.}
+    \]
+    As stated before, states are derived from their respective predecessors, of which each state has up to $m$. Thus, the time complexity is
+    \[
+        \text{Time Complexity: } \mathcal{O}\left( |S| \cdot m \right) \subseteq \mathcal{O}\left( \frac{n^m}{(m!)^2} \right)
+    \]
+\end{proof}
