@@ -1,23 +1,19 @@
-\chapter{Future Work}
+\chapter{Conclusion and Future Work}
 
-\begin{markdown}
-    **Potential Extensions:**
-    - **Algorithmic Improvements:**
-    - (Explore more advanced heuristics or metaheuristics (e.g., genetic algorithms, tabu
-    search).)
-    - Optimize existing algorithms for better performance or lower computational cost.
-    - Doubling then Binary Search for BSI
-    - **Broader Problem Scope:**
-    - Investigate scheduling with global precedence constraints.
-    - Consider variable processing times or machine-specific constraints.
-    - **Real-World Applications:**
-    - Apply algorithms to real datasets from industry.
-    - Assess practical feasibility and effectiveness.
-    - **Scalability Enhancements:**
-    - Develop parallel implementations to handle larger instances.
-    - Use approximation schemes for faster computation.
-    - **Addressing Limitations:**
-    - Acknowledge limitations in the current study (e.g., scope of instance types, computational
-    resources).
-    - Propose methodologies to overcome these challenges in future research.
-\end{markdown}
+This thesis has delved into the complex domain of scheduling with local precedence constraints, addressing significant gaps in existing research and contributing valuable insights to the field. By developing and evaluating a diverse suite of algorithms tailored specifically for this problem variant, we have enhanced the understanding of how different strategies perform under varying conditions. The comprehensive experimental framework established in this study allowed for a rigorous assessment of algorithmic efficacy, scalability, and stability across a wide array of instance types, including variations in machine numbers and weight distributions.
+
+Our findings highlight the strengths and limitations of each algorithm, providing practitioners with guidance on selecting the most suitable method based on specific problem characteristics. Notably, the \textit{Balanced Sequential Insert (BSI)} algorithm demonstrated robust performance across several scenarios, particularly in handling instances with highly skewed weight distributions. Conversely, greedy algorithms excelled in instances where weights decreased or followed a high-to-low pattern. These insights underscore the importance of algorithm selection in achieving near-optimal solutions and offer a foundation for informed decision-making in practical applications.
+
+Despite these advancements, the research presented in this thesis is not without limitations. The scope of instance types considered, while diverse, does not encompass the full spectrum of real-world scenarios. Computational resource constraints also limited the size and complexity of the instances we could feasibly analyze, potentially affecting the generalizability of the results. Acknowledging these limitations provides a pathway for future research endeavors aimed at building upon and extending the work initiated here.
+
+Looking forward, several avenues offer promising directions for further exploration and development. Enhancing the algorithms through optimization and the incorporation of more advanced heuristics or metaheuristic approaches could yield significant improvements in performance and computational efficiency. For instance, exploring genetic algorithms or tabu search methods may provide more adaptive and robust solutions capable of handling larger and more complex scheduling instances. Specifically, optimizing existing algorithms, such as implementing a ternary search instead of a linear search in the BSI algorithm, could reduce computational costs and improve scalability.
+
+Expanding the problem scope presents another opportunity for gaining deeper insights into scheduling complexities. Investigating scheduling with global precedence constraints would address a broader class of problems where dependencies extend across all machines, introducing new challenges and necessitating more sophisticated algorithmic solutions. Additionally, considering variable processing times and machine-specific constraints would align the problem more closely with real-world conditions, where such variations are commonplace. This expansion would require the development of more generalized models and could lead to the discovery of novel scheduling strategies.
+
+Applying the algorithms to real-world datasets obtained from industry partners would not only validate their practical applicability but also uncover unique challenges inherent in operational environments. Such empirical studies could reveal factors not accounted for in theoretical models, prompting refinements and adaptations that enhance the algorithms' effectiveness in practice. Assessing practical feasibility and effectiveness through real-world application is crucial for bridging the gap between theoretical research and industry needs.
+
+Addressing scalability concerns is essential for the algorithms to remain relevant as the size and complexity of scheduling problems continue to grow. Developing parallel implementations of the algorithms could significantly improve their ability to handle larger instances by leveraging modern multi-core processors and distributed computing systems. This enhancement would expand the algorithms' applicability to high-demand industrial settings where large-scale scheduling is a critical component of operational efficiency.
+
+Finally, overcoming the limitations identified in this study is vital for advancing the field. Future research should aim to diversify the range of instance types examined, incorporating more varied and complex scenarios to test the algorithms' robustness and adaptability. Employing advanced computational resources or optimizing algorithmic efficiency could mitigate computational constraints, allowing for the analysis of larger and more intricate scheduling problems. By addressing these challenges, subsequent studies can enhance the reliability and applicability of scheduling solutions in diverse and dynamic environments.
+
+In conclusion, this thesis has made meaningful contributions to the understanding and solving of scheduling problems with \textit{local precedence constraints}. The development of specialized algorithms and the comprehensive analysis of their performance provide valuable insights for both academia and industry. The proposed extensions and future research directions offer a roadmap for continued exploration, promising to further advance the field and unlock new possibilities for efficient and effective scheduling across various domains.
