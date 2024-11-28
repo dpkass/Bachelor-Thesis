@@ -1,23 +1,25 @@
 \chapter{Omitted Proofs} \label{apx:omitted-proofs}
 
+
 \section{Proof of \autoref{eq:bin-id-1}} \label{apx:proof-bin-id-1}
 
 To prove, we use \textbf{Vandermonde's convolution}:
 \[
-\binom{n + m}{r} = \sum_{k=0}^r \binom{n}{k} \binom{m}{r-k},
+    \binom{n + m}{r} = \sum_{k=0}^r \binom{n}{k} \binom{m}{r-k},
 \]
 and the symmetry property of binomial coefficients:
 \[
-\binom{n}{k} = \binom{n}{n-k}.
+    \binom{n}{k} = \binom{n}{n-k}.
 \]
 Starting with the left-hand side:
 \begin{align*}
-\sum_{k=0}^m \binom{m}{k} \binom{n-1}{k-1}
-&= \sum_{k=0}^m \binom{n-1}{k-1} \binom{m}{k} & \text{(reordering terms)} \\
-&= \sum_{k=0}^m \binom{n-1}{k} \binom{m}{m-k} & \text{(applying symmetry)} \\
-&= \binom{n + m - 1}{m}, & \text{(by Vandermonde's convolution)}
+    \sum_{k=0}^m \binom{m}{k} \binom{n-1}{k-1}
+    &= \sum_{k=0}^m \binom{n-1}{k-1} \binom{m}{k} & \text{(reordering terms)} \\
+    &= \sum_{k=0}^m \binom{n-1}{k} \binom{m}{m-k} & \text{(applying symmetry)} \\
+    &= \binom{n + m - 1}{m}, & \text{(by Vandermonde's convolution)}
 \end{align*}
 which proves the proposition.
+
 
 \section{Proof of \autoref{eq:partition-sum}} \label{apx:proof-partition-sum}
 
@@ -25,22 +27,22 @@ To prove, we use the following key equations:
 
 1. The asymptotic formula for the number of partitions of \(n\) into at most \(k\) parts:
 \[
-   p_k(n) \sim \frac{1}{(k-1)!} \frac{n^{k-1}}{k!} \cite{k-parititions}
+    p_k(n) \sim \frac{1}{(k-1)!} \frac{n^{k-1}}{k!} \cite{k-parititions}
 \]
 
 2. Faulhaber's formula for \( \sum_{i=0}^n i^p \):
 \[
-   \sum_{i=0}^n i^p \sim \frac{n^{p+1}}{p+1} + \mathcal{O}(n^p).
+    \sum_{i=0}^n i^p \sim \frac{n^{p+1}}{p+1} + \mathcal{O}(n^p).
 \]
 Starting with the given summation:
 \begin{align*}
-\sum_{n_i=0}^n p_m(n_i)
-&\sim \sum_{n_i=0}^n \frac{n_i^{m-1}}{(m-1)!m!} & \text{(using \( p_m(n) \) asymptotics)} \\
-&= \frac{1}{(m-1)! m!} \sum_{n_i=0}^n n_i^{m-1} & \text{(factoring constants)} \\
-&\sim \frac{1}{(m-1)! m!} \left( \frac{n^m}{m} + \mathcal{O}(n^{m-1}) \right) & \text{(applying summation of powers)} \\
-&= \frac{n^m}{m \cdot (m!)^2} + \mathcal{O}\left(\frac{n^{m-1}}{(m!)^2}\right). & \text{(simplifying terms)}
+    \sum_{n_i=0}^n p_m(n_i)
+    &\sim \sum_{n_i=0}^n \frac{n_i^{m-1}}{(m-1)!m!} & \text{(using \( p_m(n) \) asymptotics)} \\
+    &= \frac{1}{(m-1)! m!} \sum_{n_i=0}^n n_i^{m-1} & \text{(factoring constants)} \\
+    &\sim \frac{1}{(m-1)! m!} \left( \frac{n^m}{m} + \mathcal{O}(n^{m-1}) \right) & \text{(applying summation of powers)} \\
+    &= \frac{n^m}{m \cdot (m!)^2} + \mathcal{O}\left(\frac{n^{m-1}}{(m!)^2}\right). & \text{(simplifying terms)}
 \end{align*}
 Thus, the summation satisfies:
 \[
-\sum_{n_i=0}^n p_m(n_i) \in \mathcal{O}\left(\frac{n^m}{m \cdot (m!)^2}\right).
+    \sum_{n_i=0}^n p_m(n_i) \in \mathcal{O}\left(\frac{n^m}{m \cdot (m!)^2}\right).
 \]

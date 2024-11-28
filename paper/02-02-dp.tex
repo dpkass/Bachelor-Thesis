@@ -2,7 +2,8 @@
 
 To address the computational challenges posed by the scheduling problem with local precedence constraints, we explore a \textbf{Dynamic Programming (DP)} approach aimed at finding the optimal solution. This approach systematically examines all possible job assignments and sequences across machines to identify the schedule that minimizes the total weighted sum of completion times.
 
-\begin{definition}[State] \label{def:state}
+\begin{definition}[State]
+    \label{def:state}
     A \textbf{state} is defined as a tuple $\boldsymbol{p} = (p_1, p_2, \dots, p_m)$, where $p_k$ denotes the number of jobs assigned to machine $k$. Each state represents a unique configuration of job assignments across the machines.
 \end{definition}
 
@@ -17,7 +18,7 @@ To address the computational challenges posed by the scheduling problem with loc
     \[
         DP(0, 0, \dots, 0) = 0.
     \]
-    
+
     \textbf{Inductive Step}: Assume that for all states representing assignments of the first $j-1$ jobs, the DP table correctly stores the minimum total weighted completion time. We proceed to assign the $j$-th job by considering all possible machine assignments. Let $p = (p_1, p_2, \dots, p_m)$ represent the current state, where $p_k$ indicates the number of jobs assigned to machine $k$.
 
     The next state $p'$ is determined by assigning job $j$ to machine $k$, resulting in:
@@ -37,16 +38,18 @@ To address the computational challenges posed by the scheduling problem with loc
     By iterating through all $n$ jobs and considering all machine assignments at each step, the DP algorithm ensures that the optimal schedule is found. The algorithm terminates with the state that has all jobs assigned, representing the minimum total weighted completion time across all possible schedules.
 \end{proof}
 
-\begin{definition}[State Space] \label{def:state-space}
+\begin{definition}[State Space]
+    \label{def:state-space}
     The \textbf{state space}, denoted as $S$, is the set of all possible states $\boldsymbol{p} = (p_1, p_2, \dots, p_m)$ that the DP algorithm may encounter during its execution.
 \end{definition}
 
-\begin{theorem}[Time and Space Complexity of the DP Algorithm] \label{thm:dp-time-space-complexity}
-    The Dynamic Programming algorithm has a time complexity of 
+\begin{theorem}[Time and Space Complexity of the DP Algorithm]
+    \label{thm:dp-time-space-complexity}
+    The Dynamic Programming algorithm has a time complexity of
     \[
         \mathcal{O}\left( \frac{n^m}{(m!)^2} \right)\text{,}
     \]
-    and a space complexity of 
+    and a space complexity of
     \[
         \mathcal{O}\left( p_m(n) - p_m(n-2) \right)\text{,}
     \]
@@ -88,9 +91,10 @@ Before deriving the number of overlapping successors, let's revisit our definiti
 
 For the following derivation, we augment the state definition by including its predecessor:
 
-\begin{definition}[State With Predecessor] \label{def:state-with-predecessor}
+\begin{definition}[State With Predecessor]
+    \label{def:state-with-predecessor}
     A state is defined as $s = (p, s')$, where $s'$ is the predecessor of $s$, and $p$ remains $(p_1, p_2, \dots, p_m)$.
-    
+
     \textbf{Note:} This definition is only valid until the proof of \autoref{cor:ss-without-overlap}.
 \end{definition}
 
@@ -103,7 +107,8 @@ This modification eliminates overlapping successors, as seen in \autoref{fig:ful
     \label{fig:full-ss-no-overlapping-successors}
 \end{figure}
 
-\begin{proposition}[Number of States with $l$ Predecessors (No Overlap)] \label{prop:sp}
+\begin{proposition}[Number of States with $l$ Predecessors (No Overlap)]
+    \label{prop:sp}
     The number of states that have $l$ predecessors for given $n$ and $m$ is described by the following function:
     \[
         SP_{n,m}(l) = \sum_{n_i=0}^{n} \binom{m}{l} \stirlingS{n_i}{l} l!\text{,}
@@ -112,13 +117,11 @@ This modification eliminates overlapping successors, as seen in \autoref{fig:ful
 \end{proposition}
 
 \begin{proof}
-    There are $\binom{m}{l}$ ways to select $l$ out of the $m$ machines. For each selected subset of $l$ machines, there are $\stirlingS{n_i}{l}$ ways to partition $n_i$ jobs into $l$ non-empty subsets. Additionally, there are $l!$ ways to assign these subsets to the selected machines. Therefore, the total number of states with $l$ predecessors is given by:
-    \[
-        SP_{n,m}(l) = \sum_{n_i=0}^{n} \binom{m}{l} \stirlingS{n_i}{l} l!\text{.}
-    \]
+    There are $\binom{m}{l}$ ways to select $l$ out of the $m$ machines. For each selected subset of $l$ machines, there are $\stirlingS{n_i}{l}$ ways to partition $n_i$ jobs into $l$ non-empty subsets. Additionally, there are $l!$ ways to assign these subsets to the selected machines.
 \end{proof}
 
-\begin{corollary}[Exact State Space Size \& Time Complexity without Overlapping Successors] \label{cor:ss-without-overlap}
+\begin{corollary}[Exact State Space Size \& Time Complexity without Overlapping Successors]
+    \label{cor:ss-without-overlap}
     Following \autoref{prop:sp}, the exact number of states and the corresponding time complexity (using \autoref{def:state-with-predecessor}) is given by $|S| = \sum_{l=0}^m SP_{n,m}(l)$.
 \end{corollary}
 
@@ -130,7 +133,8 @@ Thus, the state space size is the sum of all possible configurations with differ
 
 Now, reverting back to our original definition of states \ref{def:state}, we consider merging states by taking the minimum of the possible values for that state. To calculate the state space size under this new definition, we introduce a new counting function for the number of states with a given number of predecessors.
 
-\begin{proposition}[Number of States with $l$ Predecessors] \label{prop:sp'}
+\begin{proposition}[Number of States with $l$ Predecessors]
+    \label{prop:sp'}
     The number of states that have $l$ predecessors for given $n$ and $m$ is described by the following function:
     \[
         SP'_{n,m}(l) = \sum_{n_i=0}^{n} \binom{m}{l} c_l(n_i)\text{,}
@@ -143,33 +147,36 @@ Now, reverting back to our original definition of states \ref{def:state}, we con
 \end{proof}
 
 \begin{lemma}[State Space Size with Overlapping Successors]
-    The size of the state space considering overlapping successors is $n^{\overline{m}} \in \mathcal{O}\left( n^m \right)$, where $n^{\overline{m}}$ denotes the Pochhammer symbol (rising factorial).
+    The size of the state space considering overlapping successors is $\frac{n^{\overline m}}{m!}$, where $n^{\overline m}$ denotes the Pochhammer Symbol (rising factorial).
 \end{lemma}
 
 \begin{proof}
     Analogously to \autoref{cor:ss-without-overlap}, we derive the state space size as $|S| = \sum_{l=0}^m SP'_{n,m}(l)$.
 
     Using the following binomial identity (proven in \ref{apx:proof-bin-id-1})
-    \begin{equation} \label{eq:bin-id-1}
+    \begin{equation}
+        \label{eq:bin-id-1}
         \sum_{k=0}^m \binom{m}{k} \binom{n - 1}{k - 1} = \binom{n + m - 1}{m}\text{,}
     \end{equation}
     and the identity
-    \begin{equation} \label{eq:bin-id-2}
+    \begin{equation}
+        \label{eq:bin-id-2}
         \sum_{k=0}^m \binom{n + k}{n} = \binom{n + m + 1}{m}~\cite{spiegel1968mathhandbook}\text{,}
     \end{equation}
     we obtain:
     \begin{align*}
-    |S| 
-    &= \sum_{l=0}^m \sum_{n_i=0}^{n} \binom{m}{l} c_l(n_i) \\
-    &= \sum_{n_i=0}^{n} \sum_{l=0}^m \binom{m}{l} \binom{n_i - 1}{l - 1}  & \text{(composition definition)} \\
-    &= \sum_{n_i=0}^{n} \binom{n_i + m - 1}{m} & \text{\eqref{eq:bin-id-1}} \\
-    &= \binom{n + m}{m} & \text{\eqref{eq:bin-id-2}} \\
-    &= n^{\overline{m}} \in \mathcal{O} \left( n^m \right) & \text{(Pochhammer symbol definition)}
+        |S|
+        &= \sum_{l=0}^m \sum_{n_i=0}^{n} \binom{m}{l} c_l(n_i) \\
+        &= \sum_{n_i=0}^{n} \sum_{l=0}^m \binom{m}{l} \binom{n_i - 1}{l - 1}  & \text{(composition definition)} \\
+        &= \sum_{n_i=0}^{n} \binom{n_i + m - 1}{m} & \text{\eqref{eq:bin-id-1}} \\
+        &= \binom{n + m}{m} & \text{\eqref{eq:bin-id-2}} \\
+        &= \frac{(n + m)!}{m! \, n!} & \text{(binomial coefficient definition)} \\
+        &= \frac{n^{\overline m}}{m!} & \text{(Pochhammer Symbol definition)} \text{.}
     \end{align*}
 \end{proof}
 
 \begin{corollary}[Time Complexity with Overlapping Successors]
-    When considering overlapping successors, the time complexity is reduced to $n^{\overline{m}} \cdot m \in \mathcal{O} \left( n^m \cdot m \right)$
+    When considering overlapping successors, the time complexity is reduced to $\dfrac{n^{\overline m}}{m!} \cdot m \in \mathcal{O} \left( \dfrac{n^{\overline m}}{(m-1)!} \right)$
 \end{corollary}
 
 This is true, because we calculate each state from it's predecessors, each of which can have up to $m$.
@@ -177,14 +184,14 @@ This is true, because we calculate each state from it's predecessors, each of wh
 \begin{table}
     \centering
     \begin{tabular}{c|cccccc}
-    \hline
-    \textbf{\(m\)} $\backslash$ \textbf{\(n\)} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
-    \hline
-    1 & 1 & 2 & 3 & 4 & 5 & 6 \\
-    2 & 1 & 3 & 6 & 10 & 15 & 21 \\
-    3 & 1 & 4 & 10 & 20 & 35 & 56 \\
-    4 & 1 & 5 & 15 & 35 & 70 & 126 \\
-    \hline
+        \hline
+        \textbf{\(m\)} $\backslash$ \textbf{\(n\)} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+        \hline
+        1                                          & 1          & 2          & 3          & 4          & 5          & 6          \\
+        2                                          & 1          & 3          & 6          & 10         & 15         & 21         \\
+        3                                          & 1          & 4          & 10         & 20         & 35         & 56         \\
+        4                                          & 1          & 5          & 15         & 35         & 70         & 126        \\
+        \hline
     \end{tabular}
     \label{tab:sss-merged-successors}
     \caption{\( n^{\overline{m}} \) for Selected Indices \(m\) and \(n\)}
@@ -194,9 +201,11 @@ To further optimize the time and space complexities, we employ \textbf{symmetry 
 
 By transitioning from compositions (ordered partitions) to unordered partitions, we effectively reduces the state space by recognizing symmetric states as identical.
 
-\begin{lemma}[State Space Size with Symmetry Breaking] \label{lemma:symmetry-breaking}
+\begin{lemma}[State Space Size with Symmetry Breaking]
+    \label{lemma:symmetry-breaking}
     By enforcing an ordering on machine assignments, the state space size can be further reduced to:
-    \begin{equation} \label{eq:partition-sum}
+    \begin{equation}
+        \label{eq:partition-sum}
         |S| = \sum_{n_i=0}^n p_m(n_i) \in \mathcal{O}\left( \frac{n^m}{m \cdot (m!)^2} \right),
     \end{equation}
     where $p_k(n)$ denotes the number of integer partitions of $n$ into at most $k$ non-negative parts.
@@ -208,7 +217,8 @@ Note that the asymptotic growth of $p_m(n_i)$, for fixed $m$, is
 \]
 See the proof for \autoref{eq:partition-sum} in \ref{apx:proof-partition-sum}.
 
-\begin{lemma}[Space Complexity with Layer-by-Layer Processing] \label{lemma:space-layer-by-layer}
+\begin{lemma}[Space Complexity with Layer-by-Layer Processing]
+    \label{lemma:space-layer-by-layer}
     By storing only the current and preceding layers of states, the space complexity can be further optimized to:
     \[
         \text{Space Complexity: } \mathcal{O}\left( p_m(n) - p_m(n-2) \right)\text{,}
@@ -217,8 +227,8 @@ See the proof for \autoref{eq:partition-sum} in \ref{apx:proof-partition-sum}.
 \end{lemma}
 
 \begin{proof}
-    Each state depends only on its preceding states. We define a layer of states as all states that represent having processed $i$ jobs, formally $L_i = \{ p \mid \sum_k p_k = i \}$. 
-    
+    Each state depends only on its preceding states. We define a layer of states as all states that represent having processed $i$ jobs, formally $L_i = \{ p \mid \sum_k p_k = i \}$.
+
     Each layer $L_i$ depends only on the preceding layer $L_{i-1}$, since each state $p \in L_i$ is derived from assigning a job to one of the machines in states from $L_{i-1}$. By maintaining only the current and preceding layers and discarding older layers, we limit the number of stored states at any time to:
     \[
         |L_i| + |L_{i-1}| = p_m(n_i) - p_m(n_{i-2}) \text{ for each step } i.

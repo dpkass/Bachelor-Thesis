@@ -2,19 +2,19 @@
     every node/.style={minimum size=8mm, grow=east, inner sep=0mm}
 ]
 
-\graph [layered layout, level distance=2cm, sibling distance=1.5cm] {
+    \graph [layered layout, level distance=2cm, sibling distance=1.5cm] {
     % Layer 1
-    A1 [as={(0,0,0)}] -> {
-        % Layer 2
-        B1 [as={(1,0,0)}],
-        B2 [as={(0,1,0)}],
-        B3 [as={(0,0,1)}]
-    };
+        A1 [as={(0,0,0)}] -> {
+            % Layer 2
+            B1 [as={(1,0,0)}],
+            B2 [as={(0,1,0)}],
+            B3 [as={(0,0,1)}]
+        };
 
-    % Layer 2 -> Layer 3
-    B1 -> { C1 [as={(2,0,0)}], C2_1 [as={(1,1,0)}], C3_1 [as={(1,0,1)}] };
-    B2 -> { C2_2 [as={(1,1,0)}], C4 [as={(0,2,0)}], C5_1 [as={(0,1,1)}] };
-    B3 -> { C3_2 [as={(1,0,1)}], C5_2 [as={(0,1,1)}], C6 [as={(0,0,2)}] };
-};
+        % Layer 2 -> Layer 3
+        B1 -> { C1 [as={(2,0,0)}], C2_1 [as={(1,1,0)}], C3_1 [as={(1,0,1)}] };
+        B2 -> { C2_2 [as={(1,1,0)}], C4 [as={(0,2,0)}], C5_1 [as={(0,1,1)}] };
+        B3 -> { C3_2 [as={(1,0,1)}], C5_2 [as={(0,1,1)}], C6 [as={(0,0,2)}] };
+    };
 
 \end{tikzpicture}

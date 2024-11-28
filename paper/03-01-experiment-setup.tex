@@ -15,23 +15,27 @@ We evaluated six algorithms designed to address the scheduling problem with loca
 
 To assess the algorithms across diverse scenarios, we employed several instance generators that produce different weight distributions. These generators are categorized as follows:
 
-\begin{itemize}
-    \item \textbf{Non-Random Generators}:
-    \begin{itemize}
-        \item \textbf{Increasing Weights}: Generates jobs with weights increasing sequentially.
-        \item \textbf{Decreasing Weights}: Generates jobs with weights decreasing sequentially.
-    \end{itemize}
-    \item \textbf{Random Generators}:
-    \begin{itemize}
-        \item \textbf{Small Weights}: Random weights in the range $[1, 100)$.
-        \item \textbf{Small Span Large Weights}: Random weights in the range $[100{,}000, 100{,}100)$.
-        \item \textbf{Large Span Large Weights}: Random weights in the range $[10{,}000, 100{,}000)$.
-        \item \textbf{Large Span Non-Decreasing Weights}: Random weights in the range $[1, 100{,}000)$ sorted in non-decreasing order.
-        \item \textbf{Large Span Non-Increasing Weights}: Random weights in the range $[1, 100{,}000)$ sorted in non-increasing order.
-        \item \textbf{Low Then High Weights}: The first half of the jobs have weights in $[1, 100)$, and the second half in $[900, 1{,}000)$.
-        \item \textbf{High Then Low Weights}: The reverse of the above, where the first half of the jobs have weights in $[900, 1{,}000)$, and the second half in $[1, 100)$.
-    \end{itemize}
-\end{itemize}
+
+\begin{table}[h]
+    \label{tab:instance_generators}
+    \begin{tabularx}{\textwidth}{@{}XXp{7cm}@{}}
+        \toprule
+        \textbf{Generator Name}                    & \textbf{Interval}                      & \textbf{Description}                                                                            \\
+        \midrule
+        \textbf{Increasing Weights}                & $[1, n]$                               & Generates jobs with weights increasing sequentially in the range $[1, n]$.                      \\
+        \textbf{Decreasing Weights}                & $[1, n]$                               & Generates jobs with weights decreasing sequentially in the range $[1, n]$.                      \\
+        \midrule
+        \textbf{Small Weights}                     & $[1, 100)$                             & Generates jobs with uniformly random weights.                                                   \\
+        \textbf{Small Span Large Weights}          & $[100{,}000, 100{,}100)$               & Generates jobs with uniformly random weights.                                                   \\
+        \textbf{Large Span Large Weights}          & $[10{,}000, 100{,}000)$                & Generates jobs with uniformly random weights.                                                   \\
+        \textbf{Large Span Non-Decreasing Weights} & $[1, 100{,}000)$                       & Generates jobs with uniformly random weights sorted in non-decreasing order.                    \\
+        \textbf{Large Span Non-Increasing Weights} & $[1, 100{,}000)$                       & Generates jobs with uniformly random weights sorted in non-increasing order.                    \\
+        \textbf{Low Then High Weights}             & $[1, 100) \text{ and } [900, 1{,}000)$ & The first half of the jobs have weights in $[1, 100)$, and the second half in $[900, 1{,}000)$. \\
+        \textbf{High Then Low Weights}             & $[900, 1{,}000) \text{ and } [1, 100)$ & The first half of the jobs have weights in $[900, 1{,}000)$, and the second half in $[1, 100)$. \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Instance Generators for Scheduling Algorithms}
+\end{table}
 
 These instance generators were chosen to simulate a variety of real-world scenarios and to understand how different weight distributions affect the performance of the scheduling algorithms. By testing the algorithms on both ordered and random weight distributions, we aim to uncover their strengths and weaknesses under varying conditions.
 
