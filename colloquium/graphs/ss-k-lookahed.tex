@@ -1,0 +1,17 @@
+\begin{tikzpicture}[
+  every node/.style={minimum size=8mm, grow=east, inner sep=0mm}
+]
+\graph [layered layout, level distance=2cm, sibling distance=1.5cm] {
+  C1 [as={(0,0,0)}] 
+    -> C2 [as={(1,0,0)}] 
+      -> C3 [as={(1,1,0)}] 
+        -> C4 [as={(2,1,0)}] 
+          -> C5 [as={\dots}]
+            -> C6 [as={(14,5,4)}] 
+              -> { A1 [as={(15,5,4)}], A2 [as={(14,6,4)}], A3 [as={(14,5,5)}] };
+  A1 -> { B1 [as={(16,5,4)}], B2 [as={(15,6,4)}], B3 [as={(15,5,5)}] };
+  A2 -> { B2, B4 [as={(14,7,4)}], B5 [as={(14,6,5)}] };
+  A3 -> { B3, B5 };
+};
+\end{tikzpicture}
+

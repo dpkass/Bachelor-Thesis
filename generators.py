@@ -28,14 +28,14 @@ def small_random(n, seed):
     Small Random Weights
     """
     np.random.seed(seed)
-    return np.random.randint(1, 100, size=n)
+    return np.random.randint(1, 101, size=n)
 
 
 def small_span_large(n, seed):
     """
     Small Span Large Weights
     """
-    return small_random(n, seed) + 100000
+    return small_random(n, seed) + 10_000
 
 
 def large_span_large(n, seed):
@@ -43,7 +43,7 @@ def large_span_large(n, seed):
     Large Span Large Weights
     """
     np.random.seed(seed)
-    return np.random.randint(10000, 1000000, size=n)
+    return np.random.randint(10_001, 1_000_001, size=n)
 
 
 def low_then_high(n, seed):
@@ -64,17 +64,17 @@ def high_then_low(n, seed):
     return low_then_high(n, seed)[::-1]
 
 
-def large_span_random_increasing(n, seed):
+def large_span_random_non_decreasing(n, seed):
     """
-    Increasingly Sorted Large Span Random Weights
+    Non-Decreasingly Sorted Large Span Random Weights
     """
     np.random.seed(seed)
-    return np.sort(np.random.randint(1, 100000, size=n))
+    return np.sort(np.random.randint(1, 100_001, size=n))
 
 
-def large_span_random_decreasing(n, seed):
+def large_span_random_non_increasing(n, seed):
     """
-    Decreasingly Sorted Large Span Random Weights
+    Non-Increasingly Sorted Large Span Random Weights
     """
     return large_span_random_increasing(n, seed)[::-1]
 
